@@ -1,0 +1,16 @@
+
+:orphan:
+
+.. _sphx_glr_auto_tutorials_basics_sg_execution_times:
+
+Computation times
+=================
+**00:34.439** total execution time for **auto_tutorials_basics** files:
+
++-----------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_basics_g_app.py` (``g_app.py``)                           | 00:34.439 | 0.0 MB |
++-----------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_basics_g_code_listing_01.py` (``g_code_listing_01.py``)   | 00:00.000 | 0.0 MB |
++-----------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_basics_ng_generate_infile.py` (``ng_generate_infile.py``) | 00:00.000 | 0.0 MB |
++-----------------------------------------------------------------------------------------+-----------+--------+

@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. Extended user guide &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1.1.1. Using fmas as a black-box application" href="basics/g_app.html" />
+    <link rel="prev" title="‘py-fmas’ python package" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Extended user guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-examples">1.1. Basic examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basics/g_app.html">1.1.1. Using <cite>fmas</cite> as a black-box application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics/g_code_listing_01.html">1.1.2. Basic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics/ng_generate_infile.html">1.1.3. Generating an input file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#more-specific-examples">1.2. More specific examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="specific/g_list_prop_const.html">1.2.1. Implemented propagation constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specific/g_list_raman_models.html">1.2.2. Implemented Raman response functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specific/g_user_guide_PropConst.html">1.2.3. Using the <cite>PropConst</cite> convenience class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specific/g_spectrogram.html">1.2.4. Computing spectrograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specific/g_raman_response.html">1.2.5. Using a specific Raman response function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="specific/g_custom_propagation_model.html">1.2.6. Implementing a custom model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">2. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>Extended user guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/auto_tutorials/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extended-user-guide">
+<span id="sphx-glr-auto-tutorials"></span><span id="id1"></span><h1><span class="section-number">1. </span>Extended user guide<a class="headerlink" href="#extended-user-guide" title="Permalink to this headline">¶</a></h1>
+<p>Step-by-step demonstration of basic and more specific <cite>py-fmas</cite> functionality.
+Click on any image to see the full demo including source code.</p>
+<p>For further examples that illustrate how to work with the <cite>fmas</cite> package, see
+our <a class="reference internal" href="../auto_examples/index.html#usage-examples"><span class="std std-ref">Usage examples</span></a> page.</p>
+<div class="sphx-glr-clear"></div><div class="section" id="basic-examples">
+<span id="sphx-glr-auto-tutorials-basics"></span><h2><span class="section-number">1.1. </span>Basic examples<a class="headerlink" href="#basic-examples" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows how to use py-fmas as a black-box application, that only requires a minimal..."><div class="figure align-default" id="id2">
+<img alt="Using `fmas` as a black-box application" src="../_images/sphx_glr_g_app_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basics/g_app.html#sphx-glr-auto-tutorials-basics-g-app-py"><span class="std std-ref">Using fmas as a black-box application</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates a basic workflow using the py-fmas library code."><div class="figure align-default" id="id3">
+<img alt="Basic workflow" src="../_images/sphx_glr_g_code_listing_01_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basics/g_code_listing_01.html#sphx-glr-auto-tutorials-basics-g-code-listing-01-py"><span class="std std-ref">Basic workflow</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows how to generate an input file in HDF5-format, which can then be processed b..."><div class="figure align-default" id="id4">
+<img alt="Generating an input file" src="../_images/sphx_glr_ng_generate_infile_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="basics/ng_generate_infile.html#sphx-glr-auto-tutorials-basics-ng-generate-infile-py"><span class="std std-ref">Generating an input file</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="more-specific-examples">
+<span id="sphx-glr-auto-tutorials-specific"></span><h2><span class="section-number">1.2. </span>More specific examples<a class="headerlink" href="#more-specific-examples" title="Permalink to this headline">¶</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="This example shows the group-velocity and group-velocity dispersion profiles of several propaga..."><div class="figure align-default" id="id5">
+<img alt="Implemented propagation constants" src="../_images/sphx_glr_g_list_prop_const_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="specific/g_list_prop_const.html#sphx-glr-auto-tutorials-specific-g-list-prop-const-py"><span class="std std-ref">Implemented propagation constants</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows the frequency-domain representation of the different Raman response models,..."><div class="figure align-default" id="id6">
+<img alt="Implemented Raman response functions" src="../_images/sphx_glr_g_list_raman_models_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="specific/g_list_raman_models.html#sphx-glr-auto-tutorials-specific-g-list-raman-models-py"><span class="std std-ref">Implemented Raman response functions</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how the PropConst class, implemented in module fmas.propagation_const..."><div class="figure align-default" id="id7">
+<img alt="Using the `PropConst` convenience class" src="../_images/sphx_glr_g_user_guide_PropConst_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="specific/g_user_guide_PropConst.html#sphx-glr-auto-tutorials-specific-g-user-guide-propconst-py"><span class="std std-ref">Using the PropConst convenience class</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows how to use the simple spectrogram-tool provided the py-fmas package."><div class="figure align-default" id="id8">
+<img alt="Computing spectrograms" src="../_images/sphx_glr_g_spectrogram_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="specific/g_spectrogram.html#sphx-glr-auto-tutorials-specific-g-spectrogram-py"><span class="std std-ref">Computing spectrograms</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows how the different Raman response functions, implemented in modeule raman_re..."><div class="figure align-default" id="id9">
+<img alt="Using a specific Raman response function" src="../_images/sphx_glr_g_raman_response_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="specific/g_raman_response.html#sphx-glr-auto-tutorials-specific-g-raman-response-py"><span class="std std-ref">Using a specific Raman response function</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows how to use the z-propagation model FMAS_S_Raman to implement a specialized ..."><div class="figure align-default" id="id10">
+<img alt="Implementing a custom model" src="../_images/sphx_glr_g_custom_propagation_model_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="specific/g_custom_propagation_model.html#sphx-glr-auto-tutorials-specific-g-custom-propagation-model-py"><span class="std std-ref">Implementing a custom model</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div><div class="sphx-glr-footer class sphx-glr-footer-gallery docutils container">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/cab7a090c4183ca69dc0cd84d3b04413/auto_tutorials_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">auto_tutorials_python.zip</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/97a1de59bce682890841bb846e3dd09c/auto_tutorials_jupyter.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Jupyter</span> <span class="pre">notebooks:</span> <span class="pre">auto_tutorials_jupyter.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="basics/g_app.html" class="btn btn-neutral float-right" title="1.1.1. Using fmas as a black-box application" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="‘py-fmas’ python package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

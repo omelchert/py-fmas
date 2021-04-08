@@ -1,0 +1,6 @@
+
+.. automodule:: examples.ex_solver_only_NSE
+  :no-members:
+
+.. literalinclude:: ../../examples/ex_solver_only_NSE.py
+

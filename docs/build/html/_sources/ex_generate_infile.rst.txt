@@ -1,0 +1,6 @@
+
+.. automodule:: examples.ex_generate_infile
+  :no-members:
+
+.. literalinclude:: ../../examples/ex_generate_infile.py
+

@@ -1,0 +1,9 @@
+
+.. automodule:: examples.ex_specialized_model_PCF
+  :no-members:
+
+.. autoclass::  examples.ex_specialized_model_PCF.CustomModelPCF
+   :members:
+
+.. literalinclude:: ../../examples/ex_specialized_model_PCF.py
+

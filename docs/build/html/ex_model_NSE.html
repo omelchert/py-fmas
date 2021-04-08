@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.1. Model for the nonlinear Schrödinger equation &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.2. Custom model for a specific propagation constant" href="ex_model_PCF.html" />
+    <link rel="prev" title="2. Examples" href="examples.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="reference_manual.html">1. Reference manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html">2. Examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.1. Model for the nonlinear Schrödinger equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex_model_PCF.html">2.2. Custom model for a specific propagation constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex_generate_infile.html">2.3. Generating a separate input file with simulation parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex_solver_only_NSE.html">2.4. How to use a solver on its own</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/index.html">3. Extended user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">4. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">5. Need help</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="examples.html"><span class="section-number">2. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">2.1. </span>Model for the nonlinear Schrödinger equation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ex_model_NSE.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-examples.ex_model_NSE"></span><div class="section" id="model-for-the-nonlinear-schrodinger-equation">
+<h1><span class="section-number">2.1. </span>Model for the nonlinear Schrödinger equation<a class="headerlink" href="#model-for-the-nonlinear-schrodinger-equation" title="Permalink to this headline">¶</a></h1>
+<p>This example shows how to implement an additional propagation model for
+use with the <cite>fmas</cite> library code.</p>
+<p>In particular, the below example how to implement the  nonlinear Schrödinger
+equation (NSE), which is based on the slowly varying envelope approximation.
+The corresponding <span class="math notranslate nohighlight">\(z\)</span>-propagation equation is given by</p>
+<div class="math notranslate nohighlight">
+\[\partial_z A = -i \frac{\beta_2}{2}\partial_t^2 A + i\gamma |A|^2 A,\]</div>
+<p>wherein <span class="math notranslate nohighlight">\(A = A(z, t)\)</span> represents the slowly varying pulse envelope,
+<span class="math notranslate nohighlight">\(\beta_2\)</span> is the second order dispersion parameter, and <span class="math notranslate nohighlight">\(\gamma\)</span> is
+the nonlinear parameter.
+This propagation model can be implemented via the <cite>ModelBaseClass</cite> provided by
+the <cite>fmas</cite> library code</p>
+<p>The frequency-domain representation of the linear operator of the above
+propagation model reads</p>
+<div class="math notranslate nohighlight">
+\[L_\omega = i \beta(\omega) = i \frac{1}{2}\beta_2 \omega^2.\]</div>
+<p>In the definition of the frequency-domain representation of the nonlinear
+operator, i.e. the Fourier transfom of the second term on the right-hand-side
+of the above equation, the field-multiplications are evaluated in the
+time-domain according to</p>
+<div class="math notranslate nohighlight">
+\[N_\omega = i \gamma\,\mathsf{FT}\left[ |A|^2 A \right],\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathsf{FT}\)</span> denotes fourier transform.</p>
+<p>One of the conserved quantities of the NSE related to the field energy,
+given by</p>
+<div class="math notranslate nohighlight">
+\[C_E(z) = \sum_\omega |A_\omega(z)|^2,\]</div>
+<p>is implemented along with the model.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Model for the nonlinear Schrödinger equation</span>
+<span class="sd">============================================</span>
+
+<span class="sd">This example shows how to implement an additional propagation model for</span>
+<span class="sd">use with the `fmas` library code.</span>
+
+<span class="sd">In particular, the below example how to implement the  nonlinear Schrödinger</span>
+<span class="sd">equation (NSE), which is based on the slowly varying envelope approximation.</span>
+<span class="sd">The corresponding :math:`z`-propagation equation is given by</span>
+
+<span class="sd">.. math::</span>
+<span class="sd">    \partial_z A = -i \frac{\beta_2}{2}\partial_t^2 A + i\gamma |A|^2 A,</span>
+
+<span class="sd">wherein :math:`A = A(z, t)` represents the slowly varying pulse envelope,</span>
+<span class="sd">:math:`\beta_2` is the second order dispersion parameter, and :math:`\gamma` is</span>
+<span class="sd">the nonlinear parameter.</span>
+<span class="sd">This propagation model can be implemented via the `ModelBaseClass` provided by</span>
+<span class="sd">the `fmas` library code</span>
+
+<span class="sd">The frequency-domain representation of the linear operator of the above</span>
+<span class="sd">propagation model reads</span>
+
+<span class="sd">.. math::</span>
+<span class="sd">    L_\omega = i \beta(\omega) = i \frac{1}{2}\beta_2 \omega^2.</span>
+
+<span class="sd">In the definition of the frequency-domain representation of the nonlinear</span>
+<span class="sd">operator, i.e. the Fourier transfom of the second term on the right-hand-side</span>
+<span class="sd">of the above equation, the field-multiplications are evaluated in the</span>
+<span class="sd">time-domain according to</span>
+
+<span class="sd">.. math::</span>
+<span class="sd">    N_\omega = i \gamma\,\mathsf{FT}\left[ |A|^2 A \right],</span>
+
+<span class="sd">where :math:`\mathsf{FT}` denotes fourier transform.</span>
+
+<span class="sd">One of the conserved quantities of the NSE related to the field energy,</span>
+<span class="sd">given by</span>
+
+<span class="sd">.. math::</span>
+<span class="sd">    C_E(z) = \sum_\omega |A_\omega(z)|^2,</span>
+
+<span class="sd">is implemented along with the model.</span>
+
+<span class="sd">.. codeauthor:: Oliver Melchert &lt;melchert@iqo.uni-hannover.de&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">ModelBaseClass</span>
+<span class="kn">from</span> <span class="nn">fmas.config</span> <span class="kn">import</span> <span class="n">FTFREQ</span><span class="p">,</span> <span class="n">FT</span><span class="p">,</span> <span class="n">IFT</span><span class="p">,</span> <span class="n">C0</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">SySSM</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+
+
+<span class="k">class</span> <span class="nc">NSE</span><span class="p">(</span><span class="n">ModelBaseClass</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Model implementing the nonlinear Schrödinger equation.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        One of the conserved quantities of the NSE related to the field energy, given by</span>
+
+<span class="sd">        .. math::</span>
+<span class="sd">            C_E(z) = \sum_\omega |A_\omega(z)|^2,</span>
+
+<span class="sd">        is implemented as class method `claw`.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        Lw (:obj:`numpy.ndarray`):</span>
+<span class="sd">            Frequency-domain representation of linear operator of the partial</span>
+<span class="sd">            differential equation.</span>
+<span class="sd">        Nw (:obj:`numpy.ndarray`):</span>
+<span class="sd">            Frequency-domain represetnation of the nonlinear operator of the</span>
+<span class="sd">            partial differential equation.</span>
+<span class="sd">        gamma (:obj:`float`):</span>
+<span class="sd">            Nonlinearity coefficient.</span>
+<span class="sd">        claw (:obj:`function`):</span>
+<span class="sd">            callback function implementing a measurement using a user-supplied</span>
+<span class="sd">            function with function call signature `user_action(i, zi, w, uw)`,</span>
+<span class="sd">            where the arguments are:</span>
+
+<span class="sd">            - i (:obj:`int`): Index specifying the current :math:`z`-step.</span>
+<span class="sd">            - zi (:obj:`float`): Current :math:`z`-value.</span>
+<span class="sd">            - w (:obj:`numpy.ndarray`): Angular frequency mesh.</span>
+<span class="sd">            - uw (:obj:`numpy.ndarray`): Freuqency domain representation of the</span>
+<span class="sd">              current fiels.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        w (:obj:`numpy.ndarray`):</span>
+<span class="sd">            Angular frequency grid.</span>
+<span class="sd">        b2 (:obj:`float`):</span>
+<span class="sd">            Dispersion parameter (default=-1.0).</span>
+<span class="sd">        gamma (:obj:`float`):</span>
+<span class="sd">            Nonlinearity parameter (default=1.0).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">b2</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="n">gamma</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Lw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">beta_w</span>
+
+    <span class="k">def</span> <span class="nf">Nw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uw</span><span class="p">):</span>
+        <span class="n">ut</span> <span class="o">=</span> <span class="n">IFT</span><span class="p">(</span><span class="n">uw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">gamma</span><span class="o">*</span><span class="n">FT</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ut</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">ut</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">claw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">zi</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">uw</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">uw</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># -- DEFINE SIMULATION PARAMETERS</span>
+    <span class="c1"># ... WAVEGUIDE PROPERTIES</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.</span>
+    <span class="c1"># ... TEST PULSE PROPERTIES</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="mf">1.</span>                       <span class="c1"># duration</span>
+    <span class="n">P0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="n">t0</span><span class="o">/</span><span class="n">t0</span><span class="o">/</span><span class="n">gamma</span>   <span class="c1"># peak-intensity</span>
+    <span class="n">LD</span> <span class="o">=</span> <span class="n">t0</span><span class="o">*</span><span class="n">t0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>         <span class="c1"># dispersion length</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN </span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">50.</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">12</span>
+    <span class="n">z_max</span>  <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">LD</span>
+    <span class="n">z_num</span>  <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">z_skip</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="c1"># -- INITIALIZATION STAGE</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+    <span class="c1"># ... NSE MODEL </span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">NSE</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+    <span class="c1"># ... Z-PROPAGATION USING SYMMETRIC SPLIT-STEP FOURIER METHOD </span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">SySSM</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">)</span>
+    <span class="c1"># ... INITIAL CONDITION</span>
+    <span class="n">u_0t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">FT</span><span class="p">(</span><span class="n">u_0t</span><span class="p">))</span>
+
+    <span class="c1"># -- RUN SIMULATION</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
+</pre></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ex_model_PCF.html" class="btn btn-neutral float-right" title="2.2. Custom model for a specific propagation constant" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-left" title="2. Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

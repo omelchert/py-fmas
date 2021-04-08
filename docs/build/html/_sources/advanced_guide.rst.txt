@@ -1,0 +1,16 @@
+Advanced user guide
+*******************
+
+Below we provide usage examples that show how to extend
+the `py-fmas` package with further functionality.
+
+.. toctree::
+    :maxdepth: 3
+    :caption: Examples 
+
+    model_NSE
+    model_NLPM
+
+
+
+

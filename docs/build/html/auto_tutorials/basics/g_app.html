@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.1.1. Using fmas as a black-box application &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.1.2. Basic workflow" href="g_code_listing_01.html" />
+    <link rel="prev" title="1. Extended user guide" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">1. Extended user guide</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#basic-examples">1.1. Basic examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.1.1. Using <cite>fmas</cite> as a black-box application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_code_listing_01.html">1.1.2. Basic workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ng_generate_infile.html">1.1.3. Generating an input file</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#more-specific-examples">1.2. More specific examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">2. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">1. </span>Extended user guide</a> &raquo;</li>
+        
+      <li><span class="section-number">1.1.1. </span>Using <cite>fmas</cite> as a black-box application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/auto_tutorials/basics/g_app.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-tutorials-basics-g-app-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="using-fmas-as-a-black-box-application">
+<span id="sphx-glr-auto-tutorials-basics-g-app-py"></span><h1><span class="section-number">1.1.1. </span>Using <cite>fmas</cite> as a black-box application<a class="headerlink" href="#using-fmas-as-a-black-box-application" title="Permalink to this headline">¶</a></h1>
+<p>This examples shows how to use <cite>py-fmas</cite> as a black-box application, that
+only requires a minimal amount of scripting.</p>
+<p>We start by simply importing the required <cite>fmas</cite> into the current namespace.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
+</pre></div>
+</div>
+<p>If an adequate input file is located within the current working directory,
+<cite>fmas</cite> can be used as shown below. It features a particular function called
+<cite>run</cite>, which reads-in the propagation setting stored in the input file
+<cite>input_file.h5</cite> and runs the simulaton</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">fmas</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s1">&#39;input_file.h5&#39;</span><span class="p">,</span> <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;FMAS_S_R&#39;</span><span class="p">,</span> <span class="n">solver_type</span><span class="o">=</span><span class="s1">&#39;IFM_RK4IP&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example that shows how an adequate input file can be generated via python
+is shown under the link below:</p>
+<p><a class="reference internal" href="ng_generate_infile.html#sphx-glr-auto-tutorials-basics-ng-generate-infile-py"><span class="std std-ref">Generating an input file</span></a></p>
+<p>After the proapgation algorithm (specified in <cite>input_file.h5</cite>) terminates,
+a simple dictionary data structure with the following keys is available</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;t&#39;, &#39;z&#39;, &#39;w&#39;, &#39;u&#39;, &#39;Cp&#39;])
+</pre></div>
+</div>
+<p>A simple plot that shows the result of the simulation run can be produced
+using function <cite>plot_evolution</cite> implemented in module <cite>tools</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">plot_evolution</span>
+<span class="n">plot_evolution</span><span class="p">(</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;t&#39;</span><span class="p">],</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">],</span> <span class="n">t_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">500</span><span class="p">,</span><span class="mi">2200</span><span class="p">),</span> <span class="n">w_lim</span><span class="o">=</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="mf">4.</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="$|u|^2/{\rm{max}}\left(|u|^2\right)$, $|u_\omega|^2/{\rm{max}}\left(|u_\omega|^2\right)$" class="sphx-glr-single-img" src="../../_images/sphx_glr_g_app_001.png" />
+<p>The results can be stored for later postprocessing using the function
+<cite>save_h5</cite> implemented in module <cite>data_io</cite>. It will generate a file
+<cite>out_file.h5</cite> with HDF5 format in the current working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmas.data_io</span> <span class="kn">import</span> <span class="n">save_h5</span>
+<span class="n">save_h5</span><span class="p">(</span><span class="s1">&#39;out_file.h5&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  34.439 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-basics-g-app-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/15a0767e6a3ccba7db6df4310681a0b4/g_app.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_app.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/f90f3590f8f318e97c7e021c74024a3f/g_app.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_app.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="g_code_listing_01.html" class="btn btn-neutral float-right" title="1.1.2. Basic workflow" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="1. Extended user guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

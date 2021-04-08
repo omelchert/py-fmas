@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.1.2. Soliton implosion in a NLPM750 PCF &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.1.3. Extending py-fmas by optfrog spectrograms" href="g_optfrog.html" />
+    <link rel="prev" title="2.1.1. Supercontinuum generation in a PCF" href="g_specialized_model_PCF.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">1. Extended user guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Usage examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#exemplary-propagation-scenarios">2.1. Exemplary propagation scenarios</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="g_specialized_model_PCF.html">2.1.1. Supercontinuum generation in a PCF</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.1.2. Soliton implosion in a NLPM750 PCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_optfrog.html">2.1.3. Extending <cite>py-fmas</cite> by <cite>optfrog</cite> spectrograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_specialized_model_NLPM.html">2.1.4. Two pulse interaction in a NLPM750 PCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_four_pulse_interaction_ESM.html">2.1.5. Four pulse interaction in a ESM PCF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#two-frequency-pulse-compounds">2.2. Two-frequency pulse compounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#simulation-of-other-models">2.3. Simulation of other models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">2. </span>Usage examples</a> &raquo;</li>
+        
+      <li><span class="section-number">2.1.2. </span>Soliton implosion in a NLPM750 PCF</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/auto_examples/gallery_01/g_soliton_implosion.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-gallery-01-g-soliton-implosion-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="soliton-implosion-in-a-nlpm750-pcf">
+<span id="sphx-glr-auto-examples-gallery-01-g-soliton-implosion-py"></span><h1><span class="section-number">2.1.2. </span>Soliton implosion in a NLPM750 PCF<a class="headerlink" href="#soliton-implosion-in-a-nlpm750-pcf" title="Permalink to this headline">¶</a></h1>
+<p>This examples demonstrates breakdown of a high-order soliton in a NL-PM-750
+photonic crystal fiber, described in Ref. [1].  For the numerical simualtion
+the forward model for the analytic signal including the Raman effect is used
+[1,2].</p>
+<p>In particular, this example reproduces the propagation scenario  shown in
+Fig.~2 of Ref. [1]. The resulting figure shows the breakdown of a high-order
+soliton of duration <span class="math notranslate nohighlight">\(t_{\rm{S}}=10\,\mathrm{fs}\)</span>, center frequency
+<span class="math notranslate nohighlight">\(\omega_{\rm{S}}=1.884\,\mathrm{rad/fs}\)</span>, and soliton order
+<span class="math notranslate nohighlight">\(N_{\rm{S}}=10\)</span>. This process is also referred to as soliton implosion.
+For more details see Ref. [1].</p>
+<dl>
+<dt>References:</dt><dd><p>[1] I. Babushkin, A. Tajalli, H. Sayinc et al., Simple route toward
+efficient frequency conversion for generation of fully coherent
+supercontinua in the mid-IR and UV range, Light: Science &amp; Applications 6
+(2017) e16218, <a class="reference external" href="https://doi.org/10.1038/lsa.2016.218">https://doi.org/10.1038/lsa.2016.218</a></p>
+<p>[2] A. Demircan, Sh. Amiranashvili, C. Bree, C. Mahnke, F. Mitschke, G.
+Steinmeyer, Rogue wave formation by accelerated solitons at an optical
+event horizon, Appl. Phys. B 115 (2014) 343,
+<a class="reference external" href="http://dx.doi.org/10.1007/s00340-013-5609-9">http://dx.doi.org/10.1007/s00340-013-5609-9</a></p>
+</dd>
+</dl>
+<img alt="$|u|^2/{\rm{max}}\left(|u|^2\right)$, $|u_\omega|^2/{\rm{max}}\left(|u_\omega|^2\right)$" class="sphx-glr-single-img" src="../../_images/sphx_glr_g_soliton_implosion_001.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">FMAS_S_R</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.propagation_constant</span> <span class="kn">import</span> <span class="n">PropConst</span><span class="p">,</span> <span class="n">define_beta_fun_NLPM750</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">change_reference_frame</span><span class="p">,</span> <span class="n">plot_evolution</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="c1"># -- INITIALIZATION STAGE</span>
+    <span class="c1"># ... DEFINE SIMULATION PARAMETERS</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">3000.</span>       <span class="c1"># (fs)</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span>       <span class="c1"># (-)</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mf">8.0e3</span>       <span class="c1"># (micron)</span>
+    <span class="n">z_num</span> <span class="o">=</span> <span class="mi">10000</span>       <span class="c1"># (-)</span>
+    <span class="n">z_skip</span> <span class="o">=</span> <span class="mi">10</span>         <span class="c1"># (-)</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="mf">3.0e-8</span>         <span class="c1"># (micron^2/W)</span>
+    <span class="n">wS</span> <span class="o">=</span> <span class="mf">1.884</span>          <span class="c1"># (rad/fs)</span>
+    <span class="n">tS</span> <span class="o">=</span> <span class="mf">10.0</span>           <span class="c1"># (fs)</span>
+    <span class="n">NS</span> <span class="o">=</span> <span class="mf">10.</span>            <span class="c1"># (-)</span>
+    <span class="c1"># ... PROPAGGATION CONSTANT</span>
+    <span class="n">beta_fun</span> <span class="o">=</span> <span class="n">define_beta_fun_NLPM750</span><span class="p">()</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">PropConst</span><span class="p">(</span><span class="n">beta_fun</span><span class="p">)</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN, MODEL, AND SOLVER</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">FMAS_S_R</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">beta_w</span><span class="o">=</span><span class="n">pc</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">n2</span><span class="p">)</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">)</span>
+
+    <span class="c1"># -- SET UP INITIAL CONDITION</span>
+    <span class="n">A0</span> <span class="o">=</span> <span class="n">NS</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">beta2</span><span class="p">(</span><span class="n">wS</span><span class="p">))</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">c0</span><span class="o">/</span><span class="n">wS</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span><span class="o">/</span><span class="n">tS</span>
+    <span class="n">Eps_0w</span> <span class="o">=</span> <span class="n">AS</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">A0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">tS</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">wS</span><span class="o">*</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">)))</span><span class="o">.</span><span class="n">w_rep</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">Eps_0w</span><span class="p">)</span>
+
+    <span class="c1"># -- PERFORM Z-PROPAGATION</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+    <span class="c1"># -- SHOW RESULTS</span>
+    <span class="n">utz</span> <span class="o">=</span> <span class="n">change_reference_frame</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">,</span> <span class="n">pc</span><span class="o">.</span><span class="n">vg</span><span class="p">(</span><span class="n">wS</span><span class="p">))</span>
+    <span class="n">plot_evolution</span><span class="p">(</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">utz</span><span class="p">,</span>
+        <span class="n">t_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">w_lim</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">8.</span><span class="p">),</span> <span class="n">DO_T_LOG</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 3 minutes  11.026 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gallery-01-g-soliton-implosion-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/7b7f0d3bb8c4459d28fcafc074035e70/g_soliton_implosion.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_soliton_implosion.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/0bab1337cc4d21ee4f1782f5643299eb/g_soliton_implosion.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_soliton_implosion.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="g_optfrog.html" class="btn btn-neutral float-right" title="2.1.3. Extending py-fmas by optfrog spectrograms" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="g_specialized_model_PCF.html" class="btn btn-neutral float-left" title="2.1.1. Supercontinuum generation in a PCF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

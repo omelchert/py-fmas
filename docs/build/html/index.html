@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>‘py-fmas’ python package &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Extended user guide" href="auto_tutorials/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/index.html">1. Extended user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">2. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>‘py-fmas’ python package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="py-fmas-python-package">
+<h1>‘py-fmas’ python package<a class="headerlink" href="#py-fmas-python-package" title="Permalink to this headline">¶</a></h1>
+<p>The <cite>py-fmas</cite> python package solves for the <span class="math notranslate nohighlight">\(z\)</span>-propagation dynamics of
+spectrally broad ultrashort optical pulses in single mode nonlinear waveguides
+in terms of a nonlinear unidirectional propagation model for the analytic
+signal of the optical field.  It allows to model propagation scenarios with and
+without the Raman effect.</p>
+<div class="figure align-default" id="id1">
+<img alt="Two-pulse interaction in a NL-PM-750 PCF" src="_images/fig_2.png" />
+<p class="caption"><span class="caption-text">Interaction between a fundamental soliton and a dispersive wave in a
+NL-PM-750 photonic crystal fiber (PCF).  Propagation charactersitics of the
+analytic signal intensities in the time-domain (left) and the frequency
+domain (right).  For the numerical simualtion the forward model for the
+analytic signal including the Raman effect is used. More details can be
+found in the usage example
+<a class="reference internal" href="auto_examples/gallery_01/g_specialized_model_NLPM.html#sphx-glr-auto-examples-gallery-01-g-specialized-model-nlpm-py"><span class="std std-ref">Two pulse interaction in a NLPM750 PCF</span></a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>For a user-specified propagation setting, the initial real-valued optical field
+is defined on a periodic one-dimensional temporal grid and converted to the
+complex-valued analytic signal for the optical field.  <span class="math notranslate nohighlight">\(z\)</span>-propagation is
+performed by pseudospectral methods.
+The provided software implements a selection of algorithms that are commonly
+used in nonlinear optics for solving nonlinear Schrödinger type equations.
+<cite>py-fmas</cite> implements algorithms with both, fixed or adaptive stepsize.</p>
+<p>The provided software allows for the propagation of spectrally broad ultrashort
+optical pulses and several pulses at pairwise distinct frequencies.
+Description of the proapgation process in terms of the analytic signal allows
+to directly neglect non-resonant contributions of four-wave mixing and to
+derive models that are formally simpler that the forward Maxwell equation.  The
+range of applicability of the software is however equivalent to that of the
+forward Maxwell equation.
+If the Raman effect is neglected and a slowly varying envelope approximation is
+applied, the considered propagation model can be reduced to the standard
+nonlinear Schrödinger equation.
+For reasonably chosen initial conditions, the provided software can be used
+beyond the unidirectional approximation as a bidirectional model for a complex
+field, allowing to describe forward and backward waves coupled through
+nonlinear interactions (see the useage example
+<a class="reference internal" href="auto_examples/gallery_03/g_BMCF.html#sphx-glr-auto-examples-gallery-03-g-bmcf-py"><span class="std std-ref">BMCF – Backscattered optical field components</span></a>).</p>
+<p><cite>py-fmas</cite> is based on our research code and was implemented with the aim of beeing
+easily extendible and maintainable. The provided software is aimed at researchers
+in the field of ultrashort pulse propagation and related disciplines.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/index.html">1. Extended user guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_tutorials/index.html#basic-examples">1.1. Basic examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_tutorials/index.html#more-specific-examples">1.2. More specific examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">2. Usage examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auto_examples/index.html#exemplary-propagation-scenarios">2.1. Exemplary propagation scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_examples/index.html#two-frequency-pulse-compounds">2.2. Two-frequency pulse compounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="auto_examples/index.html#simulation-of-other-models">2.3. Simulation of other models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference_manual/index.html">3. Reference manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/models.html">3.1. fmas.models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/propagation_constant.html">3.2. fmas.propagation_constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/raman_response.html">3.3. fmas.raman_response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/solver.html">3.4. fmas.solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/analytic_signal.html">3.5. fmas.analytic_signal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/stepper.html">3.6. fmas.stepper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/tools.html">3.7. fmas.tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/data_io.html">3.8. fmas.data_io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_manual/config.html">3.9. fmas.config</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="further-resources">
+<h1>Further resources<a class="headerlink" href="#further-resources" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pulse-propagation-in-terms-ot-the-analytic-signal">
+<h2>Pulse propagation in terms ot the analytic signal<a class="headerlink" href="#pulse-propagation-in-terms-ot-the-analytic-signal" title="Permalink to this headline">¶</a></h2>
+<p>Below you find a list of articles that discuss ultrashort optical pulse
+propagation in terms of the analytic signal and its variants:</p>
+<ul class="simple">
+<li><p>A. Demircan, Sh. Amiranashvili, C. Bree, U. Morgner, G. Steinmeyer,
+Supercontinuum generation by multiple scatterings at a group velocity
+horizon, Opt. Exp. 22 (2014) 3866, <a class="reference external" href="https://doi.org/10.1364/OE.22.003866">https://doi.org/10.1364/OE.22.003866</a>.</p></li>
+<li><p>A. Demircan, Sh. Amiranashvili, C. Bree, C. Mahnke, F. Mitschke, G.
+Steinmeyer, Rogue wave formation by accelerated solitons at an optical event
+horizon, Appl. Phys. B 115 (2014) 343,
+<a class="reference external" href="http://dx.doi.org/10.1007/s00340-013-5609-9">http://dx.doi.org/10.1007/s00340-013-5609-9</a></p></li>
+<li><p>Sh. Amiranashvili, A. Demircan, Ultrashort Optical Pulse Propagation in
+terms of Analytic Signal, Adv. Opt. Tech. 2011 (2011) 989515,
+<a class="reference external" href="http://dx.doi.org/10.1155/2011/989515">http://dx.doi.org/10.1155/2011/989515</a>.</p></li>
+<li><p>Sh. Amiranashvili, A. Demircan, Hamiltonian structure of
+propagation equations for ultrashort optical pulses, Phys. Rev. E 10
+(2010) 013812, <a class="reference external" href="http://dx.doi.org/10.1103/PhysRevA.82.013812">http://dx.doi.org/10.1103/PhysRevA.82.013812</a>.</p></li>
+</ul>
+</div>
+<div class="section" id="research-articles-employing-py-fmas">
+<h2>Research articles employing <cite>py-fmas</cite><a class="headerlink" href="#research-articles-employing-py-fmas" title="Permalink to this headline">¶</a></h2>
+<p>Below you find a list of articles that used some of the <span class="math notranslate nohighlight">\(z\)</span>-proapgation
+models and algorithms implemented by the <cite>py-fmas</cite> package:</p>
+<ul class="simple">
+<li><p>O. Melchert, C. Bree, A. Tajalli, A. Pape, R. Arkhipov, S. Willms, I.
+Babushkin, D. Skryabin, G. Steinmeyer, U. Morgner, A. Demircan, All-optical
+supercontinuum switching, Communications Physics 3 (2020) 146,
+<a class="reference external" href="https://doi.org/10.1038/s42005-020-00414-1">https://doi.org/10.1038/s42005-020-00414-1</a>.</p></li>
+<li><p>O. Melchert, S. Willms, S. Bose, A. Yulin, B. Roth, F. Mitschke, U.
+Morgner, I. Babushkin, A. Demircan, Soliton Molecules with Two Frequencies,
+Phys. Rev. Lett. 123 (2019) 243905,
+<a class="reference external" href="https://doi.org/10.1103/PhysRevLett.123.243905">https://doi.org/10.1103/PhysRevLett.123.243905</a>.</p></li>
+<li><p>O. Melchert, B. Roth, U. Morgner, A. Demircan, OptFROG — Analytic signal
+spectrograms with optimized time–frequency resolution, SoftwareX 10 (2019)
+100275, <a class="reference external" href="https://doi.org/10.1016/j.softx.2019.100275">https://doi.org/10.1016/j.softx.2019.100275</a>, code repository:
+<a class="reference external" href="https://github.com/ElsevierSoftwareX/SOFTX_2019_130">https://github.com/ElsevierSoftwareX/SOFTX_2019_130</a>.</p></li>
+<li><p>O. Melchert, U. Morgner, B. Roth, I. Babushkin, A. Demircan, Accurate
+propagation of ultrashort pulses in nonlinear waveguides using propagation
+models for the analytic signal, Proc. SPIE 10694, Computational Optics II,
+106940M (2018), <a class="reference external" href="https://doi.org/10.1117/12.2313255">https://doi.org/10.1117/12.2313255</a>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="auto_tutorials/index.html" class="btn btn-neutral float-right" title="1. Extended user guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

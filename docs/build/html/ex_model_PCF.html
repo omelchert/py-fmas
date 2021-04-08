@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.2. Custom model for a specific propagation constant &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.3. Generating a separate input file with simulation parameters" href="ex_generate_infile.html" />
+    <link rel="prev" title="2.1. Model for the nonlinear Schrödinger equation" href="ex_model_NSE.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="reference_manual.html">1. Reference manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="examples.html">2. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ex_model_NSE.html">2.1. Model for the nonlinear Schrödinger equation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.2. Custom model for a specific propagation constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex_generate_infile.html">2.3. Generating a separate input file with simulation parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex_solver_only_NSE.html">2.4. How to use a solver on its own</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auto_tutorials/index.html">3. Extended user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">4. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">5. Need help</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="examples.html"><span class="section-number">2. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">2.2. </span>Custom model for a specific propagation constant</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/ex_model_PCF.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-examples.ex_specialized_model_PCF"></span><div class="section" id="custom-model-for-a-specific-propagation-constant">
+<h1><span class="section-number">2.2. </span>Custom model for a specific propagation constant<a class="headerlink" href="#custom-model-for-a-specific-propagation-constant" title="Permalink to this headline">¶</a></h1>
+<p>This examples shows how to implement a specialized propagation model for a
+specific propagation constant, building upon <code class="xref py py-class docutils literal notranslate"><span class="pre">FMAS_S_Raman</span></code>.</p>
+<p>This is useful when series of numerical simulations for a project-specific
+model are needed. The code below still maintains the flexibility to specify the
+discretization of the computational domain in  the project <code class="xref py py-obj docutils literal notranslate"><span class="pre">main</span></code>
+function.</p>
+</div>
+<dl class="py class">
+<dt id="examples.ex_specialized_model_PCF.CustomModelPCF">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">examples.ex_specialized_model_PCF.</span></code><code class="sig-name descname"><span class="pre">CustomModelPCF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#examples.ex_specialized_model_PCF.CustomModelPCF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom model for specific Photonic Crystal Fiber</p>
+</dd></dl>
+
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Custom model for a specific propagation constant</span>
+<span class="sd">================================================</span>
+
+<span class="sd">This examples shows how to implement a specialized propagation model for a</span>
+<span class="sd">specific propagation constant, building upon :class:`FMAS_S_Raman`.</span>
+
+<span class="sd">This is useful when series of numerical simulations for a project-specific</span>
+<span class="sd">model are needed. The code below still maintains the flexibility to specify the</span>
+<span class="sd">discretization of the computational domain in  the project :obj:`main`</span>
+<span class="sd">function.</span>
+
+<span class="sd">.. codeauthor:: Oliver Melchert &lt;melchert@iqo.uni-hannover.de&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">FMAS_S_Raman</span>
+<span class="kn">from</span> <span class="nn">fmas.config</span> <span class="kn">import</span> <span class="n">FTFREQ</span><span class="p">,</span> <span class="n">FT</span><span class="p">,</span> <span class="n">IFT</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+
+
+<span class="k">class</span> <span class="nc">CustomModelPCF</span><span class="p">(</span><span class="n">FMAS_S_Raman</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Custom model for specific Photonic Crystal Fiber&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+
+        <span class="n">c0</span> <span class="o">=</span> <span class="mf">0.29979</span>    <span class="c1"># (micron/fs)</span>
+        <span class="n">w0</span> <span class="o">=</span> <span class="mf">2.2559</span>     <span class="c1"># (rad/fs)</span>
+        <span class="n">gam0</span> <span class="o">=</span> <span class="mf">0.11e-6</span>  <span class="c1"># (1/W/micron)</span>
+        <span class="n">fR</span> <span class="o">=</span> <span class="mf">0.18</span>       <span class="c1"># (-)</span>
+        <span class="n">tau1</span> <span class="o">=</span> <span class="mf">12.2</span>     <span class="c1"># (fs)</span>
+        <span class="n">tau2</span> <span class="o">=</span> <span class="mf">32.0</span>     <span class="c1"># (fs)</span>
+        <span class="n">n2</span> <span class="o">=</span> <span class="n">gam0</span><span class="o">*</span><span class="n">c0</span><span class="o">/</span><span class="n">w0</span>
+
+        <span class="k">def</span> <span class="nf">_beta_fun_detuning</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+            <span class="sa">r</span><span class="sd">&#39;&#39;&#39;Helper function for propagation constant</span>
+
+<span class="sd">            Implements group-velocity dispersion with expansion coefficients</span>
+<span class="sd">            listed in Tab. I of Ref. [1]. Expansion coefficients are valid for</span>
+<span class="sd">            :math:`lambda = 835\,\mathrm{nm}`, i.e. for :math:`\omega_0 \approx</span>
+<span class="sd">            2.56\,\mathrm{rad/fs}`.</span>
+
+<span class="sd">            References:</span>
+<span class="sd">                [1] J. M. Dudley, G. Genty, S. Coen,</span>
+<span class="sd">                Supercontinuum generation in photonic crystal fiber,</span>
+<span class="sd">                Rev. Mod. Phys. 78 (2006) 1135,</span>
+<span class="sd">                http://dx.doi.org/10.1103/RevModPhys.78.1135</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                w (:obj:`numpy.ndarray`): Angular frequency grid.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                :obj:`numpy.ndarray` Propagation constant as function of</span>
+<span class="sd">                frequency detuning.</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+            <span class="c1"># ... EXPANSION COEFFICIENTS DISPERSION</span>
+            <span class="n">b2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.1830e-2</span>     <span class="c1"># (fs^2/micron)</span>
+            <span class="n">b3</span> <span class="o">=</span> <span class="mf">8.1038e-2</span>      <span class="c1"># (fs^3/micron)</span>
+            <span class="n">b4</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.95205e-1</span>    <span class="c1"># (fs^4/micron)</span>
+            <span class="n">b5</span> <span class="o">=</span> <span class="mf">2.0737e-1</span>      <span class="c1"># (fs^5/micron)</span>
+            <span class="n">b6</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.3943e-1</span>     <span class="c1"># (fs^6/micron)</span>
+            <span class="n">b7</span> <span class="o">=</span> <span class="mf">1.3486</span>         <span class="c1"># (fs^7/micron)</span>
+            <span class="n">b8</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5495</span>        <span class="c1"># (fs^8/micron)</span>
+            <span class="n">b9</span> <span class="o">=</span> <span class="mf">3.0524</span>         <span class="c1"># (fs^9/micron)</span>
+            <span class="n">b10</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.7140</span>       <span class="c1"># (fs^10/micron)</span>
+            <span class="c1"># ... PROPAGATION CONSTANT (DEPENDING ON DETUNING)</span>
+            <span class="n">beta_fun_detuning</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="n">b10</span><span class="o">/</span><span class="mi">3628800</span><span class="p">,</span> <span class="n">b9</span><span class="o">/</span><span class="mi">362880</span><span class="p">,</span> <span class="n">b8</span><span class="o">/</span><span class="mi">40320</span><span class="p">,</span>
+                <span class="n">b7</span><span class="o">/</span><span class="mi">5040</span><span class="p">,</span> <span class="n">b6</span><span class="o">/</span><span class="mi">720</span><span class="p">,</span> <span class="n">b5</span><span class="o">/</span><span class="mi">120</span><span class="p">,</span> <span class="n">b4</span><span class="o">/</span><span class="mi">24</span><span class="p">,</span> <span class="n">b3</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="n">b2</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">beta_fun_detuning</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+        <span class="n">beta_w</span> <span class="o">=</span> <span class="n">_beta_fun_detuning</span><span class="p">(</span><span class="n">w</span> <span class="o">-</span> <span class="n">w0</span><span class="p">)</span>
+        <span class="c1"># -- EQUIP THE SUPERCLASS</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">beta_w</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">fR</span><span class="p">,</span> <span class="n">tau1</span><span class="p">,</span> <span class="n">tau2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># -- DEFINE SIMULATION PARAMETERS</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">3500.</span>       <span class="c1"># (fs)</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span>       <span class="c1"># (-)</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mf">0.16</span><span class="o">*</span><span class="mf">1e6</span>    <span class="c1"># (micron)</span>
+    <span class="n">z_num</span> <span class="o">=</span> <span class="mi">4000</span>        <span class="c1"># (-)</span>
+    <span class="n">z_skip</span> <span class="o">=</span> <span class="mi">20</span>         <span class="c1"># (-)</span>
+    <span class="c1"># ... INITIAL CONDITION</span>
+    <span class="n">P0</span> <span class="o">=</span> <span class="mf">1e4</span>            <span class="c1"># (W)</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="mf">28.4</span>           <span class="c1"># (fs)</span>
+    <span class="n">w0</span> <span class="o">=</span> <span class="mf">2.2559</span>         <span class="c1"># (rad/fs)</span>
+    <span class="n">E_0t_fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+
+    <span class="c1"># -- INITIALIZATION STAGE</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+    <span class="c1"># ... CUSTOM PROPAGATION MODEL</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">CustomModelPCF</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>
+    <span class="c1"># ... PROPAGATION ALGORITHM </span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">claw</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span><span class="p">)</span>
+
+    <span class="c1"># -- RUN SIMULATION</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+    <span class="c1"># -- STORE RESULTS</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span>
+        <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span>
+        <span class="s2">&quot;w&quot;</span><span class="p">:</span> <span class="n">solver</span><span class="o">.</span><span class="n">w</span><span class="p">,</span>
+        <span class="s2">&quot;utz&quot;</span><span class="p">:</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">,</span>
+        <span class="s2">&quot;Cp&quot;</span><span class="p">:</span> <span class="n">solver</span><span class="o">.</span><span class="n">ua_vals</span><span class="p">}</span>
+    <span class="n">fmas</span><span class="o">.</span><span class="n">data_io</span><span class="o">.</span><span class="n">save_h5</span><span class="p">(</span><span class="s1">&#39;out_file.h5&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">results</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ex_generate_infile.html" class="btn btn-neutral float-right" title="2.3. Generating a separate input file with simulation parameters" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ex_model_NSE.html" class="btn btn-neutral float-left" title="2.1. Model for the nonlinear Schrödinger equation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

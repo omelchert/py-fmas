@@ -1,0 +1,74 @@
+Implementing a model for the nonlinear Schrödinger equation
+===========================================================
+
+The example below shows how to implement an additional propagation model for
+use with the `fmas` library code. 
+In particular, we show how to implement the  nonlinear Schrödinger equation
+(NSE), which is based on the slowly varying envelope approximation.
+The corresponding :math:`z`-propagation equation is given by
+
+.. math::
+    \partial_z A = -i \frac{\beta_2}{2}\partial_t^2 A + i\gamma |A|^2 A,
+
+wherein :math:`A = A(z, t)` represents the slowly varying pulse envelope,
+:math:`\beta_2` is the second order dispersion parameter, and :math:`\gamma` is
+the nonlinear parameter.
+This propagation model can be implemented via the `ModelBaseClass` provided by
+the `fmas` library code, which is imported in line 2. In line 3 the forward and
+backward Fourier-transfoms used within `fmas` are imported.
+A class implementing some of the features of the NSE is detailed in lines 5-20.
+Therein, lines 7-9 perform the initialization of an instance of the `NSE`
+class.  
+
+In lines 11-13, the frequency-domain representation of the linear operator of
+the above propagation model, i.e. 
+
+.. math::
+    L_\omega = i \beta(\omega) = i \frac{1}{2}\beta_2 \omega^2,
+    
+is defined.
+
+In lines 15-17, the frequency-domain representation of the nonlinear operator,
+i.e. the Fourier transfom of the second term on the right-hand-side of the
+above equation, is defined. Therefore, the field-multiplications are evaluated
+in the time-domain according to
+
+.. math::
+    N_\omega = i \gamma\,\mathsf{FT}\left[ |A|^2 A \right],
+
+where :math:`\mathsf{FT}` denotes fourier transform.
+
+One of the conserved quantities of the NSE related to the field energy,
+given by
+
+.. math::   
+    C_E(z) = \sum_\omega |A_\omega(z)|^2, 
+    
+is defined in lines 20-21.
+
+.. code-block:: python
+   :linenos:
+
+    import fmas
+    from fmas.models import ModelBaseClass
+    from fmas.config import FT, IFT
+
+
+    class NSE(ModelBaseClass):
+
+        def __init__(self, w, b2, gamma):
+            super().__init__(w, 0.5*b2*w*w)
+            self.gamma = gamma
+
+        @property
+        def Lw(self):
+            return self.beta_w
+
+        def Nw(self, uw):
+            ut = IFT(uw)
+            return 1j*self.gamma*FT(np.abs(ut)**2*ut)
+
+        def claw(self, i, zi, w, uw):
+            return np.sum(np.abs(uw)**2)
+
+

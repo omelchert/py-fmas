@@ -1,0 +1,430 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.3. Using the build-in spectrogram &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.4. Implementing a specialized propagation model" href="g_custom_propagation_model.html" />
+    <link rel="prev" title="3.2. Analyzing propagation constants using the PropConst convenience class" href="g_user_guide_PropConst.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../reference_manual.html">1. Reference manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">2. Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Extended user guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="g_list_prop_const.html">3.1. Propagation constants implemented in <cite>py-fmas</cite></a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_user_guide_PropConst.html">3.2. Analyzing propagation constants using the <cite>PropConst</cite> convenience class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.3. Using the build-in spectrogram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="g_custom_propagation_model.html">3.4. Implementing a specialized propagation model</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">4. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">5. Need help</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">3. </span>Extended user guide</a> &raquo;</li>
+        
+      <li><span class="section-number">3.3. </span>Using the build-in spectrogram</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/auto_tutorials/g_spectrogram.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-tutorials-g-spectrogram-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="using-the-build-in-spectrogram">
+<span id="sphx-glr-auto-tutorials-g-spectrogram-py"></span><h1><span class="section-number">3.3. </span>Using the build-in spectrogram<a class="headerlink" href="#using-the-build-in-spectrogram" title="Permalink to this headline">¶</a></h1>
+<p>This examples shows how to use the simple spectrogram-tool provided the
+<cite>py-fmas</cite> package.</p>
+<p>Let us note that is also straight-forward to extend the functionality of the
+<cite>py-fmas</cite> library by the optfrog python-tool, see Ref. [1] at the end of the
+example.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">FMAS_S_Raman</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.propagation_constant</span> <span class="kn">import</span> <span class="n">PropConst</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">sech</span><span class="p">,</span> <span class="n">plot_details_prop_const</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">change_reference_frame</span><span class="p">,</span> <span class="n">plot_evolution</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">plot_spectrogram</span><span class="p">,</span> <span class="n">spectrogram</span>
+</pre></div>
+</div>
+<p>Below we will demonstrate how to construct simple spectrograms using
+functions that are implemente in <cite>py-fmas</cite>.</p>
+<p>We will first perform a simulation run for a short intense pulse, launched in
+the anomalous dispersion domain of an “endlessly single mode” (ESM) photonic
+crystal fiber [3]. The considered propagation scenario reproduces that of
+Ref. [1]. After the <span class="math notranslate nohighlight">\(z\)</span>-propagation algorithm completes, we will
+perform some data postprocessing. Specifically, we we will illustrate the
+time-frequency characteristics of the evolved scenario and point out a few
+points to bear in mind when constructing spectrograms.</p>
+<p>The propagation constant of the ESM that we will use for the
+<span class="math notranslate nohighlight">\(z\)</span>-propagation simulation is given by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">define_beta_fun_ESM</span><span class="p">():</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Custom propagation constant for an ESM photonic crystal fiber.</span>
+
+<span class="sd">    Implements rational Pade-approximant of order [8/8] for the refractive</span>
+<span class="sd">    index of a endlessly single mode (ESM) nonlinear photonic crystal fiber</span>
+<span class="sd">    (PCF), see Ref. [1].</span>
+
+<span class="sd">    References:</span>
+<span class="sd">        [1] Visibly &#39;white&#39; light generation in uniform photonic crystal fiber</span>
+<span class="sd">        using a microchip laser Stone, J.M. and Knight, J.C.  Optics Express 16</span>
+<span class="sd">        (2007) 2670.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        :obj:`callable`: Propagation constant for ESM PCF.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span>
+        <span class="p">(</span><span class="mf">16.89475</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">319.13216</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">34.82210</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.992495</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.0010671</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span>
+        <span class="p">(</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">702.70157</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">78.28249</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.337086</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.0062267</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">n_idx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="mi">1</span><span class="o">+</span><span class="n">p</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">q</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="c1"># (-)</span>
+    <span class="n">c0</span> <span class="o">=</span> <span class="mf">0.29979</span>                    <span class="c1"># (micron/fs)</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">n_idx</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">c0</span>  <span class="c1"># (1/micron)</span>
+</pre></div>
+</div>
+<p>In order to prepare the propagation scenario, we first initialize the
+propagation constant and generate an instance of the <cite>PropConst</cite> convenience
+class.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta_fun</span> <span class="o">=</span> <span class="n">define_beta_fun_ESM</span><span class="p">()</span>
+<span class="n">pc</span> <span class="o">=</span> <span class="n">PropConst</span><span class="p">(</span><span class="n">beta_fun</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The group-velocity (GV) and group-velocity dispersion (GVD) of the ESM
+propagation constant in the angular frequency range <span class="math notranslate nohighlight">\(\omega \in
+[1.2,3.2]~\mathrm{rad/fs}\)</span> can then be visualized using build in <cite>py-fmas</cite>
+functions.  GV and GVD are implemented by the class methods <cite>vg</cite>, and
+<cite>beta2</cite>, respectively.  To generate a quick plot of both, we use the function
+<cite>plot_details_prop_const</cite>, which is defined in module <cite>tools</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">w_tmp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">plot_details_prop_const</span><span class="p">(</span><span class="n">w_tmp</span><span class="p">,</span> <span class="n">pc</span><span class="o">.</span><span class="n">vg</span><span class="p">(</span><span class="n">w_tmp</span><span class="p">),</span> <span class="n">pc</span><span class="o">.</span><span class="n">beta2</span><span class="p">(</span><span class="n">w_tmp</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="g spectrogram" class="sphx-glr-single-img" src="../_images/sphx_glr_g_spectrogram_001.png" />
+<p>We next define the simulation parameters that specify the computational
+domain</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">5500.</span><span class="p">,</span>  <span class="c1"># (fs)</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span>   <span class="c1"># (-)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>After the computational domain is specified, we define the simulation
+parameters that are needed to specify the <span class="math notranslate nohighlight">\(z\)</span>-propagation model.
+Below, we use the simplified forward model for the analytic signal including
+the Raman effect [3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">FMAS_S_Raman</span><span class="p">(</span>
+    <span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span>
+    <span class="n">beta_w</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">),</span>
+    <span class="n">n2</span><span class="o">=</span> <span class="mf">3.0e-8</span>      <span class="c1"># (micron^2/W)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Thereafter, we speficy the initial condition. Here, we consider a single
+soliton with duration <span class="math notranslate nohighlight">\(t_0=7\,\mathrm{fs}\)</span> (i.e. approx. 3.8 cycles),
+center frequency <span class="math notranslate nohighlight">\(\omega_0=1.7\,\mathrm{rad/fs}\)</span>, and soliton order
+<span class="math notranslate nohighlight">\(N_{\rm{S}}=8\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ns</span> <span class="o">=</span> <span class="mf">8.0</span>            <span class="c1"># (-)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mf">7.0</span>            <span class="c1"># (fs)</span>
+<span class="n">w0</span> <span class="o">=</span> <span class="mf">1.7</span>            <span class="c1"># (rad/fs)</span>
+<span class="n">A0</span> <span class="o">=</span> <span class="n">Ns</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">beta2</span><span class="p">(</span><span class="n">w0</span><span class="p">))</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">c0</span><span class="o">/</span><span class="n">w0</span><span class="o">/</span><span class="n">model</span><span class="o">.</span><span class="n">n2</span><span class="p">)</span><span class="o">/</span><span class="n">t0</span>
+<span class="n">E_0t_fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">A0</span><span class="o">*</span><span class="n">sech</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Above, the initial condition is prepared in the time-domain. Below we show
+how the frequency-domain representation of the analytic signal for use with
+one of the implemented <span class="math notranslate nohighlight">\(z\)</span>-propagation algorithms can be obtained:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Eps_0w</span> <span class="o">=</span>  <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span>
+</pre></div>
+</div>
+<p>For <span class="math notranslate nohighlight">\(z\)</span>-propagation we here use a variant of an integrating factor
+method, referred to as the “Runge-Kutta in the interaction picture” method,
+implemented as <cite>IFM_RK4IP</cite> in module <cite>solver</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">Eps_0w</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span>
+    <span class="n">z_range</span> <span class="o">=</span> <span class="mf">0.12e6</span><span class="p">,</span>   <span class="c1"># (micron)</span>
+    <span class="n">n_steps</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">,</span>     <span class="c1"># (-)</span>
+    <span class="n">n_skip</span> <span class="o">=</span> <span class="mi">10</span>         <span class="c1"># (-)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Once the <span class="math notranslate nohighlight">\(z\)</span>-propagation algorithm terminates we can perform a shift to
+a frame of reference in which the initial pulse is stationary, i.e. to a
+moving frame of reference with velocity <span class="math notranslate nohighlight">\(v_0=v_g(\omega_0)\)</span>.  The
+evolution of the analytic signal can then be visualized using the function
+<cite>plot_evolution</cite> defined in module <cite>tools</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utz</span> <span class="o">=</span> <span class="n">change_reference_frame</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">,</span> <span class="n">pc</span><span class="o">.</span><span class="n">vg</span><span class="p">(</span><span class="n">w0</span><span class="p">))</span>
+<span class="n">plot_evolution</span><span class="p">(</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">utz</span><span class="p">,</span> <span class="n">t_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">2500</span><span class="p">),</span> <span class="n">w_lim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">3.4</span><span class="p">))</span>
+</pre></div>
+</div>
+<img alt="$|u|^2/{\rm{max}}\left(|u|^2\right)$, $|u_\omega|^2/{\rm{max}}\left(|u_\omega|^2\right)$" class="sphx-glr-single-img" src="../_images/sphx_glr_g_spectrogram_002.png" />
+<p>This reproduces Fig. 1 of Ref. [1].</p>
+<p>Analytic signal spectrograms that show the time-frequency characteristics of
+the field can be constructed using the function <cite>spectrogram</cite> defined in
+module <cite>tools</cite>.  These spectrograms are computed by using a Gaussian function
+for localizing the analytic signal along the time-axis.  The root-mean-square
+(rms) width of this window-function needs to be chosen carefully, as
+demonstrated below. Consider, e.g., the propagation distance
+<span class="math notranslate nohighlight">\(z=0.12~\mathrm{m}\)</span>, for which the analytic signal can be obtained as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z0_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="o">-</span><span class="mf">0.12e6</span><span class="p">))</span>
+<span class="n">Et</span> <span class="o">=</span> <span class="n">utz</span><span class="p">[</span><span class="n">z0_idx</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Using a very small rms-width <span class="math notranslate nohighlight">\(s_0=10~\mathrm{fs}\)</span> for the
+window-function results in a distorted spectrogram. The temporal resolution
+is good, but the frequency resolution is quite bad (cf. Fig. 2(a) of Ref.
+[1]):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">spectrogram</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span><span class="n">Et</span><span class="p">,</span><span class="n">t_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">200.</span><span class="p">,</span><span class="mf">5000.</span><span class="p">),</span><span class="n">Nt</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">Nw</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span><span class="n">s0</span><span class="o">=</span><span class="mf">10.</span><span class="p">)</span>
+<span class="n">w_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">w</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">,</span><span class="n">w</span><span class="o">&lt;</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="n">w_mask</span><span class="p">],</span> <span class="n">P</span><span class="p">[</span><span class="n">w_mask</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="$P_S(t, \omega)$" class="sphx-glr-single-img" src="../_images/sphx_glr_g_spectrogram_003.png" />
+<p>Using a very large rms-width <span class="math notranslate nohighlight">\(s_0=140~\mathrm{fs}\)</span> also results in a
+distorted spectrogram. This time the frequency resolution is good, but the
+temporal resolution is bad (cf. Fig. 2(b) of Ref. [1]):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">spectrogram</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span><span class="n">Et</span><span class="p">,</span><span class="n">t_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">200.</span><span class="p">,</span><span class="mf">5000.</span><span class="p">),</span><span class="n">Nt</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">Nw</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span><span class="n">s0</span><span class="o">=</span><span class="mf">140.</span><span class="p">)</span>
+<span class="n">w_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">w</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">,</span><span class="n">w</span><span class="o">&lt;</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="n">w_mask</span><span class="p">],</span> <span class="n">P</span><span class="p">[</span><span class="n">w_mask</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="$P_S(t, \omega)$" class="sphx-glr-single-img" src="../_images/sphx_glr_g_spectrogram_004.png" />
+<p>For this particular example, an optimal time-frequency resolution is achieved
+for the rms-width <span class="math notranslate nohighlight">\(s_0=39.1~\mathrm{fs}\)</span>. This value was obtained using
+the optfrog Python tool, see Ref. [1] below. We here simply use this
+rms-width with the simple spectrogram implemented along with <cite>py-fmas</cite> (cf.
+Fig. 2(c) of Ref. [1]):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tau</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">P</span> <span class="o">=</span> <span class="n">spectrogram</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span><span class="n">Et</span><span class="p">,</span><span class="n">t_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">200.</span><span class="p">,</span><span class="mf">5000.</span><span class="p">),</span><span class="n">Nt</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">Nw</span><span class="o">=</span><span class="mi">512</span><span class="p">,</span><span class="n">s0</span><span class="o">=</span><span class="mf">39.1</span><span class="p">)</span>
+<span class="n">w_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">w</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">,</span><span class="n">w</span><span class="o">&lt;</span><span class="mf">3.5</span><span class="p">)</span>
+<span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span> <span class="n">w</span><span class="p">[</span><span class="n">w_mask</span><span class="p">],</span> <span class="n">P</span><span class="p">[</span><span class="n">w_mask</span><span class="p">])</span>
+
+<span class="c1"># sphinx_gallery_thumbnail_number = 5</span>
+</pre></div>
+</div>
+<img alt="$P_S(t, \omega)$" class="sphx-glr-single-img" src="../_images/sphx_glr_g_spectrogram_005.png" />
+<p>Finally, let us note that the functionality of <cite>py-fmas</cite> can be extended by
+the optfrog tool in a straight-forward manner. In fact, <cite>optfrog</cite> was
+specifically written for use with <cite>py-fmas</cite>.</p>
+<dl>
+<dt>References:</dt><dd><p>[1] O. Melchert, B. Roth, U. Morgner, A. Demircan, OptFROG — Analytic
+signal spectrograms with optimized time–frequency resolution, SoftwareX 10
+(2019) 100275, <a class="reference external" href="https://doi.org/10.1016/j.softx.2019.100275">https://doi.org/10.1016/j.softx.2019.100275</a>, code
+repository: <a class="reference external" href="https://github.com/ElsevierSoftwareX/SOFTX_2019_130">https://github.com/ElsevierSoftwareX/SOFTX_2019_130</a>.</p>
+<p>[2] J. M. Stone, J. C. Knight, Visibly ‘white’ light generation in uniform
+photonic crystal fiber using a microchip laser,  Optics Express 16 (2007)
+2670.</p>
+<p>[3] A. Demircan, Sh. Amiranashvili, C. Bree, C. Mahnke, F. Mitschke, G.
+Steinmeyer, Rogue wave formation by accelerated solitons at an optical
+event horizon, Appl. Phys. B 115 (2014) 343,
+<a class="reference external" href="http://dx.doi.org/10.1007/s00340-013-5609-9">http://dx.doi.org/10.1007/s00340-013-5609-9</a></p>
+</dd>
+</dl>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  19.610 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-g-spectrogram-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/0663fb8d5ba18dd3e58f80b648d5cf23/g_spectrogram.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_spectrogram.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/da05520da640f091379885c8a4c40546/g_spectrogram.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_spectrogram.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="g_custom_propagation_model.html" class="btn btn-neutral float-right" title="3.4. Implementing a specialized propagation model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="g_user_guide_PropConst.html" class="btn btn-neutral float-left" title="3.2. Analyzing propagation constants using the PropConst convenience class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

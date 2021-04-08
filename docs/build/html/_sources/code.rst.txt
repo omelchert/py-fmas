@@ -1,0 +1,26 @@
+Reference manual
+****************
+
+Implemented :math:`z`-propagation schemes
+=========================================
+
+
+
+
+The solver base class
+---------------------
+
+.. autoclass:: pyUPEAS.solver_numpy.SolverBaseClass
+   :members:
+   :inherited-members:
+   :show-inheritance:
+
+
+The local error method (LEM)
+----------------------------
+
+.. autoclass:: pyUPEAS.solver_numpy.LocalErrorMethod
+   :members:
+   :inherited-members:
+   :show-inheritance:
+

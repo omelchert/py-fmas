@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.1.3. Extending py-fmas by optfrog spectrograms &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.1.4. Two pulse interaction in a NLPM750 PCF" href="g_specialized_model_NLPM.html" />
+    <link rel="prev" title="2.1.2. Soliton implosion in a NLPM750 PCF" href="g_soliton_implosion.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">1. Extended user guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Usage examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#exemplary-propagation-scenarios">2.1. Exemplary propagation scenarios</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="g_specialized_model_PCF.html">2.1.1. Supercontinuum generation in a PCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_soliton_implosion.html">2.1.2. Soliton implosion in a NLPM750 PCF</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.1.3. Extending <cite>py-fmas</cite> by <cite>optfrog</cite> spectrograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_specialized_model_NLPM.html">2.1.4. Two pulse interaction in a NLPM750 PCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_four_pulse_interaction_ESM.html">2.1.5. Four pulse interaction in a ESM PCF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#two-frequency-pulse-compounds">2.2. Two-frequency pulse compounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#simulation-of-other-models">2.3. Simulation of other models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">2. </span>Usage examples</a> &raquo;</li>
+        
+      <li><span class="section-number">2.1.3. </span>Extending <cite>py-fmas</cite> by <cite>optfrog</cite> spectrograms</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/auto_examples/gallery_01/g_optfrog.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-gallery-01-g-optfrog-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="extending-py-fmas-by-optfrog-spectrograms">
+<span id="sphx-glr-auto-examples-gallery-01-g-optfrog-py"></span><h1><span class="section-number">2.1.3. </span>Extending <cite>py-fmas</cite> by <cite>optfrog</cite> spectrograms<a class="headerlink" href="#extending-py-fmas-by-optfrog-spectrograms" title="Permalink to this headline">¶</a></h1>
+<p>This examples shows how to use the <cite>py-fmas</cite> library code in conjunction
+with the optFrog spectrogram tool.</p>
+<p>In particular, the example details a numerical experiment performing pulse
+propagation in terms of the simplified forward model for the analytic signal
+including the Raman effect [1]. Here, the model is used to perform simulations
+on supercontinuum generation for an instance of a highly nonlinear photonic
+crystal fiber (PCF) with an anomalous group-velocity dispersion regime [2].
+The example also includes data postprocessing by calculating an analytic signal
+spectrum with optimized time-frequency resolution using the <cite>optfrog</cite>-tool [3].</p>
+<p>An example that shows how to use the simple <cite>py-fmas</cite> native spectrogram is
+shown under the link below:</p>
+<p><a class="reference internal" href="../../auto_tutorials/specific/g_spectrogram.html#sphx-glr-auto-tutorials-specific-g-spectrogram-py"><span class="std std-ref">Computing spectrograms</span></a></p>
+<dl>
+<dt>Note:</dt><dd><ul class="simple">
+<li><p>For this exampe to run, the optfrog tool needs to be installed [3].</p></li>
+<li><p>The <cite>py-fmas</cite> package includes a simple spectrogram in module <cite>tools</cite>.
+The <cite>optfrog</cite> Python package however includes extended functionality by
+allowing a user to calculate spectrograms with optimized time and
+frequency resolution.</p></li>
+</ul>
+</dd>
+<dt>References:</dt><dd><p>[1] A. Demircan, Sh. Amiranashvili, C. Bree, C. Mahnke, F. Mitschke, G.
+Steinmeyer, Rogue wave formation by accelerated solitons at an optical
+event horizon, Appl. Phys. B 115 (2014) 343,
+<a class="reference external" href="http://dx.doi.org/10.1007/s00340-013-5609-9">http://dx.doi.org/10.1007/s00340-013-5609-9</a></p>
+<p>[2] J. M. Dudley, G. Genty, S. Coen,
+Supercontinuum generation in photonic crystal fiber,
+Rev. Mod. Phys. 78 (2006) 1135,
+<a class="reference external" href="http://dx.doi.org/10.1103/RevModPhys.78.1135">http://dx.doi.org/10.1103/RevModPhys.78.1135</a></p>
+<p>[3] O. Melchert, B. Roth, U. Morgner, A. Demircan,
+OptFROG — Analytic signal spectrograms with optimized time–frequency resolution,
+SoftwareX 10 (2019) 100275,
+<a class="reference external" href="https://doi.org/10.1016/j.softx.2019.100275">https://doi.org/10.1016/j.softx.2019.100275</a>,
+code repository: <a class="reference external" href="https://github.com/ElsevierSoftwareX/SOFTX_2019_130">https://github.com/ElsevierSoftwareX/SOFTX_2019_130</a>.</p>
+</dd>
+</dl>
+<img alt="$P_S(t, \omega)$" class="sphx-glr-single-img" src="../../_images/sphx_glr_g_optfrog_001.png" />
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span># optFrog convergence info:
+# (sigma) (Q(sigma, alpha=0.000000)) (IAE1) (IAE2)
+355.959086 0.570680 1.101932 0.039428
+573.313374 0.616589 1.200919 0.032259
+221.626749 0.531656 0.991327 0.071986
+138.604799 0.507169 0.892059 0.122278
+87.294411 0.488869 0.786706 0.191033
+55.582848 0.466704 0.665983 0.267425
+35.984024 0.447466 0.541951 0.352981
+23.871285 0.437389 0.432716 0.442062
+16.385200 0.445184 0.354833 0.535534
+25.575392 0.438465 0.449987 0.426944
+22.988308 0.437094 0.423509 0.450678
+20.466145 0.438235 0.397714 0.478756
+22.706287 0.437021 0.420520 0.453522
+21.850629 0.437280 0.411743 0.462818
+22.585945 0.437029 0.419271 0.454787
+22.688130 0.437019 0.420330 0.453708
+22.665447 0.437019 0.420096 0.453943
+22.679466 0.437019 0.420241 0.453797
+22.677702 0.437019 0.420223 0.453815
+22.673021 0.437019 0.420174 0.453863
+22.674907 0.437018 0.420194 0.453843
+22.675229 0.437018 0.420197 0.453840
+22.674560 0.437018 0.420190 0.453847
+22.673972 0.437018 0.420184 0.453853
+22.674336 0.437018 0.420188 0.453849
+22.674510 0.437018 0.420190 0.453847
+22.674467 0.437018 0.420189 0.453848
+22.674417 0.437018 0.420189 0.453848
+22.674443 0.437018 0.420189 0.453848
+22.674439 0.437018 0.420189 0.453848
+22.674431 0.437018 0.420189 0.453848
+22.674436 0.437018 0.420189 0.453848
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">CustomModelPCF</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">plot_spectrogram</span>
+<span class="kn">from</span> <span class="nn">optfrog</span> <span class="kn">import</span> <span class="n">optFrog</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># -- DEFINE SIMULATION PARAMETERS</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">3500.</span>       <span class="c1"># (fs)</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span>       <span class="c1"># (-)</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mf">0.10</span><span class="o">*</span><span class="mf">1e6</span>    <span class="c1"># (micron)</span>
+    <span class="n">z_num</span> <span class="o">=</span> <span class="mi">8000</span>        <span class="c1"># (-)</span>
+    <span class="n">z_skip</span> <span class="o">=</span> <span class="mi">10</span>         <span class="c1"># (-)</span>
+    <span class="c1"># ... INITIAL CONDITION</span>
+    <span class="n">P0</span> <span class="o">=</span> <span class="mf">1e4</span>            <span class="c1"># (W)</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="mf">28.4</span>           <span class="c1"># (fs)</span>
+    <span class="n">w0</span> <span class="o">=</span> <span class="mf">2.2559</span>         <span class="c1"># (rad/fs)</span>
+    <span class="n">E_0t_fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+
+    <span class="c1"># -- INITIALIZATION STAGE</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">CustomModelPCF</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">claw</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span><span class="p">)</span>
+    <span class="c1"># -- RUN SIMULATION</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+    <span class="c1"># -- POSTPRICESSING: COMPUTE SPECTROGRAM USING OPTFROG</span>
+    <span class="c1"># ... Z-DISTANCE, Z-INDEX AND FIELD FOR WHICH TO COMPUTE TRACE</span>
+    <span class="n">z0</span> <span class="o">=</span> <span class="mf">0.08e6</span>  <span class="c1"># (micron)</span>
+    <span class="n">z0_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="o">-</span><span class="n">z0</span><span class="p">))</span>
+    <span class="n">Et</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">[</span><span class="n">z0_idx</span><span class="p">]</span>
+    <span class="c1"># ... WINDOW FUNCTION FOR SIGNAL LOCALIZATION</span>
+    <span class="k">def</span> <span class="nf">window_fun</span><span class="p">(</span><span class="n">s0</span><span class="p">):</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">s0</span><span class="o">/</span><span class="n">s0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="n">s0</span>
+    <span class="c1"># ... OPTFROG TRACE</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">optFrog</span><span class="p">(</span>
+        <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span>                         <span class="c1"># TEMPORAL GRID</span>
+        <span class="n">Et</span><span class="p">,</span>                             <span class="c1"># ANALYTIC SIGNAL</span>
+        <span class="n">window_fun</span><span class="p">,</span>                     <span class="c1"># WINDOW FUNCTION</span>
+        <span class="n">tLim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">3200.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>    <span class="c1"># (tmin, fs) (tmax, fs) (nskip)</span>
+        <span class="n">wLim</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">4.1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>            <span class="c1"># (wmin, fs) (wmax, fs) (nskip)</span>
+    <span class="p">)</span>
+    <span class="c1"># ... SHOW SPECTROGRAM</span>
+    <span class="n">plot_spectrogram</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">tau</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">P</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  22.851 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gallery-01-g-optfrog-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/db18cac81693b45ec0eb4bc471c5f96e/g_optfrog.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_optfrog.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/b2484f94e2722fc2228d1d56c07c0a47/g_optfrog.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_optfrog.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="g_specialized_model_NLPM.html" class="btn btn-neutral float-right" title="2.1.4. Two pulse interaction in a NLPM750 PCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="g_soliton_implosion.html" class="btn btn-neutral float-left" title="2.1.2. Soliton implosion in a NLPM750 PCF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

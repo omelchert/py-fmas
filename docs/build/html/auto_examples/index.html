@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2. Usage examples &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2.1.1. Supercontinuum generation in a PCF" href="gallery_01/g_specialized_model_PCF.html" />
+    <link rel="prev" title="1.2.6. Implementing a custom model" href="../auto_tutorials/specific/g_custom_propagation_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../auto_tutorials/index.html">1. Extended user guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Usage examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exemplary-propagation-scenarios">2.1. Exemplary propagation scenarios</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery_01/g_specialized_model_PCF.html">2.1.1. Supercontinuum generation in a PCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_01/g_soliton_implosion.html">2.1.2. Soliton implosion in a NLPM750 PCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_01/g_optfrog.html">2.1.3. Extending <cite>py-fmas</cite> by <cite>optfrog</cite> spectrograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_01/g_specialized_model_NLPM.html">2.1.4. Two pulse interaction in a NLPM750 PCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_01/g_four_pulse_interaction_ESM.html">2.1.5. Four pulse interaction in a ESM PCF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#two-frequency-pulse-compounds">2.2. Two-frequency pulse compounds</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery_02/g_molecules_01.html">2.2.1. Superimposed fundamental solitons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_02/g_molecules_02.html">2.2.2. Soliton-soliton collision</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#simulation-of-other-models">2.3. Simulation of other models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gallery_03/g_BMCF.html">2.3.1. BMCF – Backscattered optical field components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_03/g_model_NSE.html">2.3.2. Nonlinear Schrödinger equation – Third-order soliton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_03/g_model_KdV.html">2.3.3. Korteweg-deVries equation – Interaction of solitons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gallery_03/g_model_LLE.html">2.3.4. Lugiato-Lefever equation – Soliton molecules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">2. </span>Usage examples</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/auto_examples/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="usage-examples">
+<span id="sphx-glr-auto-examples"></span><span id="id1"></span><h1><span class="section-number">2. </span>Usage examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h1>
+<p>Exemplar propagation scenarios obtained using <cite>py-fmas</cite>.  Click on any image to
+see more details and source code.</p>
+<p>For more detailed tutorials, see our <a class="reference internal" href="../auto_tutorials/index.html#extended-user-guide"><span class="std std-ref">Extended user guide</span></a> page.</p>
+<div class="sphx-glr-clear"></div><div class="section" id="exemplary-propagation-scenarios">
+<span id="sphx-glr-auto-examples-gallery-01"></span><h2><span class="section-number">2.1. </span>Exemplary propagation scenarios<a class="headerlink" href="#exemplary-propagation-scenarios" title="Permalink to this headline">¶</a></h2>
+<p>This gallery shows examples demonstrating the dynamical evolution of ultrashort
+optical pulses in terms of <span class="math notranslate nohighlight">\(z\)</span>-propagation models for the analytic
+signal.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates the z-propagation of a specialized propagation model for a specific ..."><div class="figure align-default" id="id2">
+<img alt="Supercontinuum generation in a PCF" src="../_images/sphx_glr_g_specialized_model_PCF_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_01/g_specialized_model_PCF.html#sphx-glr-auto-examples-gallery-01-g-specialized-model-pcf-py"><span class="std std-ref">Supercontinuum generation in a PCF</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates breakdown of a high-order soliton in a NL-PM-750 photonic crystal fi..."><div class="figure align-default" id="id3">
+<img alt="Soliton implosion in a NLPM750 PCF" src="../_images/sphx_glr_g_soliton_implosion_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_01/g_soliton_implosion.html#sphx-glr-auto-examples-gallery-01-g-soliton-implosion-py"><span class="std std-ref">Soliton implosion in a NLPM750 PCF</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples shows how to use the py-fmas library code in conjunction with the optFrog spectro..."><div class="figure align-default" id="id4">
+<img alt="Extending `py-fmas` by `optfrog` spectrograms" src="../_images/sphx_glr_g_optfrog_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_01/g_optfrog.html#sphx-glr-auto-examples-gallery-01-g-optfrog-py"><span class="std std-ref">Extending py-fmas by optfrog spectrograms</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates the interaction between a fundamental soliton and a dispersive wave ..."><div class="figure align-default" id="id5">
+<img alt="Two pulse interaction in a NLPM750 PCF" src="../_images/sphx_glr_g_specialized_model_NLPM_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_01/g_specialized_model_NLPM.html#sphx-glr-auto-examples-gallery-01-g-specialized-model-nlpm-py"><span class="std std-ref">Two pulse interaction in a NLPM750 PCF</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates the interaction between a fundamental soliton and a three dispersive..."><div class="figure align-default" id="id6">
+<img alt="Four pulse interaction in a ESM PCF" src="../_images/sphx_glr_g_four_pulse_interaction_ESM_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_01/g_four_pulse_interaction_ESM.html#sphx-glr-auto-examples-gallery-01-g-four-pulse-interaction-esm-py"><span class="std std-ref">Four pulse interaction in a ESM PCF</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="two-frequency-pulse-compounds">
+<span id="sphx-glr-auto-examples-gallery-02"></span><h2><span class="section-number">2.2. </span>Two-frequency pulse compounds<a class="headerlink" href="#two-frequency-pulse-compounds" title="Permalink to this headline">¶</a></h2>
+<p>This gallery shows specific examples demonstrating the generation and dynamical
+evolution of two-frequency pulse compounds.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates the generation of two-frequency soliton molecules, using the forward..."><div class="figure align-default" id="id7">
+<img alt="Superimposed fundamental solitons" src="../_images/sphx_glr_g_molecules_01_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_02/g_molecules_01.html#sphx-glr-auto-examples-gallery-02-g-molecules-01-py"><span class="std std-ref">Superimposed fundamental solitons</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates the generation of two-frequency soliton molecules, using the forward..."><div class="figure align-default" id="id8">
+<img alt="Soliton-soliton collision" src="../_images/sphx_glr_g_molecules_02_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_02/g_molecules_02.html#sphx-glr-auto-examples-gallery-02-g-molecules-02-py"><span class="std std-ref">Soliton-soliton collision</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="simulation-of-other-models">
+<span id="sphx-glr-auto-examples-gallery-03"></span><h2><span class="section-number">2.3. </span>Simulation of other models<a class="headerlink" href="#simulation-of-other-models" title="Permalink to this headline">¶</a></h2>
+<p>This gallery shows how the functionality of the provided software can be
+extended by implementing additional propagation models.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates backscattered optical field components using the bidirectional model..."><div class="figure align-default" id="id9">
+<img alt="BMCF -- Backscattered optical field components" src="../_images/sphx_glr_g_BMCF_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_03/g_BMCF.html#sphx-glr-auto-examples-gallery-03-g-bmcf-py"><span class="std std-ref">BMCF – Backscattered optical field components</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This example solves the standard nonlinear Schrödinger equation, given by"><div class="figure align-default" id="id10">
+<img alt="Nonlinear Schrödinger equation -- Third-order soliton" src="../_images/sphx_glr_g_model_NSE_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_03/g_model_NSE.html#sphx-glr-auto-examples-gallery-03-g-model-nse-py"><span class="std std-ref">Nonlinear Schrödinger equation – Third-order soliton</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This example solves the Korteweg-deVries (KdV) equation, given by"><div class="figure align-default" id="id11">
+<img alt="Korteweg-deVries equation -- Interaction of solitons" src="../_images/sphx_glr_g_model_KdV_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_03/g_model_KdV.html#sphx-glr-auto-examples-gallery-03-g-model-kdv-py"><span class="std std-ref">Korteweg-deVries equation – Interaction of solitons</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This example shows how to perform simulations for the Lugiato-Lefever equation (LLE) [1], using..."><div class="figure align-default" id="id12">
+<img alt="Lugiato-Lefever equation -- Soliton molecules" src="../_images/sphx_glr_g_model_LLE_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="gallery_03/g_model_LLE.html#sphx-glr-auto-examples-gallery-03-g-model-lle-py"><span class="std std-ref">Lugiato-Lefever equation – Soliton molecules</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div><div class="sphx-glr-footer class sphx-glr-footer-gallery docutils container">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/07fcc19ba03226cd3d83d4e40ec44385/auto_examples_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">auto_examples_python.zip</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/6f1e7a639e0699d6164445b55e6c116d/auto_examples_jupyter.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">all</span> <span class="pre">examples</span> <span class="pre">in</span> <span class="pre">Jupyter</span> <span class="pre">notebooks:</span> <span class="pre">auto_examples_jupyter.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="gallery_01/g_specialized_model_PCF.html" class="btn btn-neutral float-right" title="2.1.1. Supercontinuum generation in a PCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../auto_tutorials/specific/g_custom_propagation_model.html" class="btn btn-neutral float-left" title="1.2.6. Implementing a custom model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

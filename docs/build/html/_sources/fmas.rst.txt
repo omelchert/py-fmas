@@ -1,0 +1,92 @@
+Reference manual
+****************
+
+
+fmas.analytic\_signal module
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. automodule:: fmas.analytic_signal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.app module
+^^^^^^^^^^^^^^^
+
+.. automodule:: fmas.app
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+fmas.config module
+==================
+
+.. automodule:: fmas.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.data\_io module
+====================
+
+.. automodule:: fmas.data_io
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.grid module
+================
+
+.. automodule:: fmas.grid
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.models module
+==================
+
+.. automodule:: fmas.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.propagation\_constant module
+=================================
+
+.. automodule:: fmas.propagation_constant
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.raman\_response module
+===========================
+
+.. automodule:: fmas.raman_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.solver module
+==================
+
+.. automodule:: fmas.solver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.stepper module
+===================
+
+.. automodule:: fmas.stepper
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fmas.tools module
+=================
+
+.. automodule:: fmas.tools
+   :members:
+   :undoc-members:
+   :show-inheritance:

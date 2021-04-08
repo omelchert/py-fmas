@@ -1,0 +1,9 @@
+fmas.analytic_signal module
+===========================
+
+.. automodule:: fmas.analytic_signal
+  :no-members:
+
+.. autoclass:: fmas.analytic_signal.AnalyticSignal
+   :members:
+

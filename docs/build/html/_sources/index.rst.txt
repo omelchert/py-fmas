@@ -1,0 +1,120 @@
+'py-fmas' python package
+========================
+
+The `py-fmas` python package solves for the :math:`z`-propagation dynamics of
+spectrally broad ultrashort optical pulses in single mode nonlinear waveguides
+in terms of a nonlinear unidirectional propagation model for the analytic
+signal of the optical field.  It allows to model propagation scenarios with and
+without the Raman effect.
+
+.. figure:: ./titlefigure/fig_2.png
+   :alt: Two-pulse interaction in a NL-PM-750 PCF
+
+   Interaction between a fundamental soliton and a dispersive wave in a
+   NL-PM-750 photonic crystal fiber (PCF).  Propagation charactersitics of the
+   analytic signal intensities in the time-domain (left) and the frequency
+   domain (right).  For the numerical simualtion the forward model for the
+   analytic signal including the Raman effect is used. More details can be
+   found in the usage example 
+   :ref:`sphx_glr_auto_examples_gallery_01_g_specialized_model_NLPM.py`.
+
+For a user-specified propagation setting, the initial real-valued optical field
+is defined on a periodic one-dimensional temporal grid and converted to the
+complex-valued analytic signal for the optical field.  :math:`z`-propagation is
+performed by pseudospectral methods. 
+The provided software implements a selection of algorithms that are commonly
+used in nonlinear optics for solving nonlinear Schrödinger type equations.
+`py-fmas` implements algorithms with both, fixed or adaptive stepsize.
+
+The provided software allows for the propagation of spectrally broad ultrashort
+optical pulses and several pulses at pairwise distinct frequencies.
+Description of the proapgation process in terms of the analytic signal allows
+to directly neglect non-resonant contributions of four-wave mixing and to
+derive models that are formally simpler that the forward Maxwell equation.  The
+range of applicability of the software is however equivalent to that of the
+forward Maxwell equation.
+If the Raman effect is neglected and a slowly varying envelope approximation is
+applied, the considered propagation model can be reduced to the standard
+nonlinear Schrödinger equation.
+For reasonably chosen initial conditions, the provided software can be used
+beyond the unidirectional approximation as a bidirectional model for a complex
+field, allowing to describe forward and backward waves coupled through
+nonlinear interactions (see the useage example 
+:ref:`sphx_glr_auto_examples_gallery_03_g_BMCF.py`). 
+
+`py-fmas` is based on our research code and was implemented with the aim of beeing
+easily extendible and maintainable. The provided software is aimed at researchers
+in the field of ultrashort pulse propagation and related disciplines.
+
+
+.. toctree::
+   :maxdepth: 2 
+   :numbered:
+   :caption: Contents:
+
+   auto_tutorials/index
+   auto_examples/index
+   reference_manual/index
+
+
+Further resources
+=================
+
+Pulse propagation in terms ot the analytic signal
+-------------------------------------------------
+
+Below you find a list of articles that discuss ultrashort optical pulse
+propagation in terms of the analytic signal and its variants:
+
+
+- A. Demircan, Sh. Amiranashvili, C. Bree, U. Morgner, G. Steinmeyer,
+  Supercontinuum generation by multiple scatterings at a group velocity
+  horizon, Opt. Exp. 22 (2014) 3866, https://doi.org/10.1364/OE.22.003866.
+
+- A. Demircan, Sh. Amiranashvili, C. Bree, C. Mahnke, F. Mitschke, G.
+  Steinmeyer, Rogue wave formation by accelerated solitons at an optical event
+  horizon, Appl. Phys. B 115 (2014) 343,
+  http://dx.doi.org/10.1007/s00340-013-5609-9
+
+- Sh. Amiranashvili, A. Demircan, Ultrashort Optical Pulse Propagation in
+  terms of Analytic Signal, Adv. Opt. Tech. 2011 (2011) 989515,
+  http://dx.doi.org/10.1155/2011/989515.
+
+- Sh. Amiranashvili, A. Demircan, Hamiltonian structure of
+  propagation equations for ultrashort optical pulses, Phys. Rev. E 10
+  (2010) 013812, http://dx.doi.org/10.1103/PhysRevA.82.013812.
+
+
+Research articles employing `py-fmas`
+-------------------------------------
+
+Below you find a list of articles that used some of the :math:`z`-proapgation
+models and algorithms implemented by the `py-fmas` package:
+
+- O. Melchert, C. Bree, A. Tajalli, A. Pape, R. Arkhipov, S. Willms, I.
+  Babushkin, D. Skryabin, G. Steinmeyer, U. Morgner, A. Demircan, All-optical
+  supercontinuum switching, Communications Physics 3 (2020) 146,
+  https://doi.org/10.1038/s42005-020-00414-1.
+ 
+- O. Melchert, S. Willms, S. Bose, A. Yulin, B. Roth, F. Mitschke, U.
+  Morgner, I. Babushkin, A. Demircan, Soliton Molecules with Two Frequencies,
+  Phys. Rev. Lett. 123 (2019) 243905,
+  https://doi.org/10.1103/PhysRevLett.123.243905.
+
+- O. Melchert, B. Roth, U. Morgner, A. Demircan, OptFROG — Analytic signal
+  spectrograms with optimized time–frequency resolution, SoftwareX 10 (2019)
+  100275, https://doi.org/10.1016/j.softx.2019.100275, code repository:
+  https://github.com/ElsevierSoftwareX/SOFTX_2019_130.
+
+- O. Melchert, U. Morgner, B. Roth, I. Babushkin, A. Demircan, Accurate
+  propagation of ultrashort pulses in nonlinear waveguides using propagation
+  models for the analytic signal, Proc. SPIE 10694, Computational Optics II,
+  106940M (2018), https://doi.org/10.1117/12.2313255. 
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

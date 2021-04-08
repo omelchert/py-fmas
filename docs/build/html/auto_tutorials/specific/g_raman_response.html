@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.2.5. Using a specific Raman response function &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.2.6. Implementing a custom model" href="g_custom_propagation_model.html" />
+    <link rel="prev" title="1.2.4. Computing spectrograms" href="g_spectrogram.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">1. Extended user guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-examples">1.1. Basic examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#more-specific-examples">1.2. More specific examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="g_list_prop_const.html">1.2.1. Implemented propagation constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_list_raman_models.html">1.2.2. Implemented Raman response functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_user_guide_PropConst.html">1.2.3. Using the <cite>PropConst</cite> convenience class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_spectrogram.html">1.2.4. Computing spectrograms</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.2.5. Using a specific Raman response function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_custom_propagation_model.html">1.2.6. Implementing a custom model</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">2. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">1. </span>Extended user guide</a> &raquo;</li>
+        
+      <li><span class="section-number">1.2.5. </span>Using a specific Raman response function</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/auto_tutorials/specific/g_raman_response.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-tutorials-specific-g-raman-response-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="using-a-specific-raman-response-function">
+<span id="sphx-glr-auto-tutorials-specific-g-raman-response-py"></span><h1><span class="section-number">1.2.5. </span>Using a specific Raman response function<a class="headerlink" href="#using-a-specific-raman-response-function" title="Permalink to this headline">¶</a></h1>
+<p>This examples shows how the different Raman response functions, implemented in
+modeule <cite>raman_response</cite>, can be used with the class <code class="xref py py-class docutils literal notranslate"><span class="pre">CustomModelPCF</span></code>
+(derived from the more generic class <code class="xref py py-class docutils literal notranslate"><span class="pre">FMAS_S_R</span></code>), implemented in module
+<cite>models</cite>.</p>
+<p>A side-by-side comparison of the frequency-domain representation of the
+different Raman response models is detailed under</p>
+<p><a class="reference internal" href="g_list_raman_models.html#sphx-glr-auto-tutorials-specific-g-list-raman-models-py"><span class="std std-ref">Implemented Raman response functions</span></a></p>
+<p>In particular, this example shows how the implemented Raman response models
+affect the dynamical evolution of the exemplary use case:</p>
+<p><a class="reference internal" href="../../auto_examples/gallery_01/g_specialized_model_PCF.html#sphx-glr-auto-examples-gallery-01-g-specialized-model-pcf-py"><span class="std std-ref">Supercontinuum generation in a PCF</span></a></p>
+<p>We first import the functionality needed to define the problem specific data
+structures such as the model, we will use the <cite>CustomModelPCF</cite> defined module
+<cite>models</cite>, the computational grid, and the <span class="math notranslate nohighlight">\(z\)</span>-propagation algorithm.
+The various Raman response models, which we demonstrate here, will be
+imported later where they are needed in the workflow.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">CustomModelPCF</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">plot_evolution</span>
+<span class="kn">from</span> <span class="nn">fmas.config</span> <span class="kn">import</span> <span class="n">FTSHIFT</span>
+</pre></div>
+</div>
+<p>Since we will perform a sequence of numerical simulations, we first define
+and initialize all data structures and variables common to the different
+simulation runs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- COMPUTATIONAL DOMAIN</span>
+<span class="n">t_max</span> <span class="o">=</span> <span class="mf">3500.</span>       <span class="c1"># (fs)</span>
+<span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span>       <span class="c1"># (-)</span>
+<span class="n">z_max</span> <span class="o">=</span> <span class="mf">0.10</span><span class="o">*</span><span class="mf">1e6</span>    <span class="c1"># (micron)</span>
+<span class="n">z_num</span> <span class="o">=</span> <span class="mi">8000</span>        <span class="c1"># (-)</span>
+<span class="n">z_skip</span> <span class="o">=</span> <span class="mi">10</span>         <span class="c1"># (-)</span>
+
+<span class="c1"># -- INITIAL CONDITION</span>
+<span class="n">P0</span> <span class="o">=</span> <span class="mf">1e4</span>            <span class="c1"># (W)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mf">28.4</span>           <span class="c1"># (fs)</span>
+<span class="n">w0</span> <span class="o">=</span> <span class="mf">2.2559</span>         <span class="c1"># (rad/fs)</span>
+<span class="n">E_0t_fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+
+<span class="c1"># -- COMPUTATIONAL DOMAIN</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+<span class="c1"># -- PROPAGATION MODEL</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">CustomModelPCF</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>
+<span class="c1"># -- ANALYTIC SIGNAL INITIAL CONDITION</span>
+<span class="n">ic</span> <span class="o">=</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>We first perfom a simulation run using the default Raman response model
+implemented with <cite>CustomModelPCF</cite>. This is also implemented in terms of the
+Blow-Wood type response  model <cite>h_BW</cite> in module <cite>raman_response</cite>. From the
+simulation results we will only keep the final <span class="math notranslate nohighlight">\(z\)</span>-slice.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- INITIALIZE MODEL</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">claw</span><span class="p">)</span>
+<span class="c1"># -- SET INITIAL CONDITION</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span><span class="p">)</span>
+<span class="c1"># -- z-PROPAGATION</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+<span class="c1"># -- KEEP ONLY LAST z-SLICE</span>
+<span class="n">ut_BW</span><span class="p">,</span> <span class="n">uw_BW</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>To use a Raman response function different from the default requires two
+steps: first, the desired Raman response model needs to be imported from
+module <cite>raman_response</cite> (or it has to be defined by the user in any other
+way); second, the default response function of the model has to be
+overwritten.
+Below we show this for two Raman response functions that differ from the
+default response model of <cite>CustomModelPCF</cite>.</p>
+<p>First, we consider the  Lin-Agrawal type Raman response, which is implemented
+as function <cite>h_LA</cite> in module <cite>raman_response</cite>.  If a different value for the
+fractional Raman contribution is needed, the corresponding class attribute
+can be overwritten as well:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmas.raman_response</span> <span class="kn">import</span> <span class="n">h_LA</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">hRw</span> <span class="o">=</span> <span class="n">h_LA</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">)</span> <span class="c1"># overwrite default resonse function</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fR</span> <span class="o">=</span> <span class="mf">0.18</span>          <span class="c1"># overwrite default fractional Raman response if needed</span>
+
+<span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">claw</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+<span class="n">ut_LA</span><span class="p">,</span> <span class="n">uw_LA</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Next, we perform a simulation using the Hollenbeck-Cantrell type Raman
+response, which is implemented as function <cite>h_HC</cite> in module <cite>raman_response</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmas.raman_response</span> <span class="kn">import</span> <span class="n">h_HC</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">hRw</span> <span class="o">=</span> <span class="n">h_HC</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># -- PERFORM SIMULATION</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">claw</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+<span class="n">ut_HC</span><span class="p">,</span> <span class="n">uw_HC</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The subsequent plot compares the effect of three Raman response models
+side-by-side:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">col</span>
+
+<span class="c1"># -- INITIAL PEAK INTENSITIES (FOR NORMALIZATION)</span>
+<span class="n">It0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ic</span><span class="o">.</span><span class="n">t_rep</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Iw0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ic</span><span class="o">.</span><span class="n">w_rep</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">0.96</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.96</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">hspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ut_BW</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">It0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;BW&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ut_LA</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">It0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">dashes</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;LA&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ut_HC</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">It0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">dashes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;HC&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">300</span><span class="p">,</span><span class="mi">2300</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time $t~(\mathrm</span><span class="si">{fs}</span><span class="s1">)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|u(z,t)|^2/\max(|u(0,t)|^2)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">uw_BW</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Iw0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;BW&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">uw_LA</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Iw0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">dashes</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;LA&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">uw_HC</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">Iw0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">dashes</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;HC&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">1.25</span><span class="p">,</span><span class="mf">4.0</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Angular frequency $\omega~(\mathrm{rad/fs})$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|u_\omega(z)|^2/\max(|u_\omega(0)|^2)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="g raman response" class="sphx-glr-single-img" src="../../_images/sphx_glr_g_raman_response_001.png" />
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 3 minutes  14.740 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-specific-g-raman-response-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/c972fedabcc5a541ed94cbf63541a821/g_raman_response.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_raman_response.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/69747b4578a2c73e71a9e58fc42c6fb6/g_raman_response.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_raman_response.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="g_custom_propagation_model.html" class="btn btn-neutral float-right" title="1.2.6. Implementing a custom model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="g_spectrogram.html" class="btn btn-neutral float-left" title="1.2.4. Computing spectrograms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

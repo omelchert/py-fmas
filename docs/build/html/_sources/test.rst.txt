@@ -1,0 +1,4 @@
+test module
+===========
+
+.. automodule:: fmas.tools

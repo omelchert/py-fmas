@@ -1,0 +1,10 @@
+Galleries
+*********
+
+.. toctree::
+   :maxdepth: 2 
+   :numbered:
+   :caption: Contents:
+
+   gallery_examples_01/index
+   gallery_examples_02/index

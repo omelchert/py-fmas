@@ -1,0 +1,8 @@
+The local error method (LEM)
+----------------------------
+
+.. autoclass:: pyUPEAS.solver_numpy.LocalErrorMethod
+   :members:
+   :inherited-members:
+   :show-inheritance:
+

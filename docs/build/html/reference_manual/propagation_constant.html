@@ -1,0 +1,716 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.2. fmas.propagation_constant &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.3. fmas.raman_response" href="raman_response.html" />
+    <link rel="prev" title="3.1. fmas.models" href="models.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../auto_tutorials/index.html">1. Extended user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">2. Usage examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Reference manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="models.html">3.1. fmas.models</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. fmas.propagation_constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raman_response.html">3.3. fmas.raman_response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solver.html">3.4. fmas.solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analytic_signal.html">3.5. fmas.analytic_signal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepper.html">3.6. fmas.stepper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">3.7. fmas.tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3.8. fmas.data_io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">3.9. fmas.config</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">3. </span>Reference manual</a> &raquo;</li>
+        
+      <li><span class="section-number">3.2. </span>fmas.propagation_constant</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/reference_manual/propagation_constant.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fmas.propagation_constant">
+<span id="fmas-propagation-constant"></span><h1><span class="section-number">3.2. </span>fmas.propagation_constant<a class="headerlink" href="#module-fmas.propagation_constant" title="Permalink to this headline">¶</a></h1>
+<p>The provided module implements a convenience class for performing simple
+calculations for a user-defined propagation constant.</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fmas.propagation_constant.PropConst" title="fmas.propagation_constant.PropConst"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PropConst</span></code></a></p></td>
+<td><p>Convenience class for working with propagation constants.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fmas.propagation_constant.define_beta_fun_ZBLAN" title="fmas.propagation_constant.define_beta_fun_ZBLAN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_beta_fun_ZBLAN</span></code></a></p></td>
+<td><p>Propagation constant for ZBLAN fiber.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fmas.propagation_constant.define_beta_fun_ESM" title="fmas.propagation_constant.define_beta_fun_ESM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_beta_fun_ESM</span></code></a></p></td>
+<td><p>Propagation constant for an ESM PCF.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fmas.propagation_constant.define_beta_fun_NLPM750" title="fmas.propagation_constant.define_beta_fun_NLPM750"><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_beta_fun_NLPM750</span></code></a></p></td>
+<td><p>Propagation constant for NLPM750 PCF.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fmas.propagation_constant.define_beta_fun_fluoride_glass_AD2010" title="fmas.propagation_constant.define_beta_fun_fluoride_glass_AD2010"><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_beta_fun_fluoride_glass_AD2010</span></code></a></p></td>
+<td><p>Helper function for propagation constant.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#fmas.propagation_constant.define_beta_fun_PCF_Ranka2000" title="fmas.propagation_constant.define_beta_fun_PCF_Ranka2000"><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_beta_fun_PCF_Ranka2000</span></code></a></p></td>
+<td><p>Helper function for propagation constant.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#fmas.propagation_constant.define_beta_fun_slot_waveguide_Zhang2012" title="fmas.propagation_constant.define_beta_fun_slot_waveguide_Zhang2012"><code class="xref py py-obj docutils literal notranslate"><span class="pre">define_beta_fun_slot_waveguide_Zhang2012</span></code></a></p></td>
+<td><p>Helper function for propagation constant.</p></td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-propagation_constant"></span><dl class="py class">
+<dt id="fmas.propagation_constant.PropConst">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.propagation_constant.</span></code><code class="sig-name descname"><span class="pre">PropConst</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beta_fun</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convenience class for working with propagation constants.</p>
+<p>Implements methods that provide convenient access to recurrent tasks
+involving propagation constants.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>beta_fun</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code>) – Function implementing a propagation constant.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="fmas.propagation_constant.PropConst.beta_fun">
+<code class="sig-name descname"><span class="pre">beta_fun</span></code><a class="headerlink" href="#fmas.propagation_constant.PropConst.beta_fun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function implementing a propagation constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fmas.propagation_constant.PropConst.dw">
+<code class="sig-name descname"><span class="pre">dw</span></code><a class="headerlink" href="#fmas.propagation_constant.PropConst.dw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angular frequency increment used for calculating derivatives.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fmas.propagation_constant.PropConst.c0">
+<code class="sig-name descname"><span class="pre">c0</span></code><a class="headerlink" href="#fmas.propagation_constant.PropConst.c0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Speed of light (default = 0.29970 micron/fs).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.CD">
+<code class="sig-name descname"><span class="pre">CD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.CD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Chromatic dispersion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">array</span></code> or <cite>float</cite>) – Angular frequency for which to compute chromatic dispersion.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Chromatic dispersion.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.beta">
+<code class="sig-name descname"><span class="pre">beta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.beta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagation constant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency for which to compute propagation constant.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Propagation constant.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.beta1">
+<code class="sig-name descname"><span class="pre">beta1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.beta1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group delay.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency for which to compute group delay.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Group delay.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.beta2">
+<code class="sig-name descname"><span class="pre">beta2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.beta2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group velocity dispersion (GVD).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency for which to compute GVD.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Group velocity dispersion.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.beta3">
+<code class="sig-name descname"><span class="pre">beta3</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.beta3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Third order dispersion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency for which to compute 3rd order dispersion.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Group velocity dispersion.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.compute_expansion_coefficients">
+<code class="sig-name descname"><span class="pre">compute_expansion_coefficients</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.compute_expansion_coefficients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain Taylor expansion coefficients at given frequency.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses scipy.misc.derivative and scipy.misc.factorial for computing
+the expansion coefficients.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w0</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Frequency value about which to expand.</p></li>
+<li><p><strong>n_max</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of expansion coefficients to compute (default = 5).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Taylor expansion coefficients.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.find_match_beta1">
+<code class="sig-name descname"><span class="pre">find_match_beta1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_max</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.find_match_beta1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine group velocity matched partner frequency.</p>
+<p>Attempts to find a group-velocity matched partner frequency for
+<span class="math notranslate nohighlight">\(\omega_0\)</span> in the interval from <span class="math notranslate nohighlight">\(\omega_{\mathrm{min}}\)</span> to
+<span class="math notranslate nohighlight">\(\omega_{\mathrm{max}}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Helper method for analysis of dispersion profile</p></li>
+<li><p>Uses scipy.optimize.minimize_scalar for bracketed minimization</p></li>
+<li><p>If no group velocity matched frequency is contained in the
+supplied interval, the output should not be trusted. Check the
+resulting frequency by assessing whether <cite>beta1(res)==beta1(w0)</cite>.</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w0</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Frequency for which group velocity matched partner frequency
+will be computed.</p></li>
+<li><p><strong>w_min</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Lower bound for root finding procedure</p></li>
+<li><p><strong>w_max</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Upper bound for root finding procedure</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Group-velocity matched partner frequency of <cite>w0</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.find_root_beta2">
+<code class="sig-name descname"><span class="pre">find_root_beta2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_max</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.find_root_beta2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine bracketed root of 2nd order dispersion profile.</p>
+<p>Attempts to find a root of the 2nd order dispersion profile in the
+interval from <span class="math notranslate nohighlight">\(\omega_{\mathrm{min}}\)</span> to
+<span class="math notranslate nohighlight">\(\omega_{\mathrm{max}}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Helper method for analysis of dispersion profile</p></li>
+<li><p>Uses scipy.optimize.bisect for bracketed root finding</p></li>
+</ul>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w_min</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – lower bound for root finding procedure</p></li>
+<li><p><strong>w_max</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – upper bound for root finding procedure</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>root of 2nd order dispersion profile in bracketed
+interval</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.lam">
+<code class="sig-name descname"><span class="pre">lam</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.lam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angular frequency to wavelength conversion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">array</span></code> or <cite>float</cite>) – Angular frequency for which to compute wavelengths.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Wavelength values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.local_coeffs">
+<code class="sig-name descname"><span class="pre">local_coeffs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.local_coeffs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain Taylor expansion coefficients at given frequency.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Uses scipy.misc.derivative and scipy.misc.factorial for computing
+the expansion coefficients.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w0</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Frequency value about which to expand.</p></li>
+<li><p><strong>n_max</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of expansion coefficients to compute (default = 5).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Taylor expansion coefficients.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.v_sol_corr">
+<code class="sig-name descname"><span class="pre">v_sol_corr</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.v_sol_corr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corrected soliton velocity.</p>
+<p>Computes corrected soliton velocity</p>
+<div class="math notranslate nohighlight">
+\[v_{g}^\prime(\omega_0, t_0) = \left[
+    \beta_1(\omega_0) -
+    \beta_2(\omega_0)/(\omega_0 t_0^2) +
+    \beta_3(\omega_0)/(6t_0^2)
+    \right]^{-1},\]</div>
+<p>defined in <a class="reference internal" href="#pba2016" id="id1"><span>[PBA2016]</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t0</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Soliton duration.</p></li>
+<li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">array</span></code> or <cite>float</cite>) – Angular frequency for which to compute group-velocity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>corrected soliton velocity.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+<dl class="citation">
+<dt class="label" id="pba2016"><span class="brackets"><a class="fn-backref" href="#id1">PBA2016</a></span></dt>
+<dd><p>S. Pickartz, U. Bandelow, Sh. Amiranashvili, Adiabatic theory
+of solitons fed by dispersive waves, Phys. Rev. A 94 (2016) 033811,
+<a class="reference external" href="https://doi.org/10.1103/PhysRevA.94.033811">https://doi.org/10.1103/PhysRevA.94.033811</a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.propagation_constant.PropConst.vg">
+<code class="sig-name descname"><span class="pre">vg</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.PropConst.vg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group velocity profile.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">array</span></code> or <cite>float</cite>) – Angular frequency for which to compute group-velocity.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Group velocity.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> or <cite>float</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmas.propagation_constant.define_beta_fun_ESM">
+<code class="sig-prename descclassname"><span class="pre">fmas.propagation_constant.</span></code><code class="sig-name descname"><span class="pre">define_beta_fun_ESM</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.define_beta_fun_ESM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagation constant for an ESM PCF.</p>
+<p>Enclosing function returning a closure implementing a rational
+Pade-approximant of order [8/8] for the refractive index of a endlessly
+single mode (ESM) nonlinear photonic crystal fiber (PCF), see <a class="reference internal" href="#sk2007" id="id2"><span>[SK2007]</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Propagation constant for ESM PCF.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></p>
+</dd>
+</dl>
+<dl class="citation">
+<dt class="label" id="sk2007"><span class="brackets"><a class="fn-backref" href="#id2">SK2007</a></span></dt>
+<dd><p>J.M. Stone, J.C. Knight, Visibly ‘white’ light generation in
+uniform photonic crystal fiber using a microchip laser ,  Optics Express
+16 (2007) 2670.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmas.propagation_constant.define_beta_fun_NLPM750">
+<code class="sig-prename descclassname"><span class="pre">fmas.propagation_constant.</span></code><code class="sig-name descname"><span class="pre">define_beta_fun_NLPM750</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.define_beta_fun_NLPM750" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagation constant for NLPM750 PCF.</p>
+<p>Enclosing function returning a closure implementing a rational
+Pade-approximant of order [4/4] for the refractive index of a NL-PM-750
+nonlinear photonic crystal fiber (PCF), see <a class="reference internal" href="#nlpm750" id="id3"><span>[NLPM750]</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Propagation constant for NL-PM-750 PCF.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></p>
+</dd>
+</dl>
+<dl class="citation">
+<dt class="label" id="nlpm750"><span class="brackets"><a class="fn-backref" href="#id3">NLPM750</a></span></dt>
+<dd><p>NL-PM-750 Nonlinear Photonic Crystal Fiber,
+www.nktphotonics.com.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmas.propagation_constant.define_beta_fun_PCF_Ranka2000">
+<code class="sig-prename descclassname"><span class="pre">fmas.propagation_constant.</span></code><code class="sig-name descname"><span class="pre">define_beta_fun_PCF_Ranka2000</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.define_beta_fun_PCF_Ranka2000" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for propagation constant.</p>
+<p>Enclosing function returning a closure implementing a polynomial expansion
+of order 11 for the propagation constant of <a class="reference internal" href="#rws2000" id="id4"><span>[RWS2000]</span></a> given in <a class="reference internal" href="#dgc2006" id="id5"><span>[DGC2006]</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Propagation constant.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></p>
+</dd>
+</dl>
+<dl class="citation">
+<dt class="label" id="rws2000"><span class="brackets"><a class="fn-backref" href="#id4">RWS2000</a></span></dt>
+<dd><p>J. K. Ranka, R. S. Windeler, A. J. Stentz, Visible continuum
+generation in air-silica microstructure optical fibers with anomalous
+dispersion at 800 nm, Opt. Lett. 25 (2000) 25,
+<a class="reference external" href="https://doi.org/10.1364/OL.25.000025">https://doi.org/10.1364/OL.25.000025</a>.</p>
+</dd>
+<dt class="label" id="dgc2006"><span class="brackets"><a class="fn-backref" href="#id5">DGC2006</a></span></dt>
+<dd><p>J. M. Dudley, G. Genty, S. Coen, Supercontinuum generation in
+photonic crystal fiber, Rev. Mod. Phys. 78 (2006) 1135,
+<a class="reference external" href="http://dx.doi.org/10.1103/RevModPhys.78.1135">http://dx.doi.org/10.1103/RevModPhys.78.1135</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmas.propagation_constant.define_beta_fun_ZBLAN">
+<code class="sig-prename descclassname"><span class="pre">fmas.propagation_constant.</span></code><code class="sig-name descname"><span class="pre">define_beta_fun_ZBLAN</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.define_beta_fun_ZBLAN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagation constant for ZBLAN fiber.</p>
+<p>Enclosing function returning a closure implementing a rational
+Pade-approximant of order [4/4] for the refractive index of a ZBLAN fiber
+(PCF).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Propagation constant for NL-PM-750 PCF.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmas.propagation_constant.define_beta_fun_fluoride_glass_AD2010">
+<code class="sig-prename descclassname"><span class="pre">fmas.propagation_constant.</span></code><code class="sig-name descname"><span class="pre">define_beta_fun_fluoride_glass_AD2010</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.define_beta_fun_fluoride_glass_AD2010" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for propagation constant.</p>
+<p>Enclosing function returning a closure implementing a rational
+Pade-approximant of order [5/5] for the refractive index of a fluorid glass
+fiber given in <a class="reference internal" href="#ad2010" id="id6"><span>[AD2010]</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Propagation constant for NL-PM-750 PCF.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></p>
+</dd>
+</dl>
+<dl class="citation">
+<dt class="label" id="ad2010"><span class="brackets"><a class="fn-backref" href="#id6">AD2010</a></span></dt>
+<dd><p>Sh. Amiranashvili, A. Demircan, Hamiltonian structure of
+propagation equations for ultrashort optical pulses,  Phys. Rev. A, 82
+(2010) 013812</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmas.propagation_constant.define_beta_fun_slot_waveguide_Zhang2012">
+<code class="sig-prename descclassname"><span class="pre">fmas.propagation_constant.</span></code><code class="sig-name descname"><span class="pre">define_beta_fun_slot_waveguide_Zhang2012</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.propagation_constant.define_beta_fun_slot_waveguide_Zhang2012" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for propagation constant.</p>
+<p>Enclosing function returning a closure implementing a polynomial expansion
+of order 8 for the propagation constant of <a class="reference internal" href="#z2012" id="id7"><span>[Z2012]</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Propagation constant.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">callable</span></code></p>
+</dd>
+</dl>
+<dl class="citation">
+<dt class="label" id="z2012"><span class="brackets"><a class="fn-backref" href="#id7">Z2012</a></span></dt>
+<dd><p>Zhang et al., Silicon waveguide with four zero-dispersion
+wavelengths and its application in on-chip octave spanning
+supercontinuum generation, Opt. Express 20 (2012) 1685.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="raman_response.html" class="btn btn-neutral float-right" title="3.3. fmas.raman_response" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="models.html" class="btn btn-neutral float-left" title="3.1. fmas.models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

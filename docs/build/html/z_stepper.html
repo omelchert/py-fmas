@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1.2. fmas.stepper module &#8212; pyFMAS 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.3. fmas.solver module" href="propagation_schemes.html" />
+    <link rel="prev" title="1.1. fmas.analytic_signal module" href="analytic_signal.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="propagation_schemes.html" title="1.3. fmas.solver module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="analytic_signal.html" title="1.1. fmas.analytic_signal module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyFMAS 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="reference_manual.html" accesskey="U"><span class="section-number">1. </span>Reference manual</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1.2. </span>fmas.stepper module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-fmas.stepper">
+<span id="fmas-stepper-module"></span><h1><span class="section-number">1.2. </span>fmas.stepper module<a class="headerlink" href="#module-fmas.stepper" title="Permalink to this headline">¶</a></h1>
+<p>The <span class="math notranslate nohighlight">\(z\)</span>-propagation schemes implemented with the pyFMAS package are
+specified by a <span class="math notranslate nohighlight">\(z\)</span>-propagation algorithm along with a <span class="math notranslate nohighlight">\(z\)</span>-stepping
+formula that performs the field update for a single step.</p>
+<p>Currently, pyFMAS implements a second-order Runge-Kutta and a fourth-order
+Runge-Kutta formula for <span class="math notranslate nohighlight">\(z\)</span>-stepping.</p>
+<span class="target" id="module-stepper"></span><dl class="py function">
+<dt id="fmas.stepper.RungeKutta2">
+<code class="sig-prename descclassname"><span class="pre">fmas.stepper.</span></code><code class="sig-name descname"><span class="pre">RungeKutta2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.stepper.RungeKutta2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Second-order Runge-Kutta formula</p>
+<p>Implements second-order Runge-Kutta formula for <span class="math notranslate nohighlight">\(z\)</span>-stepping [1].
+Achieves local error <span class="math notranslate nohighlight">\(\mathcal O(\Delta z^3)\)</span>, with step size
+<span class="math notranslate nohighlight">\(\Delta z\)</span>.</p>
+<p class="rubric">References</p>
+<p>[1] W. H. Press, S. A. Teukolsky, W. T. Vetterling, B. P. Flannery,
+Numerical Recipes in C: The art of scientific computing (Chapter 16.1),
+Cambridge University Press (1992).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fun</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">function</span></code>) – Function evaluating the evolution rate of the ODE.</p></li>
+<li><p><strong>z</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Current <span class="math notranslate nohighlight">\(z\)</span>-value.</p></li>
+<li><p><strong>uw</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 1-dim) – Frequency-domain representation of the current field.</p></li>
+<li><p><strong>dz</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Step size.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmas.stepper.RungeKutta4">
+<code class="sig-prename descclassname"><span class="pre">fmas.stepper.</span></code><code class="sig-name descname"><span class="pre">RungeKutta4</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.stepper.RungeKutta4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fourth-order Runge-Kutta formula</p>
+<p>Implements fourth-order Runge-Kutta formula for <span class="math notranslate nohighlight">\(z\)</span>-stepping [1].
+Achieves local error <span class="math notranslate nohighlight">\(\mathcal O(\Delta z^5)\)</span>, with step size
+<span class="math notranslate nohighlight">\(\Delta z\)</span>.</p>
+<p class="rubric">References</p>
+<p>[1] W. H. Press, S. A. Teukolsky, W. T. Vetterling, B. P. Flannery,
+Numerical Recipes in C: The art of scientific computing (Chapter 16.1),
+Cambridge University Press (1992).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fun</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">function</span></code>) – Function evaluating the evolution rate of the ODE.</p></li>
+<li><p><strong>z</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Current <span class="math notranslate nohighlight">\(z\)</span>-value.</p></li>
+<li><p><strong>uw</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 1-dim) – Frequency-domain representation of the current field.</p></li>
+<li><p><strong>dz</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Step size.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="analytic_signal.html"
+                        title="previous chapter"><span class="section-number">1.1. </span>fmas.analytic_signal module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="propagation_schemes.html"
+                        title="next chapter"><span class="section-number">1.3. </span>fmas.solver module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/z_stepper.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="propagation_schemes.html" title="1.3. fmas.solver module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="analytic_signal.html" title="1.1. fmas.analytic_signal module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyFMAS 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="reference_manual.html" ><span class="section-number">1. </span>Reference manual</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1.2. </span>fmas.stepper module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, O. Melchert.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.2.
+    </div>
+  </body>
+</html>

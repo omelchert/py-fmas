@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.1.3. Pulse interaction in a NL-PM-750 photonic crystal fiber &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.1.4. Supercontinuum generation in a photonic crystal fiber" href="g_specialized_model_PCF.html" />
+    <link rel="prev" title="3.1.2. Pulse interaction in a NL-PM-750 photonic crystal fiber" href="g_specialized_model_NLPM.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../reference_manual.html">1. Reference manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples.html">2. Examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">3. Usage examples</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#exemplary-propagation-scenarios">3.1. Exemplary propagation scenarios</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="g_optfrog.html">3.1.1. Extending <cite>py-fmas</cite> with <cite>optfrog</cite> spectrograms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_specialized_model_NLPM.html">3.1.2. Pulse interaction in a NL-PM-750 photonic crystal fiber</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">3.1.3. Pulse interaction in a NL-PM-750 photonic crystal fiber</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_specialized_model_PCF.html">3.1.4. Supercontinuum generation in a photonic crystal fiber</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#two-frequency-pulse-compounds">3.2. Two-frequency pulse compounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#other-models">3.3. Other models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../help.html">4. Need help</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">3. </span>Usage examples</a> &raquo;</li>
+        
+      <li><span class="section-number">3.1.3. </span>Pulse interaction in a NL-PM-750 photonic crystal fiber</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/auto_examples/gallery_01/g_three_pulses_ESM.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-gallery-01-g-three-pulses-esm-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="pulse-interaction-in-a-nl-pm-750-photonic-crystal-fiber">
+<span id="sphx-glr-auto-examples-gallery-01-g-three-pulses-esm-py"></span><h1><span class="section-number">3.1.3. </span>Pulse interaction in a NL-PM-750 photonic crystal fiber<a class="headerlink" href="#pulse-interaction-in-a-nl-pm-750-photonic-crystal-fiber" title="Permalink to this headline">¶</a></h1>
+<p>This examples demonstrates the interaction between a fundamental soliton and a
+dispersive wave in a NL-PM-750 photonic crystal fiber. For the numerical
+simualtion the forward model for the analytic signal including the Raman effect
+is used [3].</p>
+<p>In particular, this example reproduces the propagation scenario for
+<span class="math notranslate nohighlight">\(t_0=250\,\mathrm{fs}\)</span>, shown in Fig.~2(b) of Ref. [2].</p>
+<dl>
+<dt>References:</dt><dd><p>[1] A. Demircan, Sh. Amiranashvili, C. Bree, C. Mahnke, F. Mitschke, G.
+Steinmeyer, Rogue wave formation by accelerated solitons at an optical
+event horizon, Appl. Phys. B 115 (2014) 343,
+<a class="reference external" href="http://dx.doi.org/10.1007/s00340-013-5609-9">http://dx.doi.org/10.1007/s00340-013-5609-9</a></p>
+<p>[2] O. Melchert, C. Bree, A. Tajalli, A. Pape, R. Arkhipov, S. Willms, I.
+Babushkin, D. Skryabin, G. Steinmeyer, U. Morgner, A. Demircan, All-optical
+supercontinuum switching, Communications Physics 3 (2020) 146,
+<a class="reference external" href="https://doi.org/10.1038/s42005-020-00414-1">https://doi.org/10.1038/s42005-020-00414-1</a>.</p>
+</dd>
+</dl>
+<img alt="$|u|^2/{\rm{max}}\left(|u|^2\right)$, $|u_\omega|^2/{\rm{max}}\left(|u_\omega|^2\right)$" class="sphx-glr-single-img" src="../../_images/sphx_glr_g_three_pulses_ESM_001.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../../&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">FMAS_S</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">change_reference_frame</span><span class="p">,</span> <span class="n">plot_evolution</span>
+<span class="kn">from</span> <span class="nn">fmas.propagation_constant</span> <span class="kn">import</span> <span class="n">PropConst</span>
+
+<span class="k">def</span> <span class="nf">define_beta_fun_ESM</span><span class="p">():</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Custom refractive index.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">coeffs2RatFunc</span><span class="p">(</span><span class="n">pCoeffs</span><span class="p">,</span><span class="n">qCoeffs</span><span class="p">):</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">pCoeffs</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">qCoeffs</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">q</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">pCoeffs</span> <span class="o">=</span> <span class="p">(</span><span class="mf">16.89475</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">319.13216</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">34.82210</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.992495</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.0010671</span><span class="p">)</span>
+    <span class="n">qCoeffs</span> <span class="o">=</span> <span class="p">(</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">702.70157</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">78.28249</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.337086</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.0062267</span><span class="p">)</span>
+    <span class="n">c0</span> <span class="o">=</span> <span class="mf">0.29979</span>            <span class="c1"># (micron/fs)</span>
+    <span class="n">b2Roots</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.7408203125</span><span class="p">)</span>
+    <span class="n">n_idx</span> <span class="o">=</span> <span class="n">coeffs2RatFunc</span><span class="p">(</span><span class="n">pCoeffs</span><span class="p">,</span><span class="n">qCoeffs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="n">n_idx</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="n">w</span><span class="o">/</span><span class="n">c0</span> <span class="o">+</span> <span class="mf">1e-6</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+
+    <span class="c1"># -- DEFINE SIMULATION PARAMETERS</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">4000.</span>       <span class="c1"># (fs)</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span>       <span class="c1"># (-)</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mf">4.0e6</span>       <span class="c1"># (micron)</span>
+    <span class="n">z_num</span> <span class="o">=</span> <span class="mi">50000</span>       <span class="c1"># (-)</span>
+    <span class="n">z_skip</span> <span class="o">=</span><span class="mi">100</span>         <span class="c1"># (-)</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="mf">3.0e-8</span>         <span class="c1"># (micron^2/W)</span>
+    <span class="n">c0</span> <span class="o">=</span> <span class="mf">0.29979</span>
+
+    <span class="n">beta_fun</span> <span class="o">=</span> <span class="n">define_beta_fun_ESM</span><span class="p">()</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">PropConst</span><span class="p">(</span><span class="n">beta_fun</span><span class="p">)</span>
+
+    <span class="c1"># -- INITIALIZATION STAGE</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">FMAS_S</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">beta_w</span><span class="o">=</span><span class="n">pc</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> <span class="n">n2</span><span class="o">=</span><span class="n">n2</span><span class="p">)</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">claw</span><span class="p">)</span>
+
+    <span class="c1"># -- SET UP INITIAL CONDITION</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span>
+    <span class="c1"># ... FUNDAMENTAL NSE SOLITON</span>
+    <span class="n">w0_S</span><span class="p">,</span> <span class="n">t0_S</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">20.</span>   <span class="c1"># (rad/fs), (fs)</span>
+    <span class="n">A0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">beta2</span><span class="p">(</span><span class="n">w0_S</span><span class="p">))</span><span class="o">*</span><span class="n">c0</span><span class="o">/</span><span class="n">w0_S</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span><span class="o">/</span><span class="n">t0_S</span>
+    <span class="n">A0_S</span> <span class="o">=</span> <span class="n">A0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t0_S</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0_S</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="c1"># ... 1ST DISPERSIVE WAVE; UNITS (rad/fs), (fs), (fs), (-)</span>
+    <span class="n">w0_DW1</span><span class="p">,</span> <span class="n">t0_DW1</span><span class="p">,</span> <span class="n">t_off1</span><span class="p">,</span> <span class="n">s1</span> <span class="o">=</span> <span class="mf">2.06</span><span class="p">,</span> <span class="mf">60.</span><span class="p">,</span> <span class="o">-</span><span class="mf">600.</span><span class="p">,</span> <span class="mf">0.35</span>
+    <span class="n">A0_DW1</span> <span class="o">=</span> <span class="n">s1</span><span class="o">*</span><span class="n">A0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">t_off1</span><span class="p">)</span><span class="o">/</span><span class="n">t0_DW1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0_DW1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="c1"># ... 2ND DISPERSIVE WAVE; UNITS (rad/fs), (fs), (fs), (-)</span>
+    <span class="n">w0_DW2</span><span class="p">,</span> <span class="n">t0_DW2</span><span class="p">,</span> <span class="n">t_off2</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="mf">2.05</span><span class="p">,</span> <span class="mf">60.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1200.</span><span class="p">,</span> <span class="mf">0.35</span>
+    <span class="n">A0_DW2</span> <span class="o">=</span> <span class="n">s2</span><span class="o">*</span><span class="n">A0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">t_off2</span><span class="p">)</span><span class="o">/</span><span class="n">t0_DW2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0_DW2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="c1"># ... 3RD DISPERSIVE WAVE; UNITS (rad/fs), (fs), (fs), (-)</span>
+    <span class="n">w0_DW3</span><span class="p">,</span> <span class="n">t0_DW3</span><span class="p">,</span> <span class="n">t_off3</span><span class="p">,</span> <span class="n">s3</span> <span class="o">=</span> <span class="mf">2.04</span><span class="p">,</span> <span class="mf">60.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1800.</span><span class="p">,</span> <span class="mf">0.35</span>
+    <span class="n">A0_DW3</span> <span class="o">=</span> <span class="n">s3</span><span class="o">*</span><span class="n">A0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">t_off3</span><span class="p">)</span><span class="o">/</span><span class="n">t0_DW3</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0_DW3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="c1"># ... ANALYTIC SIGNAL OF FULL ININITIAL CONDITION</span>
+    <span class="n">Eps_0w</span> <span class="o">=</span> <span class="n">AS</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">A0_S</span> <span class="o">+</span> <span class="n">A0_DW1</span> <span class="o">+</span> <span class="n">A0_DW2</span> <span class="o">+</span> <span class="n">A0_DW3</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span>
+
+    <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">Eps_0w</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+    <span class="c1"># -- SHOW RESULTS</span>
+    <span class="n">v0</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">vg</span><span class="p">(</span><span class="n">w0_S</span><span class="p">)</span>
+    <span class="n">utz</span> <span class="o">=</span> <span class="n">change_reference_frame</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">,</span> <span class="n">v0</span><span class="p">)</span>
+    <span class="n">plot_evolution</span><span class="p">(</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">utz</span><span class="p">,</span>
+        <span class="n">t_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">4000</span><span class="p">,</span><span class="mi">1000</span><span class="p">),</span> <span class="n">w_lim</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">2.4</span><span class="p">),</span> <span class="n">DO_T_LOG</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="c1">#t_lim = (-3000,800), w_lim = (1.2,2.3), DO_T_LOG = True)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 4 minutes  37.812 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gallery-01-g-three-pulses-esm-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/688feecf6c458854e3d418157f9feaf7/g_three_pulses_ESM.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_three_pulses_ESM.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a497bc2f7fc6ce7a7bdcd5cc1b88f959/g_three_pulses_ESM.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_three_pulses_ESM.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="g_specialized_model_PCF.html" class="btn btn-neutral float-right" title="3.1.4. Supercontinuum generation in a photonic crystal fiber" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="g_specialized_model_NLPM.html" class="btn btn-neutral float-left" title="3.1.2. Pulse interaction in a NL-PM-750 photonic crystal fiber" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

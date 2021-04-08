@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.5. fmas.analytic_signal &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="3.6. fmas.stepper" href="stepper.html" />
+    <link rel="prev" title="3.4. fmas.solver" href="solver.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../auto_tutorials/index.html">1. Extended user guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../auto_examples/index.html">2. Usage examples</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">3. Reference manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="models.html">3.1. fmas.models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="propagation_constant.html">3.2. fmas.propagation_constant</a></li>
+<li class="toctree-l2"><a class="reference internal" href="raman_response.html">3.3. fmas.raman_response</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solver.html">3.4. fmas.solver</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.5. fmas.analytic_signal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stepper.html">3.6. fmas.stepper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">3.7. fmas.tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_io.html">3.8. fmas.data_io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">3.9. fmas.config</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html"><span class="section-number">3. </span>Reference manual</a> &raquo;</li>
+        
+      <li><span class="section-number">3.5. </span>fmas.analytic_signal</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/reference_manual/analytic_signal.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fmas.analytic_signal">
+<span id="fmas-analytic-signal"></span><h1><span class="section-number">3.5. </span>fmas.analytic_signal<a class="headerlink" href="#module-fmas.analytic_signal" title="Permalink to this headline">¶</a></h1>
+<p>Implements class <cite>AnalyticSignal</cite>, which uses the frequncy-domain algorithm
+detailed in <a class="reference internal" href="#m1999" id="id1"><span>[M1999]</span></a> to compute the complex-valued analytic signal for a
+real-valued discrete-time field.</p>
+<dl class="citation">
+<dt class="label" id="m1999"><span class="brackets">M1999</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>)</span></dt>
+<dd><p>S. L. Marple,
+Computing the Discrete-Time Analytic signal via FFT,
+IEEE Transactions on Signal Processing, 47 (1999) 2600.</p>
+</dd>
+</dl>
+<span class="target" id="module-analytic_signal"></span><dl class="py attribute">
+<dt id="fmas.analytic_signal.AS">
+<code class="sig-prename descclassname"><span class="pre">fmas.analytic_signal.</span></code><code class="sig-name descname"><span class="pre">AS</span></code><a class="headerlink" href="#fmas.analytic_signal.AS" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#fmas.analytic_signal.AnalyticSignal" title="fmas.analytic_signal.AnalyticSignal"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.analytic_signal.AnalyticSignal</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="fmas.analytic_signal.AnalyticSignal">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.analytic_signal.</span></code><code class="sig-name descname"><span class="pre">AnalyticSignal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.analytic_signal.AnalyticSignal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class converting real-valued field to analytic signal.</p>
+<p>Implements methods that take a real-valued <span class="math notranslate nohighlight">\(N\)</span>-point discrete-time
+field <span class="math notranslate nohighlight">\(E\)</span> and provide access to the complex-valued discrete-time
+analytic signal <span class="math notranslate nohighlight">\(\mathcal{E}\)</span>, both in time-domain and
+Fourier-domain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The class implements the frequency-domain algorithm specified in
+<a class="reference internal" href="#m1999" id="id2"><span>[M1999]</span></a>, given by the three-step procedure</p>
+<p>1. Compute <span class="math notranslate nohighlight">\(E_\omega\)</span>, i.e. the <span class="math notranslate nohighlight">\(N\)</span>-point discrete
+Fourier-trasform (DFT) of the real-valued discrete-time field
+<span class="math notranslate nohighlight">\(E\)</span>.</p>
+<p>2. Compute the <span class="math notranslate nohighlight">\(N\)</span>-point discrete-time analytic signal in the
+Fourier-domain, given by</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\begin{split}\mathcal{E}_\omega[m] = \begin{cases}
+      E_\omega[0],    &amp; m=0,\\
+      2E_\omega[m],   &amp; 1\leq m \leq N/2-1,\\
+      E_\omega[N/2],  &amp; m = N/2,\\
+      0,              &amp; N/2+1 \leq m \leq N - 1.
+\end{cases}\end{split}\]</div>
+</div></blockquote>
+<p>3. Compute the complex-valued <span class="math notranslate nohighlight">\(N\)</span>-point discrete-time analytic
+signal <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> using an inverse DFT.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Real-valued field <span class="math notranslate nohighlight">\(E\)</span>.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="fmas.analytic_signal.AnalyticSignal.x">
+<code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#fmas.analytic_signal.AnalyticSignal.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Real-valued field <span class="math notranslate nohighlight">\(E\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="fmas.analytic_signal.AnalyticSignal.num">
+<code class="sig-name descname"><span class="pre">num</span></code><a class="headerlink" href="#fmas.analytic_signal.AnalyticSignal.num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number <span class="math notranslate nohighlight">\(N\)</span> of field points.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.analytic_signal.AnalyticSignal.t_rep">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">t_rep</span></code><a class="headerlink" href="#fmas.analytic_signal.AnalyticSignal.t_rep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time-domain representation <span class="math notranslate nohighlight">\(\mathcal{E}\)</span> of the analytic signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.analytic_signal.AnalyticSignal.test_orthogonality">
+<code class="sig-name descname"><span class="pre">test_orthogonality</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.analytic_signal.AnalyticSignal.test_orthogonality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if real and imaginary parts are orthogonal.</p>
+<p>Real and imaginary parts of the analytic signal must be orthogonal, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^{N-1} \mathsf{Re}(\mathcal{E}[n])\,\mathsf{Im}(\mathcal{E}[n]) = 0,\]</div>
+<p>see Eq. (7) of <a class="reference internal" href="#m1999" id="id3"><span>[M1999]</span></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.analytic_signal.AnalyticSignal.test_recover_original_field">
+<code class="sig-name descname"><span class="pre">test_recover_original_field</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.analytic_signal.AnalyticSignal.test_recover_original_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if real part of analytic signal equals original field.</p>
+<p>Real part of the discrete-time analytic signal must be equal to the original field, i.e.</p>
+<div class="math notranslate nohighlight">
+\[\mathsf{Re}(\mathcal{E}[n]) = E[n], \quad 0\leq n\leq N-1,\]</div>
+<p>see Eq. (6) of <a class="reference internal" href="#m1999" id="id4"><span>[M1999]</span></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="fmas.analytic_signal.AnalyticSignal.w_rep">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">w_rep</span></code><a class="headerlink" href="#fmas.analytic_signal.AnalyticSignal.w_rep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency-domain representation <span class="math notranslate nohighlight">\(\mathcal{E}_\omega\)</span> of the analytic signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="stepper.html" class="btn btn-neutral float-right" title="3.6. fmas.stepper" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="solver.html" class="btn btn-neutral float-left" title="3.4. fmas.solver" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

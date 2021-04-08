@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.3.2. Nonlinear Schrödinger equation – Third-order soliton &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="2.3.3. Korteweg-deVries equation – Interaction of solitons" href="g_model_KdV.html" />
+    <link rel="prev" title="2.3.1. BMCF – Backscattered optical field components" href="g_BMCF.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../auto_tutorials/index.html">1. Extended user guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">2. Usage examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#exemplary-propagation-scenarios">2.1. Exemplary propagation scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#two-frequency-pulse-compounds">2.2. Two-frequency pulse compounds</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#simulation-of-other-models">2.3. Simulation of other models</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="g_BMCF.html">2.3.1. BMCF – Backscattered optical field components</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.3.2. Nonlinear Schrödinger equation – Third-order soliton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_model_KdV.html">2.3.3. Korteweg-deVries equation – Interaction of solitons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_model_LLE.html">2.3.4. Lugiato-Lefever equation – Soliton molecules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_manual/index.html">3. Reference manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">2. </span>Usage examples</a> &raquo;</li>
+        
+      <li><span class="section-number">2.3.2. </span>Nonlinear Schrödinger equation – Third-order soliton</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/auto_examples/gallery_03/g_model_NSE.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-gallery-03-g-model-nse-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="nonlinear-schrodinger-equation-third-order-soliton">
+<span id="sphx-glr-auto-examples-gallery-03-g-model-nse-py"></span><h1><span class="section-number">2.3.2. </span>Nonlinear Schrödinger equation – Third-order soliton<a class="headerlink" href="#nonlinear-schrodinger-equation-third-order-soliton" title="Permalink to this headline">¶</a></h1>
+<p>This example solves the standard nonlinear Schrödinger equation, given by</p>
+<div class="math notranslate nohighlight">
+\[\partial_z u = -i \frac{\beta_2}{2}\partial_t^2 u + i\gamma |u|^2 u,\]</div>
+<p>wherein <span class="math notranslate nohighlight">\(u = u(z, t)\)</span> represents the slowly varying pulse envelope,
+<span class="math notranslate nohighlight">\(\beta_2=-1\)</span> is the second order dispersion parameter, and
+<span class="math notranslate nohighlight">\(\gamma=1\)</span> is the nonlinear parameter.  As initial condition, a
+higher-order soliton</p>
+<div class="math notranslate nohighlight">
+\[u_0(t) = N_{\rm{sol}} \sqrt{\frac{|\beta_2|}{\gamma \, t_0^2}} {\rm{sech}}(t/t_0),\]</div>
+<p>of duration <span class="math notranslate nohighlight">\(t_0=1\)</span>, and soliton order <span class="math notranslate nohighlight">\(N_{\rm{sol}}=3\)</span> is
+considered. The propagation is performed up to <span class="math notranslate nohighlight">\(z_{\rm{max}}=\pi/2\)</span>, i.e.
+for one soliton period.</p>
+<img alt="$|u|^2/{\rm{max}}\left(|u|^2\right)$, $|u_\omega|^2/{\rm{max}}\left(|u_\omega|^2\right)$" class="sphx-glr-single-img" src="../../_images/sphx_glr_g_model_NSE_001.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">ModelBaseClass</span>
+<span class="kn">from</span> <span class="nn">fmas.config</span> <span class="kn">import</span> <span class="n">FTFREQ</span><span class="p">,</span> <span class="n">FT</span><span class="p">,</span> <span class="n">IFT</span><span class="p">,</span> <span class="n">C0</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">SySSM</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">plot_evolution</span>
+
+
+<span class="k">class</span> <span class="nc">NSE</span><span class="p">(</span><span class="n">ModelBaseClass</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">b2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">b2</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">w</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="n">gamma</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Lw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">beta_w</span>
+
+    <span class="k">def</span> <span class="nf">Nw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">uw</span><span class="p">):</span>
+        <span class="n">ut</span> <span class="o">=</span> <span class="n">IFT</span><span class="p">(</span><span class="n">uw</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">gamma</span><span class="o">*</span><span class="n">FT</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ut</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">ut</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">claw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">zi</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">uw</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">uw</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># -- DEFINE SIMULATION PARAMETERS</span>
+    <span class="c1"># ... WAVEGUIDE PROPERTIES</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.</span>
+    <span class="c1"># ... TEST PULSE PROPERTIES</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="mf">1.</span>                       <span class="c1"># soliton duration</span>
+    <span class="n">P0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span><span class="o">/</span><span class="n">t0</span><span class="o">/</span><span class="n">t0</span><span class="o">/</span><span class="n">gamma</span>   <span class="c1"># peak-intensity</span>
+    <span class="n">LD</span> <span class="o">=</span> <span class="n">t0</span><span class="o">*</span><span class="n">t0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>         <span class="c1"># dispersion length</span>
+    <span class="n">N_sol</span> <span class="o">=</span> <span class="mi">3</span>                     <span class="c1"># soliton order</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">30.</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">12</span>
+    <span class="n">z_max</span>  <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">LD</span>
+    <span class="n">z_num</span>  <span class="o">=</span> <span class="mi">1000</span>
+    <span class="n">z_skip</span> <span class="o">=</span> <span class="mi">2</span>
+
+    <span class="c1"># -- INITIALIZATION STAGE</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+    <span class="c1"># ... NSE MODEL</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">NSE</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">b2</span><span class="p">,</span> <span class="n">gamma</span><span class="p">)</span>
+    <span class="c1"># ... Z-PROPAGATION USING SYMMETRIC SPLIT-STEP FOURIER METHOD</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">SySSM</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">)</span>
+    <span class="c1"># ... INITIAL CONDITION</span>
+    <span class="n">u_0t</span> <span class="o">=</span> <span class="n">N_sol</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">FT</span><span class="p">(</span><span class="n">u_0t</span><span class="p">))</span>
+
+    <span class="c1"># -- RUN SIMULATION</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+    <span class="n">plot_evolution</span><span class="p">(</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">,</span>
+        <span class="n">t_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">w_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">DO_T_LOG</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.320 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gallery-03-g-model-nse-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/8cf930e74a92bb490b58b139759bb68a/g_model_NSE.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_model_NSE.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/7f4c353a79a1296439f832bc865411d1/g_model_NSE.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_model_NSE.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="g_model_KdV.html" class="btn btn-neutral float-right" title="2.3.3. Korteweg-deVries equation – Interaction of solitons" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="g_BMCF.html" class="btn btn-neutral float-left" title="2.3.1. BMCF – Backscattered optical field components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Reference manual &#8212; pyFMAS 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Need help" href="help.html" />
+    <link rel="prev" title="‘pyFMAS’ python package" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="help.html" title="2. Need help"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="‘pyFMAS’ python package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyFMAS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Reference manual</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="reference-manual">
+<h1><span class="section-number">1. </span>Reference manual<a class="headerlink" href="#reference-manual" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="implemented-z-propagation-schemes">
+<h2><span class="section-number">1.1. </span>Implemented <span class="math notranslate nohighlight">\(z\)</span>-propagation schemes<a class="headerlink" href="#implemented-z-propagation-schemes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-solver-base-class">
+<h3><span class="section-number">1.1.1. </span>The solver base class<a class="headerlink" href="#the-solver-base-class" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyUPEAS.solver_numpy.</span></code><code class="sig-name descname"><span class="pre">SolverBaseClass</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">stepper=&lt;function</span> <span class="pre">RungeKutta4&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for solver</p>
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.L">
+<code class="sig-name descname"><span class="pre">L</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.L" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linear operator of the partial differential equation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.N">
+<code class="sig-name descname"><span class="pre">N</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.N" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nonlinear operator of the partial differential equation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt>
+<code class="sig-name descname"><span class="pre">stepper</span> <span class="pre">(</span></code></dt>
+<dd><p>obj:<cite>function’):
+:math:`z</cite>-stepping algorithm. Default is a fourth-order Runge-Kutta formula.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass._z">
+<code class="sig-name descname"><span class="pre">_z</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass._z" title="Permalink to this definition">¶</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(z\)</span>-values for which field is stored and available after propagation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass._uwz">
+<code class="sig-name descname"><span class="pre">_uwz</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass._uwz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency domain representation of the field at <span class="math notranslate nohighlight">\(z\)</span>-values listed in <cite>_z</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.w">
+<code class="sig-name descname"><span class="pre">w</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angular frequency mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Linear operator of the partial differential equation.</p></li>
+<li><p><strong>N</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Nonlinear operator of the partial differential equation.</p></li>
+<li><p><strong>(</strong> (<em>stepper</em>) – obj:<cite>function’):
+:math:`z</cite>-stepping algorithm. Default is a fourth-order Runge-Kutta formula.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.clear">
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear internal arrays</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.propagate">
+<code class="sig-name descname"><span class="pre">propagate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.propagate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z_range</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Propagation range.</p></li>
+<li><p><strong>n_steps</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of integration steps.</p></li>
+<li><p><strong>n_skip</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of intermediate fiels to skip in output file (default is n_skip = 0).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.set_initial_condition">
+<code class="sig-name descname"><span class="pre">set_initial_condition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.set_initial_condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set initial condition</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency mesh.</p></li>
+<li><p><strong>uw</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Initial field.</p></li>
+<li><p><strong>z0</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – <span class="math notranslate nohighlight">\(z\)</span>-position of initial field (default is z0 = 0.0).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.single_step">
+<code class="sig-name descname"><span class="pre">single_step</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.single_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Advance field by a single <span class="math notranslate nohighlight">\(z\)</span>-slice</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.utz">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">utz</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.utz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time-domain representation of field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 2-dim</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.uwz">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">uwz</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.uwz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency-domain representation of field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 2-dim</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.SolverBaseClass.z">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">z</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.SolverBaseClass.z" title="Permalink to this definition">¶</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(z\)</span>-slices at which field is stored</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 1-dim</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="the-local-error-method-lem">
+<h3><span class="section-number">1.1.2. </span>The local error method (LEM)<a class="headerlink" href="#the-local-error-method-lem" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyUPEAS.solver_numpy.</span></code><code class="sig-name descname"><span class="pre">LocalErrorMethod</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">stepper=&lt;function</span> <span class="pre">RungeKutta2&gt;</span></em>, <em class="sig-param"><span class="pre">del_G=1e-05</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pyUPEAS.solver_numpy.SolverBaseClass" title="pyUPEAS.solver_numpy.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyUPEAS.solver_numpy.SolverBaseClass</span></code></a></p>
+<p>Solver implementing the local error method (LEM)</p>
+<p>Implements a <span class="math notranslate nohighlight">\(z\)</span>-propagation scheme with adaptive step size controll,
+referred to as the local error method (LEM) [1].
+This method is based on the technique of step-doubling, providing a coarse
+and fine field solution, and the assessment of a relative local error (RLE)
+to guide step size selection. If an adequate step size for the current
+integration sub-step is found, a field solution is obtained from the
+accepted coarse and fine solutions through local extrapolation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here, local extrapolation yields increased accuracy. In the provided
+implementation the field update is performed using a symmetric split
+step Fourier method. In conjunction with a second-order Runge-Kutta
+formula, a single field update then has local error <span class="math notranslate nohighlight">\(\mathcal
+O(h^3)\)</span>, where <span class="math notranslate nohighlight">\(h\)</span> is the step size.  The local extrapolation
+procedure effectively increases the accuracy by realizing a local error
+<span class="math notranslate nohighlight">\(\mathcal O(h^4)\)</span>.</p>
+</div>
+<p class="rubric">References</p>
+<p>[1] O. V. Sinkin, R. Holzlöhner, J. Zweck, C. R. Menyuk,
+Optimization of the split-step Fourier method in modeling optical-fiber communications systems,
+IEEE J. Lightwave Tech. 21 (2003) 61,
+<a class="reference external" href="https://doi.org/10.1109/JLT.2003.808628">https://doi.org/10.1109/JLT.2003.808628</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>L</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Linear operator of the partial differential equation.</p></li>
+<li><p><strong>N</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Nonlinear operator of the partial differential equation.</p></li>
+<li><p><strong>stepper</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">function</span></code>) – z-stepping algorithm. Default is a second-order Runge-Kutta formula.</p></li>
+<li><p><strong>del_G</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Goal local error (default is <cite>del_G = 1e-5</cite>).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.del_G">
+<code class="sig-name descname"><span class="pre">del_G</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.del_G" title="Permalink to this definition">¶</a></dt>
+<dd><p>Goal local error.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.scale_fac">
+<code class="sig-name descname"><span class="pre">scale_fac</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.scale_fac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Step size scaling factor (initialized as <cite>scale_fac = numpy.inf</cite>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.dz_a">
+<code class="sig-name descname"><span class="pre">dz_a</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.dz_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Local step size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod._dz_a">
+<code class="sig-name descname"><span class="pre">_dz_a</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod._dz_a" title="Permalink to this definition">¶</a></dt>
+<dd><p>Array accumulating local step size at the end of each <span class="math notranslate nohighlight">\(z\)</span>-slice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod._del_rle">
+<code class="sig-name descname"><span class="pre">_del_rle</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod._del_rle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Array accumulating the local relative error at the end of each <span class="math notranslate nohighlight">\(z\)</span>-slice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.clear">
+<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear instance attributes and reset parameters to initial values</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is implemented for the case when an instance of the
+solver is used for various simulation runs with possibly different
+initial conditions and <span class="math notranslate nohighlight">\(z\)</span>-interval discretizations.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.propagate">
+<code class="sig-name descname"><span class="pre">propagate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_steps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_skip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.propagate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Propagate field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z_range</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Propagation range.</p></li>
+<li><p><strong>n_steps</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of integration steps.</p></li>
+<li><p><strong>n_skip</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code>) – Number of intermediate fiels to skip in output file (default is n_skip = 0).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.set_initial_condition">
+<code class="sig-name descname"><span class="pre">set_initial_condition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.set_initial_condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set initial condition</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency mesh.</p></li>
+<li><p><strong>uw</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Initial field.</p></li>
+<li><p><strong>z0</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – <span class="math notranslate nohighlight">\(z\)</span>-position of initial field (default is z0 = 0.0).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.single_step">
+<code class="sig-name descname"><span class="pre">single_step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_curr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ew</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.single_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Advance field by a single <span class="math notranslate nohighlight">\(z\)</span>-slice</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method updates the instance attributes <cite>_dz_a</cite> and <cite>_del_rle</cite>,
+i.e.  lists accumulating the local step size at the end of each
+<span class="math notranslate nohighlight">\(z\)</span>-slize, and the associated relative local error,
+respectively.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z_curr</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Current propagation distance.</p></li>
+<li><p><strong>Ew</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Frequency domain representation of the field at <cite>z_curr</cite>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Frequency domain representation of the field at <cite>z_curr</cite> + <cite>dz</cite>.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.utz">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">utz</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.utz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time-domain representation of field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 2-dim</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.uwz">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">uwz</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.uwz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency-domain representation of field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 2-dim</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyUPEAS.solver_numpy.LocalErrorMethod.z">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">z</span></code><a class="headerlink" href="#pyUPEAS.solver_numpy.LocalErrorMethod.z" title="Permalink to this definition">¶</a></dt>
+<dd><p><span class="math notranslate nohighlight">\(z\)</span>-slices at which field is stored</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, 1-dim</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. Reference manual</a><ul>
+<li><a class="reference internal" href="#implemented-z-propagation-schemes">1.1. Implemented <span class="math notranslate nohighlight">\(z\)</span>-propagation schemes</a><ul>
+<li><a class="reference internal" href="#the-solver-base-class">1.1.1. The solver base class</a></li>
+<li><a class="reference internal" href="#the-local-error-method-lem">1.1.2. The local error method (LEM)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">‘pyFMAS’ python package</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="help.html"
+                        title="next chapter"><span class="section-number">2. </span>Need help</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/code.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="help.html" title="2. Need help"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="‘pyFMAS’ python package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyFMAS 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Reference manual</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, O. Melchert.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.2.
+    </div>
+  </body>
+</html>

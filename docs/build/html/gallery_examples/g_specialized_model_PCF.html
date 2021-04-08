@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.3. Custom model for a specific propagation constant &#8212; py-fmas 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery-rendered-html.css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">py-fmas 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3.3. </span>Custom model for a specific propagation constant</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-gallery-examples-g-specialized-model-pcf-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="custom-model-for-a-specific-propagation-constant">
+<span id="sphx-glr-gallery-examples-g-specialized-model-pcf-py"></span><h1>Custom model for a specific propagation constant<a class="headerlink" href="#custom-model-for-a-specific-propagation-constant" title="Permalink to this headline">¶</a></h1>
+<p>This examples shows how to implement a specialized propagation model for a
+specific propagation constant, building upon <code class="xref py py-class docutils literal notranslate"><span class="pre">FMAS_S_Raman</span></code>.</p>
+<p>The propagation scenario schown below, is discussed on several occations in the
+scientific literature [1-3]. For example, in Ref. [1], it is used to
+demonstrate numerical simulations in terms of the gneralized nonlinear
+Schrödinger equation (GNSE) on supercontinuum generation for an instance of a
+highly nonlinear photonic crystal fiber (PCF) with an anomalous group-velocity
+dispersion regime. In Ref. [2] it is used, again using the GNSE, to introduce a
+particular <span class="math notranslate nohighlight">\(z\)</span>-propagation algorithm referred to as the “Runge-Kutta in
+the interacton picture” (RK4IP) method. This algorithm, a particular variant
+of an integrating-factor method, is also implemented in <cite>py-fmas</cite>.  In Ref. [3]
+it is used to demonstrate the feasibility of an adaptive step-size method for
+the simulation of supercontinuum generation in optical fiber.</p>
+<p>All the above simulation studies used the generalized nonlinear Schrödinger
+equation wich relies on the slowly varying envelope approximation. In contrast
+to this, the below example employs a non-envelope model, namely by the
+simplified forward model for the analytic signal with added Raman effect
+(FMAS-S-R) [4-6].  The <span class="math notranslate nohighlight">\(z\)</span>-propagation algorithm used with the FMAS-S-R
+in conjunction with the RK4IP method.</p>
+<dl>
+<dt>References:</dt><dd><p>[1] J. M. Dudley, G. Genty, S. Coen,
+Supercontinuum generation in photonic crystal fiber,
+Rev. Mod. Phys. 78 (2006) 1135,
+<a class="reference external" href="http://dx.doi.org/10.1103/RevModPhys.78.1135">http://dx.doi.org/10.1103/RevModPhys.78.1135</a></p>
+<p>[2] J. Hult, A Fourth-Order Runge–Kutta in the Inter- action Picture
+Method for Simulating Supercontin- uum Generation in Optical Fibers,
+IEEE J. Light- wave Tech. 25 (2007) 3770,
+<a class="reference external" href="https://doi.org/10.1109/JLT.2007.909373">https://doi.org/10.1109/JLT.2007.909373</a>.</p>
+<p>[3] A. M. Heidt,
+Efficient Adaptive Step Size Method for the Simulation of
+Supercontinuum Generation in Optical Fibers,
+IEEE J. Lightwave Tech. 27 (2009) 3984,
+<a class="reference external" href="https://doi.org/10.1109/JLT.2009.2021538">https://doi.org/10.1109/JLT.2009.2021538</a></p>
+<p>[4] Sh. Amiranashvili, A. Demircan, Hamiltonian structure of
+propagation equations for ultrashort optical pulses, Phys. Rev. E 10
+(2010) 013812, <a class="reference external" href="http://dx.doi.org/10.1103/PhysRevA.82.013812">http://dx.doi.org/10.1103/PhysRevA.82.013812</a>.</p>
+<p>[5] Sh. Amiranashvili, A. Demircan, Ultrashort Optical Pulse Propagation in
+terms of Analytic Signal, Adv. Opt. Tech. 2011 (2011) 989515,
+<a class="reference external" href="http://dx.doi.org/10.1155/2011/989515">http://dx.doi.org/10.1155/2011/989515</a>.</p>
+<p>[6] A. Demircan, Sh. Amiranashvili, C. Bree, C. Mahnke, F. Mitschke, G.
+Steinmeyer, Rogue wave formation by accelerated solitons at an optical
+event horizon, Appl. Phys. B 115 (2014) 343,
+<a class="reference external" href="http://dx.doi.org/10.1007/s00340-013-5609-9">http://dx.doi.org/10.1007/s00340-013-5609-9</a></p>
+</dd>
+</dl>
+<img alt="$|u|^2/{\rm{max}}\left(|u|^2\right)$, $|u_\omega|^2/{\rm{max}}\left(|u_\omega|^2\right)$" class="sphx-glr-single-img" src="../_images/sphx_glr_g_specialized_model_PCF_001.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="p">;</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;../&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">FMAS_S_Raman</span>
+<span class="kn">from</span> <span class="nn">fmas.config</span> <span class="kn">import</span> <span class="n">FTFREQ</span><span class="p">,</span> <span class="n">FT</span><span class="p">,</span> <span class="n">IFT</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">plot_evolution</span>
+
+
+<span class="k">class</span> <span class="nc">CustomModelPCF</span><span class="p">(</span><span class="n">FMAS_S_Raman</span><span class="p">):</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Custom model for specific Photonic Crystal Fiber&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+
+        <span class="n">c0</span> <span class="o">=</span> <span class="mf">0.29979</span>    <span class="c1"># (micron/fs)</span>
+        <span class="n">w0</span> <span class="o">=</span> <span class="mf">2.2559</span>     <span class="c1"># (rad/fs)</span>
+        <span class="n">gam0</span> <span class="o">=</span> <span class="mf">0.11e-6</span>  <span class="c1"># (1/W/micron)</span>
+        <span class="n">fR</span> <span class="o">=</span> <span class="mf">0.18</span>       <span class="c1"># (-)</span>
+        <span class="n">tau1</span> <span class="o">=</span> <span class="mf">12.2</span>     <span class="c1"># (fs)</span>
+        <span class="n">tau2</span> <span class="o">=</span> <span class="mf">32.0</span>     <span class="c1"># (fs)</span>
+        <span class="n">n2</span> <span class="o">=</span> <span class="n">gam0</span><span class="o">*</span><span class="n">c0</span><span class="o">/</span><span class="n">w0</span>
+
+        <span class="k">def</span> <span class="nf">_beta_fun_detuning</span><span class="p">(</span><span class="n">w</span><span class="p">):</span>
+            <span class="sa">r</span><span class="sd">&#39;&#39;&#39;Helper function for propagation constant</span>
+
+<span class="sd">            Implements group-velocity dispersion with expansion coefficients</span>
+<span class="sd">            listed in Tab. I of Ref. [1]. Expansion coefficients are valid for</span>
+<span class="sd">            :math:`lambda = 835\,\mathrm{nm}`, i.e. for :math:`\omega_0 \approx</span>
+<span class="sd">            2.56\,\mathrm{rad/fs}`.</span>
+
+<span class="sd">            References:</span>
+<span class="sd">                [1] J. M. Dudley, G. Genty, S. Coen,</span>
+<span class="sd">                Supercontinuum generation in photonic crystal fiber,</span>
+<span class="sd">                Rev. Mod. Phys. 78 (2006) 1135,</span>
+<span class="sd">                http://dx.doi.org/10.1103/RevModPhys.78.1135</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                w (:obj:`numpy.ndarray`): Angular frequency grid.</span>
+
+<span class="sd">            Returns:</span>
+<span class="sd">                :obj:`numpy.ndarray` Propagation constant as function of</span>
+<span class="sd">                frequency detuning.</span>
+<span class="sd">            &#39;&#39;&#39;</span>
+            <span class="c1"># ... EXPANSION COEFFICIENTS DISPERSION</span>
+            <span class="n">b2</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.1830e-2</span>     <span class="c1"># (fs^2/micron)</span>
+            <span class="n">b3</span> <span class="o">=</span> <span class="mf">8.1038e-2</span>      <span class="c1"># (fs^3/micron)</span>
+            <span class="n">b4</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.95205e-1</span>    <span class="c1"># (fs^4/micron)</span>
+            <span class="n">b5</span> <span class="o">=</span> <span class="mf">2.0737e-1</span>      <span class="c1"># (fs^5/micron)</span>
+            <span class="n">b6</span> <span class="o">=</span> <span class="o">-</span><span class="mf">5.3943e-1</span>     <span class="c1"># (fs^6/micron)</span>
+            <span class="n">b7</span> <span class="o">=</span> <span class="mf">1.3486</span>         <span class="c1"># (fs^7/micron)</span>
+            <span class="n">b8</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.5495</span>        <span class="c1"># (fs^8/micron)</span>
+            <span class="n">b9</span> <span class="o">=</span> <span class="mf">3.0524</span>         <span class="c1"># (fs^9/micron)</span>
+            <span class="n">b10</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.7140</span>       <span class="c1"># (fs^10/micron)</span>
+            <span class="c1"># ... PROPAGATION CONSTANT (DEPENDING ON DETUNING)</span>
+            <span class="n">beta_fun_detuning</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">([</span><span class="n">b10</span><span class="o">/</span><span class="mi">3628800</span><span class="p">,</span> <span class="n">b9</span><span class="o">/</span><span class="mi">362880</span><span class="p">,</span> <span class="n">b8</span><span class="o">/</span><span class="mi">40320</span><span class="p">,</span>
+                <span class="n">b7</span><span class="o">/</span><span class="mi">5040</span><span class="p">,</span> <span class="n">b6</span><span class="o">/</span><span class="mi">720</span><span class="p">,</span> <span class="n">b5</span><span class="o">/</span><span class="mi">120</span><span class="p">,</span> <span class="n">b4</span><span class="o">/</span><span class="mi">24</span><span class="p">,</span> <span class="n">b3</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="n">b2</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">beta_fun_detuning</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+
+        <span class="n">beta_w</span> <span class="o">=</span> <span class="n">_beta_fun_detuning</span><span class="p">(</span><span class="n">w</span> <span class="o">-</span> <span class="n">w0</span><span class="p">)</span>
+        <span class="c1"># -- EQUIP THE SUPERCLASS</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">beta_w</span><span class="p">,</span> <span class="n">n2</span><span class="p">,</span> <span class="n">fR</span><span class="p">,</span> <span class="n">tau1</span><span class="p">,</span> <span class="n">tau2</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># -- DEFINE SIMULATION PARAMETERS</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">t_max</span> <span class="o">=</span> <span class="mf">3500.</span>       <span class="c1"># (fs)</span>
+    <span class="n">t_num</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">14</span>       <span class="c1"># (-)</span>
+    <span class="n">z_max</span> <span class="o">=</span> <span class="mf">0.10</span><span class="o">*</span><span class="mf">1e6</span>    <span class="c1"># (micron)</span>
+    <span class="n">z_num</span> <span class="o">=</span> <span class="mi">8000</span>        <span class="c1"># (-)</span>
+    <span class="n">z_skip</span> <span class="o">=</span> <span class="mi">10</span>         <span class="c1"># (-)</span>
+    <span class="c1"># ... INITIAL CONDITION</span>
+    <span class="n">P0</span> <span class="o">=</span> <span class="mf">1e4</span>            <span class="c1"># (W)</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="mf">28.4</span>           <span class="c1"># (fs)</span>
+    <span class="n">w0</span> <span class="o">=</span> <span class="mf">2.2559</span>         <span class="c1"># (rad/fs)</span>
+    <span class="n">E_0t_fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">P0</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">t</span><span class="o">/</span><span class="n">t0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">w0</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
+
+    <span class="c1"># -- INITIALIZATION STAGE</span>
+    <span class="c1"># ... COMPUTATIONAL DOMAIN</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span> <span class="n">t_max</span> <span class="o">=</span> <span class="n">t_max</span><span class="p">,</span> <span class="n">t_num</span> <span class="o">=</span> <span class="n">t_num</span><span class="p">,</span> <span class="n">z_max</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">z_num</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">)</span>
+    <span class="c1"># ... CUSTOM PROPAGATION MODEL</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">CustomModelPCF</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>
+    <span class="c1"># ... PROPAGATION ALGORITHM</span>
+    <span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span> <span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">claw</span><span class="p">)</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span> <span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span><span class="p">)</span>
+
+    <span class="c1"># -- RUN SIMULATION</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span> <span class="n">z_range</span> <span class="o">=</span> <span class="n">z_max</span><span class="p">,</span> <span class="n">n_steps</span> <span class="o">=</span> <span class="n">z_num</span><span class="p">,</span> <span class="n">n_skip</span> <span class="o">=</span> <span class="n">z_skip</span><span class="p">)</span>
+
+    <span class="c1"># -- SHOW RESULTS</span>
+    <span class="n">plot_evolution</span><span class="p">(</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">,</span>
+        <span class="n">t_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">500</span><span class="p">,</span><span class="mi">2200</span><span class="p">),</span> <span class="n">w_lim</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="mf">4.</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  6.760 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-gallery-examples-g-specialized-model-pcf-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/96d4cb0f78f045ec1355ade93a84da56/g_specialized_model_PCF.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_specialized_model_PCF.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/5f9a0382096cea92d21c4719963e1f29/g_specialized_model_PCF.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_specialized_model_PCF.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/gallery_examples/g_specialized_model_PCF.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">py-fmas 0.0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3.3. </span>Custom model for a specific propagation constant</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, O. Melchert.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.2.
+    </div>
+  </body>
+</html>
