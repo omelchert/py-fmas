@@ -46,6 +46,9 @@ nonlinear interactions (see the useage example
 easily extendible and maintainable. The provided software is aimed at researchers
 in the field of ultrashort pulse propagation and related disciplines.
 
+The source code of the package is available on `gitHub`_.
+
+.. _gitHub: https://github.com/omelchert/py-fmas
 
 .. toctree::
    :maxdepth: 2 
