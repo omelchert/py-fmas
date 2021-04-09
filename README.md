@@ -38,6 +38,10 @@ these examples can be run directly from the command line.
 
 ## Further information 
 
+An extended user guide with step-by-step demonstrations, further usage examples
+and a reference manual can be found on the  [project
+page](https://omelchert.github.io/py-fmas/) on gitHub pages.
+
 ### Pulse propagation in terms ot the analytic signal
 
 Below you find a list of articles that discuss ultrashort optical pulse
