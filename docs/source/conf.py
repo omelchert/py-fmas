@@ -14,11 +14,11 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../../'))
 
-sys.path.append('/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/')
+#sys.path.append('/usr/local/Cellar/python@3.9/3.9.2_1/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/')
+#sys.path.append('/Users/melchert/Programs/Python/git-optfrog/optfrog/')
 from sphinx_gallery.sorting import ExplicitOrder, FileNameSortKey
 import sphinx_rtd_theme
 
-sys.path.append('/Users/melchert/Programs/Python/git-optfrog/optfrog/')
 
 # -- Project information -----------------------------------------------------
 
@@ -28,7 +28,6 @@ author = 'O. Melchert'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -46,7 +45,6 @@ autosummary_generate = True
 
 # OM - Sphinx-Gallery configuration dictionary
 sphinx_gallery_conf = {
-    #'thumbnail_size': (600,420),
     'examples_dirs': ['../../galleries','../../tutorials/'],
     'subsection_order': ExplicitOrder([
         '../../galleries/gallery_01',
@@ -69,8 +67,6 @@ exclude_patterns = []
 
 
 # -- Options for HTML output -------------------------------------------------
-
-#html_logo = 'logo/fmas_logo_v5b.svg'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
