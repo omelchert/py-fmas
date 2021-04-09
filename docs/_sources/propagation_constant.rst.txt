@@ -1,5 +1,0 @@
-fmas.propagation_constant
-=========================
-
-.. automodule:: fmas.propagation_constant
-  :members:

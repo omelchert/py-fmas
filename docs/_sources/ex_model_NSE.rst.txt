@@ -1,6 +1,0 @@
-
-.. automodule:: examples.ex_model_NSE
-  :no-members:
-
-.. literalinclude:: ../../examples/ex_model_NSE.py
-
