@@ -1,0 +1,32 @@
+Citations
+*********
+
+If you use `py-fmas` in your work, please cite the `py-fmas` methods manuscript:
+
+- O. Melchert, A. Demircan, py-fmas: A python package for ultrashort
+  optical pulse propagation in terms of forward models for the analytic signal,
+  arXiv (not uploaded yet)   
+
+
+Below you find a list of articles that used some of the :math:`z`-proapgation
+models and algorithms implemented by the `py-fmas` package:
+
+4. O. Melchert, C. Bree, A. Tajalli, A. Pape, R. Arkhipov, S. Willms, I.
+   Babushkin, D. Skryabin, G. Steinmeyer, U. Morgner, A. Demircan, All-optical
+   supercontinuum switching, Communications Physics 3 (2020) 146,
+   https://doi.org/10.1038/s42005-020-00414-1.
+ 
+3. O. Melchert, S. Willms, S. Bose, A. Yulin, B. Roth, F. Mitschke, U.
+   Morgner, I. Babushkin, A. Demircan, Soliton Molecules with Two Frequencies,
+   Phys. Rev. Lett. 123 (2019) 243905,
+   https://doi.org/10.1103/PhysRevLett.123.243905.
+
+2. O. Melchert, B. Roth, U. Morgner, A. Demircan, OptFROG — Analytic signal
+   spectrograms with optimized time–frequency resolution, SoftwareX 10 (2019)
+   100275, https://doi.org/10.1016/j.softx.2019.100275, code repository:
+   https://github.com/ElsevierSoftwareX/SOFTX_2019_130.
+
+1. O. Melchert, U. Morgner, B. Roth, I. Babushkin, A. Demircan, Accurate
+   propagation of ultrashort pulses in nonlinear waveguides using propagation
+   models for the analytic signal, Proc. SPIE 10694, Computational Optics II,
+   106940M (2018), https://doi.org/10.1117/12.2313255. 
