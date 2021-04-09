@@ -4,31 +4,27 @@
 
 `py-fmas` is a Python package for the accurate numerical simulation of the
 z-propagation dynamics of ultrashort optical pulses in single mode nonlinear
-waveguides. The simulation approach is based on nonlinear propagation models
-for the analytic signal of the optical field.  The implemented models include,
-e.g., third-harmonic generation and the Raman effect.
+waveguides.  The simulation approach is based on propagation models for the
+analytic signal of the optical field.
+The software implements various models of the Raman response and allows to
+calculate spectrograms, detailing the time-frequency composition of the
+analytic signal. Additionally, a convenience class for analyzing propagation
+constants is provided.
 
-To perfom z-propagation, the initial real-valued optical field is defined on a
-periodic one-dimensional temporal grid and converted to the complex-valued
-analytic signal. z-stepping is performed by pseudospectral methods. The
-software implements a selection of algorithms with fixed or adaptive stepsize,
-commonly used in nonlinear optics for solving nonlinear Schr\"odinger type
-equations.
-
-The provided software implements various models for the Raman response and
-allows to calculate spectrograms, detailing the time-frequency composition of
-the analytic signal. Additionally, a convenience class for analyzing
-propagation constants is provided.
+Further details such as an extended user guide with step-by-step
+demonstrations, various usage examples, and a reference manual can be found on
+the [py-fmas project page on gitHub pages](https://omelchert.github.io/py-fmas/).
 
 ## Installation
 
-Simply clone the repository
+The software can be installed by cloning the repository and installing the
+provided Python3 wheel in the following way
 
-``$ git clone https://github.com/omelchert/py-fmas``
-
-and install the Python3 Wheel via
-
-``$ python3 -m pip install ./py-fmas/dist/py_fmas-1.3.0.whl``
+```
+$ git clone https://github.com/omelchert/py-fmas
+$ cd py-fmas/dist 
+$ python3 -m pip install py_fmas-1.3.0-py3-none-any.whl
+```
 
 ## Usage Examples
 
@@ -37,10 +33,6 @@ and usage examples in folder `galleries`. After completing the installation,
 these examples can be run directly from the command line.
 
 ## Further information 
-
-An extended user guide with step-by-step demonstrations, further usage examples
-and a reference manual can be found on the  [project
-page](https://omelchert.github.io/py-fmas/) on gitHub pages.
 
 ### Pulse propagation in terms ot the analytic signal
 
