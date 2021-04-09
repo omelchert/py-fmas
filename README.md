@@ -37,6 +37,8 @@ $ python3 -m pip install py_fmas-1.3.0.whl
   
 - **Reference manual:** <https://omelchert.github.io/py-fmas/reference_manual/index.html>
 
+- **Citations:** TBW 
+
 ## License 
 
 This project is licensed under the MIT License - see the
