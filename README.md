@@ -12,7 +12,7 @@ calculate spectrograms, detailing the time-frequency composition of the
 analytic signal. Additionally, a convenience class for analyzing propagation
 constants is provided.
 
-Further details can be found on the [py-fmas projec page](https://omelchert.github.io/py-fmas/).
+Further details can be found on the [py-fmas project page](https://omelchert.github.io/py-fmas/).
 
 ## Installation
 
