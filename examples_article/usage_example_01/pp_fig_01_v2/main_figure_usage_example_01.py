@@ -173,7 +173,15 @@ def figure(fig_basename):
     err = dat[:,1]
     l7 = axA1.plot(dz, err, color=col1, marker='^', markersize=3., markerfacecolor=col12, linewidth=1., mew= 1., label=r'LEM-RK4')
 
-    set_legend(axA1, l4+l2+l3+l6+l7, loc=(0.7,0.06), ncol=2)
+
+    f_name = '../res_CQE.dat'
+    dat = np.loadtxt(f_name)
+    dz = dat[:,0]
+    err = dat[:,1]
+    col1 = 'gray'
+    l8 = axA1.plot(dz, err, color=col1, marker='p', markersize=2., markerfacecolor=col12, linewidth=0.75, mew= 0.75, label=r'CQE')
+
+    set_legend(axA1, l4+l2+l3+l6+l7+l8, loc=(0.7,0.06), ncol=2)
     #lg1 = set_legend(axA1, l4+l5, loc=(0.4,0.06), ncol=1)
     #lg2 = set_legend(axA1, l1+l2+l3, loc=(0.7,0.06), ncol=1)
     #plt.gca().add_artist(lg1)
@@ -215,7 +223,7 @@ def figure(fig_basename):
     axA1.set_ylabel(r"Average RMS error $\epsilon$")
     #axA1.set_ylabel(r"Global error $\epsilon$")
 
-    save_figure(fig_name = fig_basename, fig_format = 'png')
+    save_figure(fig_name = fig_basename, fig_format = 'svg')
 
 
 

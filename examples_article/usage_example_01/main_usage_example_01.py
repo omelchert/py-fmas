@@ -3,7 +3,7 @@ import numpy as np
 import numpy.fft as nfft
 from fmas.models import ModelBaseClass
 from fmas.config import FTFREQ, FT, IFT, C0
-from fmas.solver import SiSSM, SySSM, IFM_RK4IP, LEM_SySSM, LEM_IFM
+from fmas.solver import SiSSM, SySSM, IFM_RK4IP, LEM_SySSM, LEM_IFM, CQE
 from fmas.stepper import RungeKutta2, RungeKutta4
 
 
@@ -62,6 +62,7 @@ def determine_error(mode, stepper):
         'SySSM': SySSM(model.Lw, model.Nw, my_stepper),
         'IFM': IFM_RK4IP(model.Lw, model.Nw),
         'LEM': LEM_SySSM(model.Lw, model.Nw, my_stepper),
+        'CQE': CQE(model.Lw, model.Nw, del_G=1e-6),
         'MLEM': LEM_IFM(model.Lw, model.Nw)
     }
     try:
