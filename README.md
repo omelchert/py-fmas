@@ -29,7 +29,7 @@ $ python3 -m pip install py_fmas-1.3.0.whl
 
 - **Project page:** <https://omelchert.github.io/py-fmas/>
 
-- **Source:**: <https://github.com/omelchert/py-fmas>
+- **Source:** <https://github.com/omelchert/py-fmas>
 
 - **Extended user guide:** <https://omelchert.github.io/py-fmas/auto_tutorials/index.html>
 

@@ -1,6 +1,6 @@
 """
 Implements several :math:`z`-propagation models based on the forward model for
-the analutic signal [1,2,3,4].
+the analytic signal [1,2,3,4].
 
 .. autosummary::
    :nosignatures:
