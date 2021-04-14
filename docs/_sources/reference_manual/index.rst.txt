@@ -1,6 +1,9 @@
 Reference manual
 ****************
 
+`py-fmas` is a pure Python package, organized as a collection of modules. The
+scope and capabilities of the individual modules are detailed below. 
+
 .. toctree::
     :maxdepth: 3
     :caption: Submodules

@@ -27,6 +27,9 @@ our :ref:`usage-examples` page.
 Basic examples
 --------------
 
+The step-by-step demonstrations in this gallery show how to perfom basic
+simulations using the provided software.
+
 
 
 .. raw:: html
@@ -101,6 +104,10 @@ Basic examples
 
 More specific examples 
 ----------------------
+
+The step-by-step demonstrations in this gallery show how the 
+functionality of the provided software can be used to customize
+the implemented models and to compute spectrograms.
 
 
 
@@ -229,6 +236,87 @@ More specific examples
    :hidden:
 
    /auto_tutorials/specific/g_custom_propagation_model
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_auto_tutorials_tests:
+
+Performance tests
+-----------------
+
+The step-by-step demonstrations in this gallery illustrate performance tests
+for the various implemented solver types.
+All test cases are implemented on basis of the standard nonlinear Schrödinger
+equation.
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the ability of the local error method (LEM) [S2003]_ to locally decre...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/tests/images/thumb/sphx_glr_g_performance_LEM_thumb.png
+     :alt: Stepsize adaption in the LEM method
+
+     :ref:`sphx_glr_auto_tutorials_tests_g_performance_LEM.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tests/g_performance_LEM
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the ability of the conservation quantity error (CQE) method [H2009]_ ...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/tests/images/thumb/sphx_glr_g_performance_CQE_thumb.png
+     :alt: Stepsize adaption in the CQE method
+
+     :ref:`sphx_glr_auto_tutorials_tests_g_performance_CQE.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tests/g_performance_CQE
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the accuracy of the various z-propagation algorithms. As test case, t...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/tests/images/thumb/sphx_glr_g_error_scaling_thumb.png
+     :alt: Scaling behavior of global errors
+
+     :ref:`sphx_glr_auto_tutorials_tests_g_error_scaling.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/tests/g_error_scaling
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
