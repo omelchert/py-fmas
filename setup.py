@@ -8,7 +8,7 @@ setup(
     description = "Ultrashort optical pulse propagation in terms of the analytic signal",
     keywords = "Ultrashort pulse propagation, analytic signal, Raman effect, Spectrograms",
     license = "MIT",
-    packages=['fmas'],
+    packages=['fmas','fmas/solver','fmas/models'],
     classifiers=[
         "Development Status :: Beta",
         "Intended Audience :: Science/Research",

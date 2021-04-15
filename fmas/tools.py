@@ -327,3 +327,127 @@ def plot_details_prop_const(w, vg, beta2):
     ax2.set_xlabel(r"Angular frequency $\omega~\mathrm{(rad/fs)}$")
 
     plt.show()
+
+
+def plot_photon_number(z, t, u, Cp, t_lim=None, w_lim=None, DO_T_LOG=False, ratio_Iw=1e-6):
+    """Generate a figure showing the photon number.
+
+    Generates a plot showing the z-propagation characteristics of
+    the squared magnitude field envelope (left subfigure) and
+    the spectral intensity (right subfigure).
+
+    Args:
+        z (:obj:`numpy.ndarray`):
+            :math:`z`-grid.
+        t (:obj:`numpy.ndarray`):
+            Temporal grid.
+        u (:obj:`numpy.ndarray`):
+            Time-domain representation of analytic signal.
+        Cp (:obj:`numpy.ndarray`):
+            Classical analog of photon number.
+        t_lim (:obj:`list`, 2-tuple):
+            Time range in the form (t_min, t_max) (default=None).
+        w_lim (:obj:`list`, 2-tuple):
+            Angular frequency range in the form (w_min,w_max) (default=None).
+        DO_T_LOG (:obj:`bool`):
+            Flag indicating whether time-domain propagation characteristics
+            will be shown on log-scale (default=True).
+    """
+
+    def _setColorbar(im, refPos):
+        """colorbar helper"""
+        x0, y0, w, h = refPos.x0, refPos.y0, refPos.width, refPos.height
+        cax = f.add_axes([x0 + 1.02*w, y0, 0.025*w, h])
+        cbar = f.colorbar(im, cax=cax, orientation="vertical")
+        cbar.ax.tick_params(
+            color="k",
+            labelcolor="k",
+            bottom=False,
+            direction="out",
+            labelbottom=False,
+            labeltop=True,
+            top=True,
+            size=4,
+            pad=0,
+        )
+
+        cbar.ax.tick_params(which="minor", bottom=False, top=False)
+        return cbar
+
+    def _truncate(I):
+        """truncate intensity
+
+        fixes python3 matplotlib issue with representing small
+        intensities on plots with log-colorscale
+        """
+        I[I < 1e-20] = 1e-20
+        return I
+
+    w = nfft.ifftshift(nfft.fftfreq(t.size, d=t[1] - t[0]) * 2 * np.pi)
+
+    if t_lim == None:
+        t_lim = (np.min(t), np.max(t))
+    if w_lim == None:
+        w_lim = (np.min(w), np.max(w))
+
+    f, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(5, 4))
+    plt.subplots_adjust(left=0.15, right=0.8, bottom=0.12, top=0.96, hspace=0.2)
+    cmap = mpl.cm.get_cmap("jet")
+
+    # -- TOP SUB-FIGURE: TIME-DOMAIN PROPAGATION CHARACTERISTICS
+    It = np.abs(u) ** 2
+    It /= np.max(It)
+    It = _truncate(It)
+
+    if DO_T_LOG:
+        my_norm = col.LogNorm(vmin=1e-6 * It.max(), vmax=It.max())
+    else:
+        my_norm = col.Normalize(vmin=0, vmax=1)
+
+    im1 = ax1.pcolorfast(z, t, np.swapaxes(It[:-1, :-1],0,1), norm=my_norm, cmap=cmap)
+    cbar1 = _setColorbar(im1, ax1.get_position())
+    cbar1.ax.set_ylabel(r"$|u|^2/{\rm{max}}\left(|u|^2\right)$")
+    ax1.xaxis.set_ticks_position("bottom")
+    ax1.yaxis.set_ticks_position("left")
+    ax1.set_ylim(t_lim[1],t_lim[0])
+    ax1.set_xlim([0.0, z.max()])
+    ax1.set_ylabel(r"$t~\mathrm{(fs)}$")
+    ax1.ticklabel_format(useOffset=False, style="plain")
+    ax1.tick_params(axis='x', labelbottom=False, length=4)
+
+    # -- CENTER SUB-FIGURE: ANGULAR FREQ.-DOMAIN PROPAGATION CHARACTERISTICS
+    Iw = np.abs(nfft.ifftshift(FT(u, axis=-1), axes=-1)) ** 2
+    Iw /= np.max(Iw[0])
+    Iw = _truncate(Iw)
+    im2 = ax2.pcolorfast(
+        z,
+        w,
+        np.swapaxes(Iw[:-1, :-1],0,1),
+        norm=col.LogNorm(vmin=ratio_Iw * Iw.max(), vmax=Iw.max()),
+        cmap=cmap,
+    )
+    cbar2 = _setColorbar(im2, ax2.get_position())
+    cbar2.ax.set_ylabel(
+        r"$|u_\omega|^2/{\rm{max}}\left(|u_\omega|^2\right)$"
+    )
+    ax2.xaxis.set_ticks_position("bottom")
+    ax2.yaxis.set_ticks_position("left")
+    ax2.set_ylim(w_lim)
+    ax2.set_yticks((1,2,3,4))
+    ax2.set_xlim([0.0, z.max()])
+    ax2.set_ylabel(r"$\omega~\mathrm{(rad/fs)}$")
+    ax2.ticklabel_format(useOffset=False, style="plain")
+    ax2.tick_params(axis='x', labelbottom=False, length=4)
+
+    # -- BOTTOM SUB-FIGURE: NORMALIZED PHOTON NUMBER VARIATION 
+    rel_Cp = (Cp-Cp[0])/Cp[0]
+    ax3.plot(z,rel_Cp)
+    ax3.xaxis.set_ticks_position("bottom")
+    ax3.yaxis.set_ticks_position("left")
+    ax3.set_xlim([0.0, z.max()])
+    ax3.ticklabel_format(useOffset=False, style="sci")
+    ax3.set_xlabel(r"Propagation distance $z~\mathrm{(\mu m)}$")
+    ax3.set_ylabel(r"$\delta_{\rm{Ph}}$")
+
+    plt.show()
+

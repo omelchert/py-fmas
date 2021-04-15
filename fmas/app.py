@@ -3,7 +3,7 @@ import time
 import numpy as np
 import logging as log
 from .config import FTFREQ, FT, IFT
-from .solver import IFM_RK4IP, SiSSM, SySSM, LEM_SySSM, LEM_IFM
+from .solver import IFM_RK4IP, SiSSM, SySSM, LEM, CQE
 from .models import FMAS_S, FMAS_S_Raman
 from .data_io import read_h5, save_h5
 from .grid import Grid
@@ -42,8 +42,8 @@ def run(file_name, model_type = 'FMAS_S_R', solver_type = 'IFM_RK4IP'):
         "SiSSM": SiSSM,
         "SySSM": SySSM,
         "IFM_RK4IP": IFM_RK4IP,
-        "LEM": LEM_SySSM,
-        "MLEM": LEM_IFM,
+        "LEM": LEM,
+        "CQE": CQE
     }
     try:
         Solver = solver_switch[solver_type]
