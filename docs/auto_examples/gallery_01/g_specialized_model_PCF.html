@@ -234,7 +234,6 @@ event horizon, Appl. Phys. B 115 (2014) 343,
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">CustomModelPCF</span>
-<span class="kn">from</span> <span class="nn">fmas.config</span> <span class="kn">import</span> <span class="n">FTFREQ</span><span class="p">,</span> <span class="n">FT</span><span class="p">,</span> <span class="n">IFT</span>
 <span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
 <span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
 <span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
@@ -269,14 +268,14 @@ event horizon, Appl. Phys. B 115 (2014) 343,
 
     <span class="c1"># -- SHOW RESULTS</span>
     <span class="n">plot_evolution</span><span class="p">(</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">utz</span><span class="p">,</span>
-        <span class="n">t_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">500</span><span class="p">,</span><span class="mi">2200</span><span class="p">),</span> <span class="n">w_lim</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="mf">4.</span><span class="p">),</span> <span class="n">DO_T_LOG</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">t_lim</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">500</span><span class="p">,</span><span class="mi">2200</span><span class="p">),</span> <span class="n">w_lim</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="mf">4.</span><span class="p">))</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  5.767 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  5.424 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gallery-01-g-specialized-model-pcf-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/1a4c633b4d1dfefe2528680f6e794ae9/g_specialized_model_PCF.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_specialized_model_PCF.py</span></code></a></p>

@@ -149,7 +149,7 @@ imaginary parts (i.e. the Raman gain spectrum):
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.352 seconds)
+   **Total running time of the script:** ( 0 minutes  0.220 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_specific_g_list_raman_models.py:

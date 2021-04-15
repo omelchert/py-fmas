@@ -1,0 +1,16 @@
+
+:orphan:
+
+.. _sphx_glr_auto_tutorials_photon_number_conservation_sg_execution_times:
+
+Computation times
+=================
+**01:22.549** total execution time for **auto_tutorials_photon_number_conservation** files:
+
++---------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_photon_number_conservation_g_FMAS_S_R.py` (``g_FMAS_S_R.py``) | 00:33.807 | 0.0 MB |
++---------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_photon_number_conservation_g_FMAS.py` (``g_FMAS.py``)         | 00:24.963 | 0.0 MB |
++---------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_photon_number_conservation_g_FMAS_S.py` (``g_FMAS_S.py``)     | 00:23.779 | 0.0 MB |
++---------------------------------------------------------------------------------------------+-----------+--------+

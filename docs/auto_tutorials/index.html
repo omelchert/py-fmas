@@ -106,10 +106,16 @@
 <li class="toctree-l3"><a class="reference internal" href="specific/g_custom_propagation_model.html">1.2.6. Implementing a custom model</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#performance-tests">1.3. Performance tests</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests/g_performance_LEM.html">1.3.1. Stepsize adaption in the LEM method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests/g_performance_CQE.html">1.3.2. Stepsize adaption in the CQE method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests/g_error_scaling.html">1.3.3. Scaling behavior of global errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#photon-number-conservation">1.3. Photon number conservation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="photon_number_conservation/g_FMAS_S.html">1.3.1. FMAS_S</a></li>
+<li class="toctree-l3"><a class="reference internal" href="photon_number_conservation/g_FMAS_S_R.html">1.3.2. FMAS_S_R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="photon_number_conservation/g_FMAS.html">1.3.3. FMAS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#performance-tests">1.4. Performance tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tests/g_performance_LEM.html">1.4.1. Stepsize adaption in the LEM method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests/g_performance_CQE.html">1.4.2. Stepsize adaption in the CQE method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests/g_error_scaling.html">1.4.3. Scaling behavior of global errors</a></li>
 </ul>
 </li>
 </ul>
@@ -255,27 +261,52 @@ the implemented models and to compute spectrograms.</p>
 </div><div class="toctree-wrapper compound">
 </div>
 <div class="sphx-glr-clear"></div></div>
+<div class="section" id="photon-number-conservation">
+<span id="sphx-glr-auto-tutorials-photon-number-conservation"></span><h2><span class="section-number">1.3. </span>Photon number conservation<a class="headerlink" href="#photon-number-conservation" title="Permalink to this headline">¶</a></h2>
+<p>The examples provided in this gallery demonstrate the conservation of the
+photon number for the different models. Having available a proper conservation
+law is particularly important when the conservation quantity error method (CQE)
+is used for guiding step size adaption.</p>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates photon number conservation for the simplified forward model for the ..."><div class="figure align-default" id="id11">
+<img alt="FMAS_S" src="../_images/sphx_glr_g_FMAS_S_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="photon_number_conservation/g_FMAS_S.html#sphx-glr-auto-tutorials-photon-number-conservation-g-fmas-s-py"><span class="std std-ref">FMAS_S</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates photon number conservation for the simplified forward model for the ..."><div class="figure align-default" id="id12">
+<img alt="FMAS_S_R" src="../_images/sphx_glr_g_FMAS_S_R_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="photon_number_conservation/g_FMAS_S_R.html#sphx-glr-auto-tutorials-photon-number-conservation-g-fmas-s-r-py"><span class="std std-ref">FMAS_S_R</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates photon number conservation for the forward model for the analytic sig..."><div class="figure align-default" id="id13">
+<img alt="FMAS" src="../_images/sphx_glr_g_FMAS_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="photon_number_conservation/g_FMAS.html#sphx-glr-auto-tutorials-photon-number-conservation-g-fmas-py"><span class="std std-ref">FMAS</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
 <div class="section" id="performance-tests">
-<span id="sphx-glr-auto-tutorials-tests"></span><h2><span class="section-number">1.3. </span>Performance tests<a class="headerlink" href="#performance-tests" title="Permalink to this headline">¶</a></h2>
+<span id="sphx-glr-auto-tutorials-tests"></span><h2><span class="section-number">1.4. </span>Performance tests<a class="headerlink" href="#performance-tests" title="Permalink to this headline">¶</a></h2>
 <p>The step-by-step demonstrations in this gallery illustrate performance tests
 for the various implemented solver types.
 All test cases are implemented on basis of the standard nonlinear Schrödinger
 equation.</p>
-<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the ability of the local error method (LEM) [S2003]_ to locally decre..."><div class="figure align-default" id="id11">
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the ability of the local error method (LEM) [S2003]_ to locally decre..."><div class="figure align-default" id="id14">
 <img alt="Stepsize adaption in the LEM method" src="../_images/sphx_glr_g_performance_LEM_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="tests/g_performance_LEM.html#sphx-glr-auto-tutorials-tests-g-performance-lem-py"><span class="std std-ref">Stepsize adaption in the LEM method</span></a></span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="tests/g_performance_LEM.html#sphx-glr-auto-tutorials-tests-g-performance-lem-py"><span class="std std-ref">Stepsize adaption in the LEM method</span></a></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the ability of the conservation quantity error (CQE) method [H2009]_ ..."><div class="figure align-default" id="id12">
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the ability of the conservation quantity error (CQE) method [H2009]_ ..."><div class="figure align-default" id="id15">
 <img alt="Stepsize adaption in the CQE method" src="../_images/sphx_glr_g_performance_CQE_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="tests/g_performance_CQE.html#sphx-glr-auto-tutorials-tests-g-performance-cqe-py"><span class="std std-ref">Stepsize adaption in the CQE method</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="tests/g_performance_CQE.html#sphx-glr-auto-tutorials-tests-g-performance-cqe-py"><span class="std std-ref">Stepsize adaption in the CQE method</span></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the accuracy of the various z-propagation algorithms. As test case, t..."><div class="figure align-default" id="id13">
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the accuracy of the various z-propagation algorithms. As test case, t..."><div class="figure align-default" id="id16">
 <img alt="Scaling behavior of global errors" src="../_images/sphx_glr_g_error_scaling_thumb.png" />
-<p class="caption"><span class="caption-text"><a class="reference internal" href="tests/g_error_scaling.html#sphx-glr-auto-tutorials-tests-g-error-scaling-py"><span class="std std-ref">Scaling behavior of global errors</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text"><a class="reference internal" href="tests/g_error_scaling.html#sphx-glr-auto-tutorials-tests-g-error-scaling-py"><span class="std std-ref">Scaling behavior of global errors</span></a></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>

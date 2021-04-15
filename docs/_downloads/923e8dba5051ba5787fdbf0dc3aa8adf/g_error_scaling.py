@@ -21,7 +21,7 @@ import numpy as np
 import numpy.fft as nfft
 from fmas.models import ModelBaseClass
 from fmas.config import FTFREQ, FT, IFT, C0
-from fmas.solver import SiSSM, SySSM, IFM_RK4IP, LEM_SySSM, LEM_IFM, CQE
+from fmas.solver import SiSSM, SySSM, IFM_RK4IP, LEM_SySSM, CQE
 from fmas.grid import Grid
 
 ###############################################################################
@@ -97,8 +97,7 @@ def determine_error(mode):
         'SySSM': SySSM(model.Lw, model.Nw),
         'IFM': IFM_RK4IP(model.Lw, model.Nw),
         'LEM': LEM_SySSM(model.Lw, model.Nw),
-        'CQE': CQE(model.Lw, model.Nw, del_G=1e-6),
-        'MLEM': LEM_IFM(model.Lw, model.Nw)
+        'CQE': CQE(model.Lw, model.Nw, del_G=1e-6)
     }
     try:
         my_solver = switcher[mode]

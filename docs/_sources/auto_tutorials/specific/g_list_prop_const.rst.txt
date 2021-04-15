@@ -285,7 +285,7 @@ with four zero-dispersion points
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.847 seconds)
+   **Total running time of the script:** ( 0 minutes  0.581 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_specific_g_list_prop_const.py:

@@ -228,7 +228,7 @@ horizon, Opt. Exp. 22 (2014) 3866,
 <span class="target" id="module-models"></span><dl class="py class">
 <dt id="fmas.models.BMCF">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">BMCF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.BMCF" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.models.ModelBaseClass" title="fmas.models.ModelBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.ModelBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Bidirectional model for the complex field.</p>
 <p>Implements the bidirectional model for the complex field (BMCF), i.e.  Eq.
 (31) of Ref.[1]. It includes third-harmonic generation and self-steepening
@@ -310,14 +310,14 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 <dl class="py class">
 <dt id="fmas.models.CustomModelPCF">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">CustomModelPCF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.CustomModelPCF" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.models.FMAS_S_Raman" title="fmas.models.FMAS_S_Raman"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.FMAS_S_Raman</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.fmas_s_raman.FMAS_S_Raman</span></code></p>
 <p>Custom model for specific Photonic Crystal Fiber</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="fmas.models.FMAS">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.models.ModelBaseClass" title="fmas.models.ModelBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.ModelBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Forward-model for the analytic signal.</p>
 <p>Implements the forward-model for the analytic signal (FMAS) [1,2]. In
 particular, this model implements Eq. (33) of Ref.[1].</p>
@@ -401,7 +401,7 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 <dl class="py class">
 <dt id="fmas.models.FMAS_S">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_S</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS_S" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.models.ModelBaseClass" title="fmas.models.ModelBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.ModelBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Simplified variant of the forward-model for the analytic signal.</p>
 <p>Implements a simplified variant of the forward-model for the analytic
 signal [1,2]. In particular, this model implements Eq. (9) of Ref.[2].</p>
@@ -486,13 +486,13 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 <dl class="py attribute">
 <dt id="fmas.models.FMAS_S_R">
 <code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_S_R</span></code><a class="headerlink" href="#fmas.models.FMAS_S_R" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#fmas.models.FMAS_S_Raman" title="fmas.models.FMAS_S_Raman"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.FMAS_S_Raman</span></code></a></p>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.fmas_s_raman.FMAS_S_Raman</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="fmas.models.FMAS_S_Raman">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_S_Raman</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS_S_Raman" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.models.ModelBaseClass" title="fmas.models.ModelBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.ModelBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Simplified variant of the forward-model for the analytic signal
 including the Raman effect.</p>
 <p>Implements a simplified variant of the forward-model for the analytic
@@ -582,7 +582,7 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 <dl class="py class">
 <dt id="fmas.models.FMAS_THG">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_THG</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS_THG" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.models.ModelBaseClass" title="fmas.models.ModelBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.ModelBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Forward model for analytic signal including third-harmonic generation.</p>
 <p>Implements the forward model for the analytic signal including
 third-harmonic generation, see  Eq. (17) of Ref.[1].</p>

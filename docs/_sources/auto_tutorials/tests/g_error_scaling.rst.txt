@@ -45,7 +45,7 @@ experiments:
     import numpy.fft as nfft
     from fmas.models import ModelBaseClass
     from fmas.config import FTFREQ, FT, IFT, C0
-    from fmas.solver import SiSSM, SySSM, IFM_RK4IP, LEM_SySSM, LEM_IFM, CQE
+    from fmas.solver import SiSSM, SySSM, IFM_RK4IP, LEM_SySSM, CQE
     from fmas.grid import Grid
 
 
@@ -125,7 +125,7 @@ This error measure was also used in [H2007]_ to compare the performance of
 different :math:`z`-propagation algorithms. The function then returns
 the sequence of step sizes and the corresponding error values:
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-147
+.. GENERATED FROM PYTHON SOURCE LINES 82-146
 
 .. code-block:: default
 
@@ -147,8 +147,7 @@ the sequence of step sizes and the corresponding error values:
             'SySSM': SySSM(model.Lw, model.Nw),
             'IFM': IFM_RK4IP(model.Lw, model.Nw),
             'LEM': LEM_SySSM(model.Lw, model.Nw),
-            'CQE': CQE(model.Lw, model.Nw, del_G=1e-6),
-            'MLEM': LEM_IFM(model.Lw, model.Nw)
+            'CQE': CQE(model.Lw, model.Nw, del_G=1e-6)
         }
         try:
             my_solver = switcher[mode]
@@ -201,13 +200,13 @@ the sequence of step sizes and the corresponding error values:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-151
+.. GENERATED FROM PYTHON SOURCE LINES 147-150
 
 Finally, we prepare a figure that shows the scaling behavior of the resulting
 relative intensity error for the different propagation algorithms
 side-by-side:
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-209
+.. GENERATED FROM PYTHON SOURCE LINES 150-208
 
 .. code-block:: default
 
@@ -280,7 +279,7 @@ side-by-side:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 210-217
+.. GENERATED FROM PYTHON SOURCE LINES 209-216
 
 **References:**
 
@@ -293,7 +292,7 @@ side-by-side:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  30.640 seconds)
+   **Total running time of the script:** ( 0 minutes  30.750 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_tests_g_error_scaling.py:

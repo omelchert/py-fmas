@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.3.3. FMAS &mdash; py-fmas 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-binder.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-dataframe.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/gallery-rendered-html.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="1.4.1. Stepsize adaption in the LEM method" href="../tests/g_performance_LEM.html" />
+    <link rel="prev" title="1.3.2. FMAS_S_R" href="g_FMAS_S_R.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> py-fmas
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">1. Extended user guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#basic-examples">1.1. Basic examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#more-specific-examples">1.2. More specific examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#photon-number-conservation">1.3. Photon number conservation</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="g_FMAS_S.html">1.3.1. FMAS_S</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_FMAS_S_R.html">1.3.2. FMAS_S_R</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.3.3. FMAS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#performance-tests">1.4. Performance tests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">2. Usage examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_manual/index.html">3. Reference manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../citations.html">4. Citations</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py-fmas</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html"><span class="section-number">1. </span>Extended user guide</a> &raquo;</li>
+        
+      <li><span class="section-number">1.3.3. </span>FMAS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/auto_tutorials/photon_number_conservation/g_FMAS.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-tutorials-photon-number-conservation-g-fmas-py"><span class="std std-ref">here</span></a>
+to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="fmas">
+<span id="sphx-glr-auto-tutorials-photon-number-conservation-g-fmas-py"></span><h1><span class="section-number">1.3.3. </span>FMAS<a class="headerlink" href="#fmas" title="Permalink to this headline">¶</a></h1>
+<p>This example demonstrates photon number conservation for the forward model for
+the analytic signal (FMAS).</p>
+<p>The considered propagation model provides a proper conservation law as class
+method <cite>claw</cite>. However, for clarity, we here re-implement the conservation
+law and explicitly pass this  user-defined function to the solver class upon
+initialization.</p>
+<p>As exemplary propagation scenario, the setup used in the step-by-step demo</p>
+<p><a class="reference internal" href="../specific/g_spectrogram.html#sphx-glr-auto-tutorials-specific-g-spectrogram-py"><span class="std std-ref">Computing spectrograms</span></a></p>
+<p>is used.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmas</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">IFM_RK4IP</span>
+<span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
+<span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
+<span class="kn">from</span> <span class="nn">fmas.propagation_constant</span> <span class="kn">import</span> <span class="n">PropConst</span><span class="p">,</span> <span class="n">define_beta_fun_ESM</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">sech</span><span class="p">,</span> <span class="n">change_reference_frame</span><span class="p">,</span> <span class="n">plot_photon_number</span>
+
+<span class="n">beta_fun</span> <span class="o">=</span> <span class="n">define_beta_fun_ESM</span><span class="p">()</span>
+<span class="n">pc</span> <span class="o">=</span> <span class="n">PropConst</span><span class="p">(</span><span class="n">beta_fun</span><span class="p">)</span>
+
+<span class="n">grid</span> <span class="o">=</span> <span class="n">Grid</span><span class="p">(</span><span class="n">t_max</span><span class="o">=</span><span class="mf">5500.0</span><span class="p">,</span> <span class="n">t_num</span><span class="o">=</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">14</span><span class="p">)</span>  <span class="c1"># (fs)  # (-)</span>
+
+<span class="n">Ns</span> <span class="o">=</span> <span class="mf">8.0</span>  <span class="c1"># (-)</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mf">7.0</span>  <span class="c1"># (fs)</span>
+<span class="n">w0</span> <span class="o">=</span> <span class="mf">1.7</span>  <span class="c1"># (rad/fs)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="mf">3.0e-8</span>  <span class="c1"># (micron^2/W)</span>
+<span class="n">chi</span> <span class="o">=</span> <span class="mf">8.0</span> <span class="o">*</span> <span class="n">n2</span> <span class="o">*</span> <span class="n">pc</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">w0</span><span class="p">)</span> <span class="o">*</span> <span class="n">pc</span><span class="o">.</span><span class="n">c0</span> <span class="o">/</span> <span class="n">w0</span> <span class="o">/</span> <span class="mf">3.0</span>
+<span class="n">gam0</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">w0</span> <span class="o">*</span> <span class="n">w0</span> <span class="o">*</span> <span class="n">chi</span> <span class="o">/</span> <span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">pc</span><span class="o">.</span><span class="n">c0</span> <span class="o">*</span> <span class="n">pc</span><span class="o">.</span><span class="n">c0</span> <span class="o">*</span> <span class="n">pc</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">w0</span><span class="p">))</span>
+<span class="n">A0</span> <span class="o">=</span> <span class="n">Ns</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">pc</span><span class="o">.</span><span class="n">beta2</span><span class="p">(</span><span class="n">w0</span><span class="p">))</span> <span class="o">/</span> <span class="n">gam0</span><span class="p">)</span> <span class="o">/</span> <span class="n">t0</span>
+<span class="n">E_0t_fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">real</span><span class="p">(</span><span class="n">A0</span> <span class="o">*</span> <span class="n">sech</span><span class="p">(</span><span class="n">t</span> <span class="o">/</span> <span class="n">t0</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">w0</span> <span class="o">*</span> <span class="n">t</span><span class="p">))</span>
+<span class="n">Eps_0w</span> <span class="o">=</span> <span class="n">AS</span><span class="p">(</span><span class="n">E_0t_fun</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">))</span><span class="o">.</span><span class="n">w_rep</span>
+</pre></div>
+</div>
+<p>As model we here consider the forward model for the analytic signal (FMAS)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">FMAS</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">FMAS</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">beta_w</span><span class="o">=</span><span class="n">pc</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">),</span> <span class="n">chi</span><span class="o">=</span><span class="n">chi</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For the FMAS <span class="math notranslate nohighlight">\(z\)</span>-propagation model we consider a conserved quantity
+that is related to the classical analog of the photon number, see Eq. (24) of
+Ref. [AD2010] below. In particular we here implement</p>
+<div class="math notranslate nohighlight">
+\[C_p(z) = \sum_{\omega&gt;0} \omega^{-2} \beta(\omega) |u_\omega(z)|^2,\]</div>
+<p>which is, by default, provided as method <cite>model.claw</cite> .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">beta_w</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">)</span>  <span class="c1"># pre-compute beta(w) for convenience</span>
+
+
+<span class="k">def</span> <span class="nf">Cp</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">zi</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">uw</span><span class="p">):</span>
+    <span class="n">_a2_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">beta_w</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">uw</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">w</span> <span class="o">*</span> <span class="n">w</span><span class="p">,</span>
+        <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">),</span>
+        <span class="n">where</span><span class="o">=</span><span class="n">w</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">_a2_w</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As shown below, this conserved quantity can be provided when an instance of
+the desired solver is initialized. Here, for simply monitoring the
+conservation law we use the Runge-Kutta in the ineraction picture method.
+However, a proper conserved quantity is especially important when the
+conservation quantity error method (CQE) is used, see, e.g., demo</p>
+<p><a class="reference internal" href="../tests/g_performance_CQE.html#sphx-glr-auto-tutorials-tests-g-performance-cqe-py"><span class="std std-ref">Stepsize adaption in the CQE method</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">IFM_RK4IP</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">user_action</span><span class="o">=</span><span class="n">Cp</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">set_initial_condition</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">Eps_0w</span><span class="p">)</span>
+<span class="n">solver</span><span class="o">.</span><span class="n">propagate</span><span class="p">(</span><span class="n">z_range</span><span class="o">=</span><span class="mf">0.01e6</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">4000</span><span class="p">,</span> <span class="n">n_skip</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># (micron)  # (-)  # (-)</span>
+</pre></div>
+</div>
+<p>The figure below shows the dynamic evolution of the pulse in the time domain
+(top subfigure) and in the frequency domain (center subfigure). The subfigure
+at the bottom shows the normalized photon number variation</p>
+<div class="math notranslate nohighlight">
+\[\delta_{\rm{Ph}}(z) = \frac{ C_p(z)-C_p(0)}{C_p(0)}\]</div>
+<p>as function of the proapgation coordinate <span class="math notranslate nohighlight">\(z\)</span>. For the considered
+discretization of the computational domain the normalized photon number
+variation is of the order <span class="math notranslate nohighlight">\(\delta_{\rm{Ph}}\approx 10^{-7}\)</span> and thus
+very small. The value can be still decreased by decreasing the stepsize
+<span class="math notranslate nohighlight">\(\Delta z\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utz</span> <span class="o">=</span> <span class="n">change_reference_frame</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">,</span> <span class="n">pc</span><span class="o">.</span><span class="n">vg</span><span class="p">(</span><span class="n">w0</span><span class="p">))</span>
+
+<span class="n">plot_photon_number</span><span class="p">(</span>
+    <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">utz</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">ua_vals</span><span class="p">,</span> <span class="n">t_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">125</span><span class="p">),</span> <span class="n">w_lim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img alt="g FMAS" class="sphx-glr-single-img" src="../../_images/sphx_glr_g_FMAS_001.png" />
+<p><strong>References:</strong></p>
+<p>[AD2010] Sh. Amiranashvili, A. Demircan, Hamiltonian structure of propagation
+equations for ultrashort optical pulses, Phys. Rev. E 10 (2010) 013812,
+<a class="reference external" href="http://dx.doi.org/10.1103/PhysRevA.82.013812">http://dx.doi.org/10.1103/PhysRevA.82.013812</a>.</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.963 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-photon-number-conservation-g-fmas-py">
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/7943ff5efb5dec543e75e1af0bebe7f4/g_FMAS.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_FMAS.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/f1b7967ae3329c0d7d67a26c865f1e79/g_FMAS.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">g_FMAS.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../tests/g_performance_LEM.html" class="btn btn-neutral float-right" title="1.4.1. Stepsize adaption in the LEM method" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="g_FMAS_S_R.html" class="btn btn-neutral float-left" title="1.3.2. FMAS_S_R" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, O. Melchert.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -2,5 +2,5 @@ fmas.solver
 ===========
 
 .. automodule:: fmas.solver
-  :members:
+  :members: LEM, LEM_SySSM, CQE, CQE_RK4IP, SolverBaseClass, SySSM, SiSSM, IFM
   :show-inheritance:

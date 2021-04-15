@@ -5,12 +5,12 @@
 
 Computation times
 =================
-**00:06.561** total execution time for **auto_tutorials_tests** files:
+**00:30.750** total execution time for **auto_tutorials_tests** files:
 
 +--------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_tutorials_tests_g_performance_LEM.py` (``g_performance_LEM.py``) | 00:04.767 | 0.0 MB |
+| :ref:`sphx_glr_auto_tutorials_tests_g_error_scaling.py` (``g_error_scaling.py``)     | 00:30.750 | 0.0 MB |
 +--------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_tutorials_tests_g_performance_CQE.py` (``g_performance_CQE.py``) | 00:01.794 | 0.0 MB |
+| :ref:`sphx_glr_auto_tutorials_tests_g_performance_CQE.py` (``g_performance_CQE.py``) | 00:00.000 | 0.0 MB |
 +--------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_tutorials_tests_g_error_scaling.py` (``g_error_scaling.py``)     | 00:00.000 | 0.0 MB |
+| :ref:`sphx_glr_auto_tutorials_tests_g_performance_LEM.py` (``g_performance_LEM.py``) | 00:00.000 | 0.0 MB |
 +--------------------------------------------------------------------------------------+-----------+--------+

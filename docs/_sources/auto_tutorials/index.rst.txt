@@ -242,6 +242,86 @@ the implemented models and to compute spectrograms.
 
 
 
+.. _sphx_glr_auto_tutorials_photon_number_conservation:
+
+Photon number conservation
+--------------------------
+
+The examples provided in this gallery demonstrate the conservation of the
+photon number for the different models. Having available a proper conservation
+law is particularly important when the conservation quantity error method (CQE)
+is used for guiding step size adaption.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates photon number conservation for the simplified forward model for the ...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/photon_number_conservation/images/thumb/sphx_glr_g_FMAS_S_thumb.png
+     :alt: FMAS_S
+
+     :ref:`sphx_glr_auto_tutorials_photon_number_conservation_g_FMAS_S.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/photon_number_conservation/g_FMAS_S
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This examples demonstrates photon number conservation for the simplified forward model for the ...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/photon_number_conservation/images/thumb/sphx_glr_g_FMAS_S_R_thumb.png
+     :alt: FMAS_S_R
+
+     :ref:`sphx_glr_auto_tutorials_photon_number_conservation_g_FMAS_S_R.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/photon_number_conservation/g_FMAS_S_R
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates photon number conservation for the forward model for the analytic sig...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/photon_number_conservation/images/thumb/sphx_glr_g_FMAS_thumb.png
+     :alt: FMAS
+
+     :ref:`sphx_glr_auto_tutorials_photon_number_conservation_g_FMAS.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/photon_number_conservation/g_FMAS
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
 .. _sphx_glr_auto_tutorials_tests:
 
 Performance tests

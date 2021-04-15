@@ -180,7 +180,7 @@ References:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  22.851 seconds)
+   **Total running time of the script:** ( 1 minutes  21.680 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gallery_01_g_optfrog.py:

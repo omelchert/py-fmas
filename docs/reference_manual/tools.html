@@ -259,6 +259,29 @@ will be shown on log-scale (default=True).</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt id="fmas.tools.plot_photon_number">
+<code class="sig-prename descclassname"><span class="pre">fmas.tools.</span></code><code class="sig-name descname"><span class="pre">plot_photon_number</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_lim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DO_T_LOG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratio_Iw</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.tools.plot_photon_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a figure showing the photon number.</p>
+<p>Generates a plot showing the z-propagation characteristics of
+the squared magnitude field envelope (left subfigure) and
+the spectral intensity (right subfigure).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>z</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – <span class="math notranslate nohighlight">\(z\)</span>-grid.</p></li>
+<li><p><strong>t</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Temporal grid.</p></li>
+<li><p><strong>u</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Time-domain representation of analytic signal.</p></li>
+<li><p><strong>Cp</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Classical analog of photon number.</p></li>
+<li><p><strong>t_lim</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, 2-tuple) – Time range in the form (t_min, t_max) (default=None).</p></li>
+<li><p><strong>w_lim</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code>, 2-tuple) – Angular frequency range in the form (w_min,w_max) (default=None).</p></li>
+<li><p><strong>DO_T_LOG</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code>) – Flag indicating whether time-domain propagation characteristics
+will be shown on log-scale (default=True).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt id="fmas.tools.plot_spectrogram">
 <code class="sig-prename descclassname"><span class="pre">fmas.tools.</span></code><code class="sig-name descname"><span class="pre">plot_spectrogram</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t_delay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w_opt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P_tw</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.tools.plot_spectrogram" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a figure of a spectrogram.</p>

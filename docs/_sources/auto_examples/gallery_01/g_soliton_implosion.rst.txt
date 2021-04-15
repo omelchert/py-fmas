@@ -111,7 +111,7 @@ References:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 3 minutes  11.026 seconds)
+   **Total running time of the script:** ( 1 minutes  24.165 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gallery_01_g_soliton_implosion.py:

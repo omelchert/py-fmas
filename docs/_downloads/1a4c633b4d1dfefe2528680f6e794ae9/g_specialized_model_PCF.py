@@ -61,7 +61,6 @@ References:
 import fmas
 import numpy as np
 from fmas.models import CustomModelPCF
-from fmas.config import FTFREQ, FT, IFT
 from fmas.solver import IFM_RK4IP
 from fmas.analytic_signal import AS
 from fmas.grid import Grid
@@ -96,7 +95,7 @@ def main():
 
     # -- SHOW RESULTS
     plot_evolution( solver.z, grid.t, solver.utz,
-        t_lim = (-500,2200), w_lim = (1.,4.), DO_T_LOG = False)
+        t_lim = (-500,2200), w_lim = (1.,4.))
 
 
 if __name__=='__main__':

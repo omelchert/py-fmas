@@ -134,7 +134,7 @@ References:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 4 minutes  40.009 seconds)
+   **Total running time of the script:** ( 4 minutes  42.481 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gallery_01_g_four_pulse_interaction_ESM.py:

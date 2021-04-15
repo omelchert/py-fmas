@@ -149,7 +149,7 @@ References:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 6 minutes  1.985 seconds)
+   **Total running time of the script:** ( 6 minutes  8.820 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gallery_02_g_molecules_02.py:

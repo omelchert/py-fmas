@@ -292,7 +292,7 @@ References:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  34.205 seconds)
+   **Total running time of the script:** ( 0 minutes  34.113 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_specific_g_custom_propagation_model.py:

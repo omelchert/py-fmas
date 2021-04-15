@@ -213,16 +213,16 @@ the solvers below. If a user does not specify a <span class="math notranslate no
 each solver falls back to a reasonable default.</p>
 <p>Further <span class="math notranslate nohighlight">\(z\)</span>-propagation schemes can be implemented by using the
 class <a class="reference internal" href="#fmas.solver.SolverBaseClass" title="fmas.solver.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">SolverBaseClass</span></code></a>.</p>
-<span class="target" id="module-solver"></span><dl class="py attribute">
+<dl class="py attribute">
 <dt id="fmas.solver.CQE">
 <code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">CQE</span></code><a class="headerlink" href="#fmas.solver.CQE" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#fmas.solver.CQE_RK4IP" title="fmas.solver.CQE_RK4IP"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.CQE_RK4IP</span></code></a></p>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.conservation_quantity_error_method.CQE_RK4IP</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="fmas.solver.CQE_RK4IP">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">CQE_RK4IP</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">del_G=1e-05</span></em>, <em class="sig-param"><span class="pre">user_action=&lt;function</span> <span class="pre">CQE_RK4IP._default_CQE_fun&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.CQE_RK4IP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.solver.SolverBaseClass" title="fmas.solver.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.SolverBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.solver_base.SolverBaseClass</span></code></p>
 <p>Adaptive stepsize conservation quantity error (CQE) method.</p>
 <p>Implements <span class="math notranslate nohighlight">\(z\)</span>-propagation scheme with adaptive step size control,
 based on the conservation quantity error (CQE) method [1].
@@ -359,7 +359,7 @@ at <cite>z_curr</cite> + <cite>dz</cite>.</p>
 <dl class="py class">
 <dt id="fmas.solver.IFM">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">IFM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.IFM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.solver.SolverBaseClass" title="fmas.solver.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.SolverBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.solver_base.SolverBaseClass</span></code></p>
 <p>Fixed stepsize algorithm implementing the integrating factor
 method (IFM).</p>
 <p>Implements a fixed stepsize algorithm referred to as the integrating factor
@@ -393,7 +393,7 @@ current fiels.</p></li>
 </ul>
 </dd>
 </dl>
-<p>Aliased as <a class="reference internal" href="#fmas.solver.IFM_RK4IP" title="fmas.solver.IFM_RK4IP"><code class="xref py py-class docutils literal notranslate"><span class="pre">IFM_RK4IP</span></code></a>.</p>
+<p>Aliased as <code class="xref py py-class docutils literal notranslate"><span class="pre">IFM_RK4IP</span></code>.</p>
 <p class="rubric">References</p>
 <p>[1] A.-K. Kassam, L. N. Trefethen,
 Fourth-order time- stepping for stiff PDEs,
@@ -433,198 +433,15 @@ at <cite>z_curr</cite> + <cite>dz</cite>.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt id="fmas.solver.IFM_RK4IP">
-<code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">IFM_RK4IP</span></code><a class="headerlink" href="#fmas.solver.IFM_RK4IP" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#fmas.solver.IFM" title="fmas.solver.IFM"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.IFM</span></code></a></p>
-</dd></dl>
-
-<dl class="py attribute">
 <dt id="fmas.solver.LEM">
 <code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">LEM</span></code><a class="headerlink" href="#fmas.solver.LEM" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#fmas.solver.LEM_SySSM" title="fmas.solver.LEM_SySSM"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.LEM_SySSM</span></code></a></p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="fmas.solver.LEM_IFM">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">LEM_IFM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">del_G</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_action</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.LEM_IFM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.solver.SolverBaseClass" title="fmas.solver.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.SolverBaseClass</span></code></a></p>
-<p><span class="math notranslate nohighlight">\(z\)</span>-propagation algorithm implementing a modified local-error
-method (LEM-IFM)</p>
-<p>Implements a <span class="math notranslate nohighlight">\(z\)</span>-propagation scheme with adaptive step size controll,
-based on the local-error method (LEM) [1] in conjunction with a variant of
-the integrating factor method for which the reference position <span class="math notranslate nohighlight">\(z_0\)</span>
-coincides with as the starting position <span class="math notranslate nohighlight">\(z\)</span> of each substep.</p>
-<p>Here, the advantage is that when step-doubling, it is possible to exploit
-the fact that the full step, needed to compute the coarse solution, and the
-first half-step, needed to compute the fine solution, have one evaluation
-of the nonlinear function <span class="math notranslate nohighlight">\(\mathsf{N}\)</span> in common. Thus, a custom
-fourth-order Runge-Kutta scheme can be devised that exploits this
-redundancy and saves one evaluation of the nonlinear function.  In
-comparison to the number of evaluations of the nonlinear term needed to
-compute the fine solution, the overhead cost of a single local
-extrapolation is a factor 1.375.
-This is beneficial in cases where the evaluation of the nonlinear function
-comes at high computational cost, e.g. when the underlying propagation
-model accounts for the Raman effect.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul class="simple">
-<li><p>Local extrapolation yields increased accuracy. In the provided
-implementation, the field update is performed using a variant if
-the integrating factor method in conjunction with a fourth-order
-Runge-Kutta (RK4) formula. Here, a single field update based on
-local extrapolation achieves local error <span class="math notranslate nohighlight">\(\mathcal O(h^6)\)</span>
-scaling [2].</p></li>
-<li><p>As for the standard LEM,
-true advantage of the modified LEM is not the apparent higher
-order, but the possibility to control the performance of the
-algorithm by adapting the step size.</p></li>
-<li><p>In comparison to the number of evaluations of the nonlinear term
-<span class="math notranslate nohighlight">\(\mathsf{N}\)</span> needed to compute the fine solution, the
-overhead cost of a single local extrapolation is a factor 1.375.
-This is a result of the coarse step, requiring 4 evaluations of
-<span class="math notranslate nohighlight">\(\mathsf{N}\)</span>, and the fine step, requiring additional 7
-evaluations of <span class="math notranslate nohighlight">\(\mathsf{N}\)</span>.
-Compared to the 8 evaluations a sole fine step would need, this
-then amounts to an increase of a factor of 11/8 evaluations of
-<span class="math notranslate nohighlight">\(\mathsf{N}\)</span>.
-Thus, in comparison to the standard LEM and the LEM based on the
-Runge-Kutta in the interaction picture method [3], the overhead
-cost of step-doubling is about <span class="math notranslate nohighlight">\(10\%\)</span> smaller.</p></li>
-</ul>
-</div>
-<p class="rubric">References</p>
-<p>[1] O. V. Sinkin, R. Holzlöhner, J. Zweck, C. R. Menyuk,
-Optimization of the split-step Fourier method in modeling optical-fiber
-communications systems,
-IEEE J. Lightwave Tech. 21 (2003) 61,
-<a class="reference external" href="https://doi.org/10.1109/JLT.2003.808628">https://doi.org/10.1109/JLT.2003.808628</a>.</p>
-<p>[2] W. H. Press, S. A. Teukolsky, W. T. Vetterling, B. P. Flannery,
-Numerical Recipes in C: The art of scientific computing (Chapter 16.1),
-Cambridge University Press (1992).</p>
-<p>[3] A. M. Heidt,
-Efficient Adaptive Step Size Method for the Simulation of
-Supercontinuum Generation in Optical Fibers,
-IEEE J. Lightwave Tech. 27 (2009) 3984,
-<a class="reference external" href="https://doi.org/10.1109/JLT.2009.2021538">https://doi.org/10.1109/JLT.2009.2021538</a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>L</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Linear operator of the partial differential equation.</p></li>
-<li><p><strong>N</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Nonlinear operator of the partial differential equation.</p></li>
-<li><p><strong>stepper</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">function</span></code>) – z-stepping algorithm. Default is a 2nd-order Runge-Kutta formula.</p></li>
-<li><p><strong>del_G</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Goal local error (default is <cite>del_G = 1e-5</cite>).</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt id="fmas.solver.LEM_IFM.del_G">
-<code class="sig-name descname"><span class="pre">del_G</span></code><a class="headerlink" href="#fmas.solver.LEM_IFM.del_G" title="Permalink to this definition">¶</a></dt>
-<dd><p>Goal local error.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="fmas.solver.LEM_IFM.scale_fac">
-<code class="sig-name descname"><span class="pre">scale_fac</span></code><a class="headerlink" href="#fmas.solver.LEM_IFM.scale_fac" title="Permalink to this definition">¶</a></dt>
-<dd><p>Step size scaling factor (initialized as <cite>scale_fac = numpy.inf</cite>).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="fmas.solver.LEM_IFM.dz_a">
-<code class="sig-name descname"><span class="pre">dz_a</span></code><a class="headerlink" href="#fmas.solver.LEM_IFM.dz_a" title="Permalink to this definition">¶</a></dt>
-<dd><p>Local step size.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="fmas.solver.LEM_IFM._dz_a">
-<code class="sig-name descname"><span class="pre">_dz_a</span></code><a class="headerlink" href="#fmas.solver.LEM_IFM._dz_a" title="Permalink to this definition">¶</a></dt>
-<dd><p>Array accumulating local step size at the end of each
-<span class="math notranslate nohighlight">\(z\)</span>-slice.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt id="fmas.solver.LEM_IFM._del_rle">
-<code class="sig-name descname"><span class="pre">_del_rle</span></code><a class="headerlink" href="#fmas.solver.LEM_IFM._del_rle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Array accumulating the local relative error at the end of each
-<span class="math notranslate nohighlight">\(z\)</span>-slice.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="fmas.solver.LEM_IFM.clear">
-<code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.LEM_IFM.clear" title="Permalink to this definition">¶</a></dt>
-<dd><p>Clear instance attributes and reset parameters to initial values</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This method is implemented for the case when an instance of the
-solver is used for various simulation runs with possibly different
-initial conditions and <span class="math notranslate nohighlight">\(z\)</span>-interval discretizations.</p>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt id="fmas.solver.LEM_IFM.single_step">
-<code class="sig-name descname"><span class="pre">single_step</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z_curr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ew</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.LEM_IFM.single_step" title="Permalink to this definition">¶</a></dt>
-<dd><p>Advance field by a single <span class="math notranslate nohighlight">\(z\)</span>-slice</p>
-<p>Uses a custom fourth-order Runge-Kutta algorithm for step-doubling,
-exploiting the fortunate fact that the full step and the first
-half-step have one evaluation of the nonlinear function
-<span class="math notranslate nohighlight">\(\mathsf{N}\)</span> in common.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This method updates the instance attributes <cite>_dz_a</cite> and <cite>_del_rle</cite>,
-i.e.  lists accumulating the local step size at the end of each
-<span class="math notranslate nohighlight">\(z\)</span>-slize, and the associated relative local error,
-respectively.</p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>z_curr</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Current propagation distance.</p></li>
-<li><p><strong>Ew</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Frequency domain representation of the
-field at <cite>z_curr</cite>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Frequency domain representation of the field
-at <cite>z_curr</cite> + <cite>dz</cite>.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.local_error_method.LEM_SySSM</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="fmas.solver.LEM_SySSM">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">LEM_SySSM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">stepper=&lt;function</span> <span class="pre">RungeKutta2&gt;</span></em>, <em class="sig-param"><span class="pre">del_G=1e-05</span></em>, <em class="sig-param"><span class="pre">user_action=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.LEM_SySSM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.solver.SolverBaseClass" title="fmas.solver.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.SolverBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.solver_base.SolverBaseClass</span></code></p>
 <p>Adaptive stepsize local error method (LEM).</p>
 <p>Implements a <span class="math notranslate nohighlight">\(z\)</span>-propagation scheme with adaptive step size controll,
 referred to as the local error method (LEM) [1].  This method is based on
@@ -734,13 +551,6 @@ IEEE J. Lightwave Tech. 27 (2009) 3984,
 </dl>
 </dd></dl>
 
-<p class="rubric">Examples</p>
-<p>Initialize the LEM_SySSM solver:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">fmas</span>
-<span class="gp">...</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">my_solver</span> <span class="o">=</span> <span class="n">fmas</span><span class="o">.</span><span class="n">solver</span><span class="o">.</span><span class="n">LEM_SySSM</span>
-</pre></div>
-</div>
 <dl class="py method">
 <dt id="fmas.solver.LEM_SySSM.clear">
 <code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.LEM_SySSM.clear" title="Permalink to this definition">¶</a></dt>
@@ -787,7 +597,7 @@ at <cite>z_curr</cite> + <cite>dz</cite>.</p>
 <dl class="py class">
 <dt id="fmas.solver.SiSSM">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">SiSSM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">stepper=&lt;function</span> <span class="pre">RungeKutta2&gt;</span></em>, <em class="sig-param"><span class="pre">user_action=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.SiSSM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.solver.SolverBaseClass" title="fmas.solver.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.SolverBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.solver_base.SolverBaseClass</span></code></p>
 <p>Fixed stepsize algorithm implementing the simple split step
 method (SiSSM).</p>
 <p>Implements a fixed stepsize algorithm referred to as the simple split step
@@ -949,11 +759,6 @@ where the arguments are:</p>
 <li><p>uw (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>): Freuqency domain representation of the
 current fiels.</p></li>
 </ul>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">user_action</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">zi</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">uw</span><span class="p">):</span>
-    <span class="k">return</span> <span class="kc">None</span>
-</pre></div>
-</div>
 </p></li>
 </ul>
 </dd>
@@ -1041,7 +846,7 @@ stored</p>
 <dl class="py class">
 <dt id="fmas.solver.SySSM">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.solver.</span></code><code class="sig-name descname"><span class="pre">SySSM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">L</span></em>, <em class="sig-param"><span class="pre">N</span></em>, <em class="sig-param"><span class="pre">stepper=&lt;function</span> <span class="pre">RungeKutta4&gt;</span></em>, <em class="sig-param"><span class="pre">user_action=None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.solver.SySSM" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#fmas.solver.SolverBaseClass" title="fmas.solver.SolverBaseClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.SolverBaseClass</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.solver.solver_base.SolverBaseClass</span></code></p>
 <p>Fixed stepsize algorithm implementing the symmetric split step
 method (SySSM).</p>
 <p>Implements a fixed stepsize algorithm referred to as the symmetric split

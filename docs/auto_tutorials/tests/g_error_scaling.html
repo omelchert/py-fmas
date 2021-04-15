@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>1.3.3. Scaling behavior of global errors &mdash; py-fmas 0.0.1 documentation</title>
+  <title>1.4.3. Scaling behavior of global errors &mdash; py-fmas 0.0.1 documentation</title>
   
 
   
@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Usage examples" href="../../auto_examples/index.html" />
-    <link rel="prev" title="1.3.2. Stepsize adaption in the CQE method" href="g_performance_CQE.html" /> 
+    <link rel="prev" title="1.4.2. Stepsize adaption in the CQE method" href="g_performance_CQE.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -94,10 +94,11 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">1. Extended user guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../index.html#basic-examples">1.1. Basic examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#more-specific-examples">1.2. More specific examples</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html#performance-tests">1.3. Performance tests</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="g_performance_LEM.html">1.3.1. Stepsize adaption in the LEM method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="g_performance_CQE.html">1.3.2. Stepsize adaption in the CQE method</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">1.3.3. Scaling behavior of global errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#photon-number-conservation">1.3. Photon number conservation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#performance-tests">1.4. Performance tests</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="g_performance_LEM.html">1.4.1. Stepsize adaption in the LEM method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="g_performance_CQE.html">1.4.2. Stepsize adaption in the CQE method</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">1.4.3. Scaling behavior of global errors</a></li>
 </ul>
 </li>
 </ul>
@@ -155,7 +156,7 @@
         
           <li><a href="../index.html"><span class="section-number">1. </span>Extended user guide</a> &raquo;</li>
         
-      <li><span class="section-number">1.3.3. </span>Scaling behavior of global errors</li>
+      <li><span class="section-number">1.4.3. </span>Scaling behavior of global errors</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -180,7 +181,7 @@
 to download the full example code</p>
 </div>
 <div class="sphx-glr-example-title section" id="scaling-behavior-of-global-errors">
-<span id="sphx-glr-auto-tutorials-tests-g-error-scaling-py"></span><h1><span class="section-number">1.3.3. </span>Scaling behavior of global errors<a class="headerlink" href="#scaling-behavior-of-global-errors" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-tutorials-tests-g-error-scaling-py"></span><h1><span class="section-number">1.4.3. </span>Scaling behavior of global errors<a class="headerlink" href="#scaling-behavior-of-global-errors" title="Permalink to this headline">¶</a></h1>
 <p>This example demonstrates the accuracy of the various <span class="math notranslate nohighlight">\(z\)</span>-propagation
 algorithms. As test case, the propagation dynamics of a fundamental soliton in
 terms of the standard nonlinear Schrödinger equation is considered. For this
@@ -194,7 +195,7 @@ experiments:</p>
 <span class="kn">import</span> <span class="nn">numpy.fft</span> <span class="k">as</span> <span class="nn">nfft</span>
 <span class="kn">from</span> <span class="nn">fmas.models</span> <span class="kn">import</span> <span class="n">ModelBaseClass</span>
 <span class="kn">from</span> <span class="nn">fmas.config</span> <span class="kn">import</span> <span class="n">FTFREQ</span><span class="p">,</span> <span class="n">FT</span><span class="p">,</span> <span class="n">IFT</span><span class="p">,</span> <span class="n">C0</span>
-<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">SiSSM</span><span class="p">,</span> <span class="n">SySSM</span><span class="p">,</span> <span class="n">IFM_RK4IP</span><span class="p">,</span> <span class="n">LEM_SySSM</span><span class="p">,</span> <span class="n">LEM_IFM</span><span class="p">,</span> <span class="n">CQE</span>
+<span class="kn">from</span> <span class="nn">fmas.solver</span> <span class="kn">import</span> <span class="n">SiSSM</span><span class="p">,</span> <span class="n">SySSM</span><span class="p">,</span> <span class="n">IFM_RK4IP</span><span class="p">,</span> <span class="n">LEM_SySSM</span><span class="p">,</span> <span class="n">CQE</span>
 <span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
 </pre></div>
 </div>
@@ -259,8 +260,7 @@ the sequence of step sizes and the corresponding error values:</p>
         <span class="s1">&#39;SySSM&#39;</span><span class="p">:</span> <span class="n">SySSM</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">),</span>
         <span class="s1">&#39;IFM&#39;</span><span class="p">:</span> <span class="n">IFM_RK4IP</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">),</span>
         <span class="s1">&#39;LEM&#39;</span><span class="p">:</span> <span class="n">LEM_SySSM</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">),</span>
-        <span class="s1">&#39;CQE&#39;</span><span class="p">:</span> <span class="n">CQE</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">del_G</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">),</span>
-        <span class="s1">&#39;MLEM&#39;</span><span class="p">:</span> <span class="n">LEM_IFM</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">)</span>
+        <span class="s1">&#39;CQE&#39;</span><span class="p">:</span> <span class="n">CQE</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Lw</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">Nw</span><span class="p">,</span> <span class="n">del_G</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">)</span>
     <span class="p">}</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">my_solver</span> <span class="o">=</span> <span class="n">switcher</span><span class="p">[</span><span class="n">mode</span><span class="p">]</span>
@@ -377,7 +377,7 @@ J. Light- wave Tech. 25 (2007) 3770,
 <a class="reference external" href="https://doi.org/10.1109/JLT.2007.909373">https://doi.org/10.1109/JLT.2007.909373</a>.</p>
 </dd>
 </dl>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  30.640 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  30.750 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-tests-g-error-scaling-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/923e8dba5051ba5787fdbf0dc3aa8adf/g_error_scaling.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_error_scaling.py</span></code></a></p>
@@ -396,7 +396,7 @@ J. Light- wave Tech. 25 (2007) 3770,
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../../auto_examples/index.html" class="btn btn-neutral float-right" title="2. Usage examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="g_performance_CQE.html" class="btn btn-neutral float-left" title="1.3.2. Stepsize adaption in the CQE method" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="g_performance_CQE.html" class="btn btn-neutral float-left" title="1.4.2. Stepsize adaption in the CQE method" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

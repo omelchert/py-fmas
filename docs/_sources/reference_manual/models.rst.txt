@@ -2,6 +2,6 @@ fmas.models
 ===========
 
 .. automodule:: fmas.models
-  :members:
+  :members: ModelBaseClass, FMAS_THG, FMAS_S_Raman, FMAS_S_R, FMAS_S, FMAS, BMCF, CustomModelPCF
   :show-inheritance:
 
