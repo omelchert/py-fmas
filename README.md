@@ -22,7 +22,7 @@ provided Python3 wheel in the following way
 ```
 $ git clone https://github.com/omelchert/py-fmas.git
 $ cd ./py-fmas/dist 
-$ python3 -m pip install py_fmas-1.3.0.whl
+$ python3 -m pip install py_fmas-1.3.0-py3-none-any.whl
 ```
 
 ## Further information
