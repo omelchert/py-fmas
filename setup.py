@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = "py-fmas",
-    version = "1.3.0",
+    version = "1.0",
     author = "Oliver Melchert",
     author_email = "melchert@iqo.uni-hannover.de",
     description = "Ultrashort optical pulse propagation in terms of the analytic signal",
