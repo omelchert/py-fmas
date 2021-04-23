@@ -47,7 +47,7 @@ is used.
     from fmas.analytic_signal import AS
     from fmas.grid import Grid
     from fmas.propagation_constant import PropConst, define_beta_fun_ESM
-    from fmas.tools import sech, change_reference_frame, plot_photon_number
+    from fmas.tools import sech, change_reference_frame, plot_claw
 
     beta_fun = define_beta_fun_ESM()
     pc = PropConst(beta_fun)
@@ -155,11 +155,12 @@ conservation quantity error method (CQE) is used, see, e.g., demo
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-102
+.. GENERATED FROM PYTHON SOURCE LINES 90-103
 
 The figure below shows the dynamic evolution of the pulse in the time domain
 (top subfigure) and in the frequency domain (center subfigure). The subfigure
-at the bottom shows the normalized photon number variation
+at the bottom shows the conservation law (c-law) given by the normalized
+photon number variation
 
 .. math::
    \delta_{\rm{Ph}}(z) = \frac{ C_p(z)-C_p(0)}{C_p(0)}
@@ -170,14 +171,14 @@ variation is of the order :math:`\delta_{\rm{Ph}}\approx 10^{-7}` and thus
 very small. The value can be still decreased by decreasing the stepsize
 :math:`\Delta z`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-109
+.. GENERATED FROM PYTHON SOURCE LINES 103-110
 
 .. code-block:: default
 
 
     utz = change_reference_frame(solver.w, solver.z, solver.uwz, pc.vg(w0))
 
-    plot_photon_number(
+    plot_claw(
         solver.z, grid.t, utz, solver.ua_vals, t_lim=(-25, 125), w_lim=(0.5, 4.5)
     )
 
@@ -192,7 +193,7 @@ very small. The value can be still decreased by decreasing the stepsize
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-115
+.. GENERATED FROM PYTHON SOURCE LINES 111-116
 
 **References:**
 
@@ -203,7 +204,7 @@ http://dx.doi.org/10.1103/PhysRevA.82.013812.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  24.963 seconds)
+   **Total running time of the script:** ( 0 minutes  25.543 seconds)
 
 
 .. _sphx_glr_download_auto_tutorials_photon_number_conservation_g_FMAS.py:

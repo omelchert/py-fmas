@@ -322,6 +322,85 @@ is used for guiding step size adaption.
 
 
 
+.. _sphx_glr_auto_tutorials_attenuation:
+
+Attenuation
+-----------
+
+The examples provided in this gallery demonstrate how to use models that
+incorporate loss in terms of an absorption constant or a frequency dependent
+absorption profile.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to use models along with a realistic attenuation profile.">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/attenuation/images/thumb/sphx_glr_g_absorption_profile_thumb.png
+     :alt: Attenuation of a NLPM750 fiber
+
+     :ref:`sphx_glr_auto_tutorials_attenuation_g_absorption_profile.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/attenuation/g_absorption_profile
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to perform simulations for the nonlinear Schrödinger equation inc...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/attenuation/images/thumb/sphx_glr_g_NSE_absorption_constant_thumb.png
+     :alt: Nonlinear Schrödinger equation with loss
+
+     :ref:`sphx_glr_auto_tutorials_attenuation_g_NSE_absorption_constant.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/attenuation/g_NSE_absorption_constant
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" .. codeauthor:: Oliver Melchert &lt;melchert@iqo.uni-hannover.de&gt;">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/attenuation/images/thumb/sphx_glr_ng_fiber_details_nlpm750_thumb.png
+     :alt: NLPM750 fiber model with loss
+
+     :ref:`sphx_glr_auto_tutorials_attenuation_ng_fiber_details_nlpm750.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/attenuation/ng_fiber_details_nlpm750
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
 .. _sphx_glr_auto_tutorials_tests:
 
 Performance tests

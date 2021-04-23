@@ -100,7 +100,8 @@
 <li class="toctree-l3"><a class="reference internal" href="g_FMAS.html">1.3.3. FMAS</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../index.html#performance-tests">1.4. Performance tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#attenuation">1.4. Attenuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#performance-tests">1.5. Performance tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../auto_examples/index.html">2. Usage examples</a></li>
@@ -197,7 +198,7 @@ initialization.</p>
 <span class="kn">from</span> <span class="nn">fmas.analytic_signal</span> <span class="kn">import</span> <span class="n">AS</span>
 <span class="kn">from</span> <span class="nn">fmas.grid</span> <span class="kn">import</span> <span class="n">Grid</span>
 <span class="kn">from</span> <span class="nn">fmas.propagation_constant</span> <span class="kn">import</span> <span class="n">PropConst</span><span class="p">,</span> <span class="n">define_beta_fun_ESM</span>
-<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">sech</span><span class="p">,</span> <span class="n">change_reference_frame</span><span class="p">,</span> <span class="n">plot_photon_number</span>
+<span class="kn">from</span> <span class="nn">fmas.tools</span> <span class="kn">import</span> <span class="n">sech</span><span class="p">,</span> <span class="n">change_reference_frame</span><span class="p">,</span> <span class="n">plot_claw</span>
 
 <span class="n">beta_fun</span> <span class="o">=</span> <span class="n">define_beta_fun_ESM</span><span class="p">()</span>
 <span class="n">pc</span> <span class="o">=</span> <span class="n">PropConst</span><span class="p">(</span><span class="n">beta_fun</span><span class="p">)</span>
@@ -245,7 +246,8 @@ conservation quantity error method (CQE) is used, see, e.g., demo</p>
 </div>
 <p>The figure below shows the dynamic evolution of the pulse in the time domain
 (top subfigure) and in the frequency domain (center subfigure). The subfigure
-at the bottom shows the normalized photon number variation</p>
+at the bottom shows the conservation law (c-law) given by the normalized
+photon number variation</p>
 <div class="math notranslate nohighlight">
 \[\delta_{\rm{Ph}}(z) = \frac{ C_p(z)-C_p(0)}{C_p(0)}\]</div>
 <p>as function of the proapgation coordinate <span class="math notranslate nohighlight">\(z\)</span>. For the considered
@@ -255,7 +257,7 @@ very small. The value can be still decreased by decreasing the stepsize
 <span class="math notranslate nohighlight">\(\Delta z\)</span>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">utz</span> <span class="o">=</span> <span class="n">change_reference_frame</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">uwz</span><span class="p">,</span> <span class="n">pc</span><span class="o">.</span><span class="n">vg</span><span class="p">(</span><span class="n">w0</span><span class="p">))</span>
 
-<span class="n">plot_photon_number</span><span class="p">(</span>
+<span class="n">plot_claw</span><span class="p">(</span>
     <span class="n">solver</span><span class="o">.</span><span class="n">z</span><span class="p">,</span> <span class="n">grid</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">utz</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">ua_vals</span><span class="p">,</span> <span class="n">t_lim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">125</span><span class="p">),</span> <span class="n">w_lim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
@@ -268,7 +270,7 @@ equations for ultrashort optical pulses, Phys. Rev. E 10 (2010) 013812,
 <p>[BW1989] K. J. Blow, D. Wood, Theoretical description of transient stimulated
 Raman scattering in optical fibers.  IEEE J. Quantum Electron., 25 (1989)
 1159, <a class="reference external" href="https://doi.org/10.1109/3.40655">https://doi.org/10.1109/3.40655</a>.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  33.807 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  33.755 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-tutorials-photon-number-conservation-g-fmas-s-r-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/0af33a4de3879aeb2bb6e39ef26f7d90/g_FMAS_S_R.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">g_FMAS_S_R.py</span></code></a></p>

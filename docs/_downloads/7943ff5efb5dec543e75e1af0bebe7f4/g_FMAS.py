@@ -24,7 +24,7 @@ from fmas.solver import IFM_RK4IP
 from fmas.analytic_signal import AS
 from fmas.grid import Grid
 from fmas.propagation_constant import PropConst, define_beta_fun_ESM
-from fmas.tools import sech, change_reference_frame, plot_photon_number
+from fmas.tools import sech, change_reference_frame, plot_claw
 
 beta_fun = define_beta_fun_ESM()
 pc = PropConst(beta_fun)
@@ -89,7 +89,8 @@ solver.propagate(z_range=0.01e6, n_steps=4000, n_skip=8)  # (micron)  # (-)  # (
 ###############################################################################
 # The figure below shows the dynamic evolution of the pulse in the time domain
 # (top subfigure) and in the frequency domain (center subfigure). The subfigure
-# at the bottom shows the normalized photon number variation
+# at the bottom shows the conservation law (c-law) given by the normalized
+# photon number variation
 #
 # .. math::
 #    \delta_{\rm{Ph}}(z) = \frac{ C_p(z)-C_p(0)}{C_p(0)}
@@ -102,7 +103,7 @@ solver.propagate(z_range=0.01e6, n_steps=4000, n_skip=8)  # (micron)  # (-)  # (
 
 utz = change_reference_frame(solver.w, solver.z, solver.uwz, pc.vg(w0))
 
-plot_photon_number(
+plot_claw(
     solver.z, grid.t, utz, solver.ua_vals, t_lim=(-25, 125), w_lim=(0.5, 4.5)
 )
 

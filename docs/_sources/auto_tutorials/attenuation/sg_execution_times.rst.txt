@@ -1,0 +1,16 @@
+
+:orphan:
+
+.. _sphx_glr_auto_tutorials_attenuation_sg_execution_times:
+
+Computation times
+=================
+**00:01.820** total execution time for **auto_tutorials_attenuation** files:
+
++------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_attenuation_g_absorption_profile.py` (``g_absorption_profile.py``)           | 00:01.820 | 0.0 MB |
++------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_attenuation_g_NSE_absorption_constant.py` (``g_NSE_absorption_constant.py``) | 00:00.000 | 0.0 MB |
++------------------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_attenuation_ng_fiber_details_nlpm750.py` (``ng_fiber_details_nlpm750.py``)   | 00:00.000 | 0.0 MB |
++------------------------------------------------------------------------------------------------------------+-----------+--------+

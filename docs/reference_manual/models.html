@@ -316,7 +316,7 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 
 <dl class="py class">
 <dt id="fmas.models.FMAS">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Forward-model for the analytic signal.</p>
 <p>Implements the forward-model for the analytic signal (FMAS) [1,2]. In
@@ -333,6 +333,7 @@ Propagation in terms of Analytic Signal, Adv. Opt. Tech. 2011 (2011)
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency grid.</p></li>
 <li><p><strong>beta_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Propagation constant.</p></li>
+<li><p><strong>alpha_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Frequency-domain representation of root-power loss.</p></li>
 <li><p><strong>chi</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Nonlinear susceptibility (default=1.0).</p></li>
 </ul>
 </dd>
@@ -400,7 +401,7 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 
 <dl class="py class">
 <dt id="fmas.models.FMAS_S">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_S</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS_S" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_S</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS_S" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Simplified variant of the forward-model for the analytic signal.</p>
 <p>Implements a simplified variant of the forward-model for the analytic
@@ -418,6 +419,7 @@ event horizon, Appl. Phys. B 115 (2014) 343,
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency grid.</p></li>
 <li><p><strong>beta_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Propagation constant.</p></li>
+<li><p><strong>alpha_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Frequency-domain representation of root-power loss.</p></li>
 <li><p><strong>n2</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Nonlinear refractive index (default=1.0).</p></li>
 </ul>
 </dd>
@@ -491,7 +493,7 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 
 <dl class="py class">
 <dt id="fmas.models.FMAS_S_Raman">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_S_Raman</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS_S_Raman" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">FMAS_S_Raman</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fR</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.18</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tau2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.FMAS_S_Raman" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">fmas.models.model_base.ModelBaseClass</span></code></p>
 <p>Simplified variant of the forward-model for the analytic signal
 including the Raman effect.</p>
@@ -509,6 +511,7 @@ event horizon, Appl. Phys. B 115 (2014) 343,
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency grid.</p></li>
 <li><p><strong>beta_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Propagation constant.</p></li>
+<li><p><strong>alpha_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Frequency-domain representation of root-power loss.</p></li>
 <li><p><strong>n2</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Nonlinear refractive index (default=1.0).</p></li>
 <li><p><strong>fR</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Fractional raman response (default=0.18).</p></li>
 <li><p><strong>tau1</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code>) – Time scale associated with oscillator angular
@@ -663,7 +666,7 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 
 <dl class="py class">
 <dt id="fmas.models.ModelBaseClass">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">ModelBaseClass</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.ModelBaseClass" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">fmas.models.</span></code><code class="sig-name descname"><span class="pre">ModelBaseClass</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta_w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_w</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmas.models.ModelBaseClass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for propagation models.</p>
 <dl class="py attribute">
@@ -689,6 +692,17 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 </dd></dl>
 
 <dl class="py attribute">
+<dt id="fmas.models.ModelBaseClass.alpha_w">
+<code class="sig-name descname"><span class="pre">alpha_w</span></code><a class="headerlink" href="#fmas.models.ModelBaseClass.alpha_w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequency-domain representation of root-power loss.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
 <dt id="fmas.models.ModelBaseClass.c0">
 <code class="sig-name descname"><span class="pre">c0</span></code><a class="headerlink" href="#fmas.models.ModelBaseClass.c0" title="Permalink to this definition">¶</a></dt>
 <dd><p>speed of light</p>
@@ -704,6 +718,7 @@ current <span class="math notranslate nohighlight">\(z\)</span>-position.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Angular frequency grid.</p></li>
 <li><p><strong>beta_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Frequency-domain representation of propagation constant.</p></li>
+<li><p><strong>alpha_w</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>) – Frequency-domain representation of root-power loss (default: None).</p></li>
 </ul>
 </dd>
 </dl>
