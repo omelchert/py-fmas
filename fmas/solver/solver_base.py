@@ -96,21 +96,21 @@ class SolverBaseClass:
         """
         w, ua_fun = self.w, self.ua_fun
         # -- INITIALIZE Z-SLICES
-        z_, self.dz_ = np.linspace(0, z_range, n_steps + 1, retstep=True)
-        #pb = ProgressBar(num_iter=z_.size - 1, bar_len=60)
+        self.z_, self.dz_ = np.linspace(0, z_range, n_steps + 1, retstep=True)
+        pb = ProgressBar(num_iter=self.z_.size - 1, bar_len=60)
         uw = self._uwz[0]
         if ua_fun is not None:
-            self.ua_vals.append(ua_fun(0, z_[0], w, uw))
+            self.ua_vals.append(ua_fun(0, self.z_[0], w, uw))
         # -- SOLVE FOR SUBSEQUENT Z-SLICES
-        for i in range(1, z_.size):
-            uw = self.single_step(z_[i], uw)
+        for i in range(1, self.z_.size):
+            uw = self.single_step(self.z_[i], uw)
             if i % n_skip == 0:
                 self._uwz.append(uw)
-                self._z.append(z_[i])
+                self._z.append(self.z_[i])
                 if ua_fun is not None:
-                    self.ua_vals.append(ua_fun(i, z_[i], w, uw))
-            #pb.update(i)
-        #pb.finish()
+                    self.ua_vals.append(ua_fun(i, self.z_[i], w, uw))
+            pb.update(i)
+        pb.finish()
 
     @property
     def utz(self):
