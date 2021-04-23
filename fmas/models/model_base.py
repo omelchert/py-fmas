@@ -15,6 +15,8 @@ class ModelBaseClass:
             Angular frequency grid.
         beta_w (:obj:`numpy.ndarray`):
             Frequency-domain representation of propagation constant.
+        alpha_w (:obj:`numpy.ndarray`):
+            Frequency-domain representation of root-power loss.
         c0 (:obj:`float`): speed of light
 
     Args:
@@ -22,10 +24,13 @@ class ModelBaseClass:
             Angular frequency grid.
         beta_w (:obj:`numpy.ndarray`):
             Frequency-domain representation of propagation constant.
+        alpha_w (:obj:`numpy.ndarray`):
+            Frequency-domain representation of root-power loss (default: None).
     """
 
-    def __init__(self, w, beta_w):
+    def __init__(self, w, beta_w, alpha_w=None):
         self.beta_w = beta_w
+        self.alpha_w = alpha_w
         self.w = w
         self.c0 = C0
 

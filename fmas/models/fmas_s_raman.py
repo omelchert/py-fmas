@@ -30,6 +30,8 @@ class FMAS_S_Raman(ModelBaseClass):
             Angular frequency grid.
         beta_w (:obj:`numpy.ndarray`):
             Propagation constant.
+        alpha_w (:obj:`numpy.ndarray`):
+            Frequency-domain representation of root-power loss.
         n2 (:obj:`float`):
             Nonlinear refractive index (default=1.0).
         fR (:obj:`float`):
@@ -42,8 +44,8 @@ class FMAS_S_Raman(ModelBaseClass):
             frequency in Lorentz model of Raman response (default=32.0 fs).
     """
 
-    def __init__(self, w, beta_w, n2, fR=0.18, tau1=12.2, tau2=32.0):
-        super().__init__(w, beta_w)
+    def __init__(self, w, beta_w, alpha_w=0.0, n2=1.0, fR=0.18, tau1=12.2, tau2=32.0):
+        super().__init__(w, beta_w, alpha_w)
         self.n2 = n2
         self.fR = fR
         self.hRw = self._initialize_Raman_response(tau1, tau2)
@@ -74,7 +76,7 @@ class FMAS_S_Raman(ModelBaseClass):
             :obj:`numpy.ndarray`: Frequency-domain representation of linear
             operator of the partial differential equation.
         """
-        return 1j * self.beta_w
+        return 1j * self.beta_w - self.alpha_w
 
     def Nw(self, uw):
         r"""Frequency-domain representation of nonlinear operator.

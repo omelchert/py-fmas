@@ -29,12 +29,14 @@ class FMAS_S(ModelBaseClass):
             Angular frequency grid.
         beta_w (:obj:`numpy.ndarray`):
             Propagation constant.
+        alpha_w (:obj:`numpy.ndarray`):
+            Frequency-domain representation of root-power loss.
         n2 (:obj:`float`):
             Nonlinear refractive index (default=1.0).
     """
 
-    def __init__(self, w, beta_w, n2):
-        super().__init__(w, beta_w)
+    def __init__(self, w, beta_w, n2=1.0, alpha_w=0.0):
+        super().__init__(w, beta_w, alpha_w)
         self.n2 = n2
 
     @property
@@ -45,7 +47,7 @@ class FMAS_S(ModelBaseClass):
             :obj:`numpy.ndarray`: Frequency-domain representation of linear
             operator of the partial differential equation.
         """
-        return 1j * self.beta_w
+        return 1j * self.beta_w - self.alpha_w
 
     def Nw(self, uw):
         r"""Frequency-domain representation of nonlinear operator.
