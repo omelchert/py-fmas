@@ -329,8 +329,8 @@ def plot_details_prop_const(w, vg, beta2):
     plt.show()
 
 
-def plot_photon_number(z, t, u, Cp, t_lim=None, w_lim=None, DO_T_LOG=False, ratio_Iw=1e-6):
-    """Generate a figure showing the photon number.
+def plot_claw(z, t, u, Cp, t_lim=None, w_lim=None, DO_T_LOG=False, ratio_Iw=1e-6):
+    """Generate a figure showing the conservation law.
 
     Generates a plot showing the z-propagation characteristics of
     the squared magnitude field envelope (left subfigure) and
@@ -433,7 +433,7 @@ def plot_photon_number(z, t, u, Cp, t_lim=None, w_lim=None, DO_T_LOG=False, rati
     ax2.xaxis.set_ticks_position("bottom")
     ax2.yaxis.set_ticks_position("left")
     ax2.set_ylim(w_lim)
-    ax2.set_yticks((1,2,3,4))
+    #ax2.set_yticks((1,2,3,4))
     ax2.set_xlim([0.0, z.max()])
     ax2.set_ylabel(r"$\omega~\mathrm{(rad/fs)}$")
     ax2.ticklabel_format(useOffset=False, style="plain")
@@ -447,7 +447,8 @@ def plot_photon_number(z, t, u, Cp, t_lim=None, w_lim=None, DO_T_LOG=False, rati
     ax3.set_xlim([0.0, z.max()])
     ax3.ticklabel_format(useOffset=False, style="sci")
     ax3.set_xlabel(r"Propagation distance $z~\mathrm{(\mu m)}$")
-    ax3.set_ylabel(r"$\delta_{\rm{Ph}}$")
+    ax3.set_ylabel(r"c-law")
+    #ax3.set_ylabel(r"$\delta_{\rm{Ph}}$")
 
     plt.show()
 
