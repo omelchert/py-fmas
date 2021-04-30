@@ -5,7 +5,7 @@ If you use `py-fmas` in your work, please cite the `py-fmas` methods manuscript:
 
 - O. Melchert, A. Demircan, A python package for ultrashort optical pulse
   propagation in terms of forward models for the analytic signal,
-  arXig:2104.11649, https://arxiv.org/abs/2104.11649.
+  arXiv:2104.11649, https://arxiv.org/abs/2104.11649.
 
 Below you find a list of articles that used some of the :math:`z`-proapgation
 models and algorithms implemented by the `py-fmas` package:
