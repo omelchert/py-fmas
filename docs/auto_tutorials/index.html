@@ -36,6 +36,7 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -122,6 +123,12 @@
 <li class="toctree-l3"><a class="reference internal" href="tests/g_performance_LEM.html">1.5.1. Stepsize adaption in the LEM method</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests/g_performance_CQE.html">1.5.2. Stepsize adaption in the CQE method</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tests/g_error_scaling.html">1.5.3. Scaling behavior of global errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#propagation-errors">1.6. Propagation errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="errors/g_error_dealiasing.html">1.6.1. Implementing an anti-aliasing technique with a model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="errors/g_error_3rdOrderSoliton.html">1.6.2. Propagation errors caused by a too narrow frequency window</a></li>
+<li class="toctree-l3"><a class="reference internal" href="errors/g_instabilities_dz.html">1.6.3. Numerical instabilities of the Nonlinear Schrödinger Equation</a></li>
 </ul>
 </li>
 </ul>
@@ -337,6 +344,35 @@ equation.</p>
 <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates the accuracy of the various z-propagation algorithms. As test case, t..."><div class="figure align-default" id="id19">
 <img alt="Scaling behavior of global errors" src="../_images/sphx_glr_g_error_scaling_thumb.png" />
 <p class="caption"><span class="caption-text"><a class="reference internal" href="tests/g_error_scaling.html#sphx-glr-auto-tutorials-tests-g-error-scaling-py"><span class="std std-ref">Scaling behavior of global errors</span></a></span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div></div>
+<div class="section" id="propagation-errors">
+<span id="sphx-glr-auto-tutorials-errors"></span><h2><span class="section-number">1.6. </span>Propagation errors<a class="headerlink" href="#propagation-errors" title="Permalink to this headline">¶</a></h2>
+<p>The step-by-step demonstrations in this gallery demonstrate propagation errors
+that can occur when the computational domain does not properly support the
+intendet propagation scenario. We include these to assist users to identify
+possible error sources, and to raise awareness to ensure that the propagation
+<span class="math notranslate nohighlight">\(z\)</span>-increment is small enough, the computational domain is large enough,
+and to bear in mind the periodic boundary conditions along the time-axis.
+All test cases are implemented on basis of the standard nonlinear Schrödinger
+equation.</p>
+<div class="sphx-glr-thumbcontainer" tooltip=" When performing nonlinear computations on discrete grids, it is important to choose the time w..."><div class="figure align-default" id="id20">
+<img alt="Implementing an anti-aliasing technique with a model" src="../_images/sphx_glr_g_error_dealiasing_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="errors/g_error_dealiasing.html#sphx-glr-auto-tutorials-errors-g-error-dealiasing-py"><span class="std std-ref">Implementing an anti-aliasing technique with a model</span></a></span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates that if the computational domain does not support the propagation sce..."><div class="figure align-default" id="id21">
+<img alt="Propagation errors caused by a too narrow frequency window" src="../_images/sphx_glr_g_error_3rdOrderSoliton_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="errors/g_error_3rdOrderSoliton.html#sphx-glr-auto-tutorials-errors-g-error-3rdordersoliton-py"><span class="std std-ref">Propagation errors caused by a too narrow frequency window</span></a></span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates numerical instabilities that build up during simulations of the stand..."><div class="figure align-default" id="id22">
+<img alt="Numerical instabilities of the Nonlinear Schrödinger Equation" src="../_images/sphx_glr_g_instabilities_dz_thumb.png" />
+<p class="caption"><span class="caption-text"><a class="reference internal" href="errors/g_instabilities_dz.html#sphx-glr-auto-tutorials-errors-g-instabilities-dz-py"><span class="std std-ref">Numerical instabilities of the Nonlinear Schrödinger Equation</span></a></span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 </div><div class="toctree-wrapper compound">
 </div>

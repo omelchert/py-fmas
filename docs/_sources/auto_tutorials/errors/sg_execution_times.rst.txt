@@ -1,0 +1,16 @@
+
+:orphan:
+
+.. _sphx_glr_auto_tutorials_errors_sg_execution_times:
+
+Computation times
+=================
+**00:09.406** total execution time for **auto_tutorials_errors** files:
+
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_errors_g_error_dealiasing.py` (``g_error_dealiasing.py``)           | 00:09.406 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_errors_g_error_3rdOrderSoliton.py` (``g_error_3rdOrderSoliton.py``) | 00:00.000 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_auto_tutorials_errors_g_instabilities_dz.py` (``g_instabilities_dz.py``)           | 00:00.000 | 0.0 MB |
++---------------------------------------------------------------------------------------------------+-----------+--------+

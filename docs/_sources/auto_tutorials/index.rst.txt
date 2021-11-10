@@ -482,6 +482,91 @@ equation.
 
 
 
+.. _sphx_glr_auto_tutorials_errors:
+
+Propagation errors
+------------------
+
+The step-by-step demonstrations in this gallery demonstrate propagation errors
+that can occur when the computational domain does not properly support the
+intendet propagation scenario. We include these to assist users to identify
+possible error sources, and to raise awareness to ensure that the propagation
+:math:`z`-increment is small enough, the computational domain is large enough,
+and to bear in mind the periodic boundary conditions along the time-axis.
+All test cases are implemented on basis of the standard nonlinear Schrödinger
+equation.
+
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" When performing nonlinear computations on discrete grids, it is important to choose the time w...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/errors/images/thumb/sphx_glr_g_error_dealiasing_thumb.png
+     :alt: Implementing an anti-aliasing technique with a model
+
+     :ref:`sphx_glr_auto_tutorials_errors_g_error_dealiasing.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/errors/g_error_dealiasing
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates that if the computational domain does not support the propagation sce...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/errors/images/thumb/sphx_glr_g_error_3rdOrderSoliton_thumb.png
+     :alt: Propagation errors caused by a too narrow frequency window
+
+     :ref:`sphx_glr_auto_tutorials_errors_g_error_3rdOrderSoliton.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/errors/g_error_3rdOrderSoliton
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates numerical instabilities that build up during simulations of the stand...">
+
+.. only:: html
+
+ .. figure:: /auto_tutorials/errors/images/thumb/sphx_glr_g_instabilities_dz_thumb.png
+     :alt: Numerical instabilities of the Nonlinear Schrödinger Equation
+
+     :ref:`sphx_glr_auto_tutorials_errors_g_instabilities_dz.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_tutorials/errors/g_instabilities_dz
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
 .. only :: html
 
  .. container:: sphx-glr-footer
